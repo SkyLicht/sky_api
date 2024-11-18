@@ -3,10 +3,7 @@ from sqlalchemy.exc import SQLAlchemyError
 from sqlalchemy.orm import sessionmaker, declarative_base
 
 DATABASE_URL = "sqlite:///./sky_db.db"  # SQLite database URL
-# engine = create_engine(
-#     DATABASE_URL, connect_args={"check_same_thread": False}
-# )
-# SessionLocal = sessionmaker(bind=engine, autoflush=False, autocommit=False)
+
 Base = declarative_base()
 
 class DBConnection:
