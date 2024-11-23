@@ -2,10 +2,10 @@ import argparse
 from sqlite3 import IntegrityError
 
 from core.db.database import DBConnection
-from core.data.models.user_model import User, Role, Permission
+from core.data.schemas.user_model_schema import User, Role, Permission
 from core.security.auth import get_password_hash
 
-
+from core.data.schemas.hour_by_hour_schema import HourByHourSchema, WorkPlanSchema, PlatformSchema
 
 
 def init_db():
@@ -58,6 +58,9 @@ def init_db():
     finally:
         session.close()
 
+def init_hour_by_hour():
+    session = DBConnection().get_session()
+    session.close()
 
 
 if __name__ == '__main__':
@@ -65,7 +68,7 @@ if __name__ == '__main__':
     parser.add_argument(
         '--db',
         type=str,
-        choices=['init', 'aau'],
+        choices=['init','init_hbh'],
         help='...'
     )
 
@@ -73,6 +76,8 @@ if __name__ == '__main__':
 
     if arg.db == 'init':
         init_db()
+    if arg.db == 'init_hbh':
+        init_hour_by_hour()
 
 
 

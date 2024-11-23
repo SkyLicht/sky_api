@@ -1,0 +1,63 @@
+[
+  {
+    "name": "call_api_task",
+    "type": "interval",
+    "interval_seconds": 100,
+    "is_active": false,
+    "action": {
+      "type": "api_call",
+      "method": "GET",
+      "url": "http://10.13.33.46:3060/api/collections/employee_line_record/records",
+      "params": {},
+      "headers": {}
+    }
+  },
+  {
+    "name": "update_db_task",
+    "type": "interval",
+    "interval_seconds": 30,
+    "is_active": false,
+    "action": {
+      "type": "db_update",
+      "db_config": {
+        "host": "localhost",
+        "port": 3306,
+        "user": "your_user",
+        "password": "your_password",
+        "db": "your_database",
+        "charset": "utf8mb4"
+      },
+      "query": "UPDATE your_table SET column1 = %s WHERE column2 = %s",
+      "params": [
+        "value1",
+        "value2"
+      ]
+    }
+  },
+  {
+    "name": "api_to_db_task",
+    "type": "interval",
+    "interval_seconds": 60,
+    "is_active": false,
+    "action": {
+      "type": "api_call_db_update",
+      "method": "GET",
+      "url": "http://example.com/api/data",
+      "params": {},
+      "headers": {},
+      "db_config": {
+        "host": "localhost",
+        "port": 3306,
+        "user": "your_user",
+        "password": "your_password",
+        "db": "your_database",
+        "charset": "utf8mb4"
+      },
+      "query": "INSERT INTO table_name (column1, column2) VALUES (%s, %s)",
+      "query_params_mapping": [
+        "data.field1",
+        "data.field2"
+      ]
+    }
+  }
+]

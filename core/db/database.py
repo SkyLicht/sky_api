@@ -5,10 +5,10 @@ from sqlalchemy.orm import sessionmaker, declarative_base
 DATABASE_URL = "sqlite:///./sky_db.db"  # SQLite database URL
 
 Base = declarative_base()
-engine = create_engine(
-    DATABASE_URL, connect_args={"check_same_thread": False}
-)
-SessionLocal = sessionmaker(bind=engine, autoflush=False, autocommit=False)
+# engine = create_engine(
+#     DATABASE_URL, connect_args={"check_same_thread": False}
+# )
+# SessionLocal = sessionmaker(bind=engine, autoflush=False, autocommit=False)
 
 
 class DBConnection:
@@ -22,11 +22,14 @@ class DBConnection:
 
     def _initialize(self):
         self.engine = create_engine(
-            DATABASE_URL, connect_args={"check_same_thread": False}, echo=True
+            DATABASE_URL, connect_args={"check_same_thread": False}, echo=False
         )
         Base.metadata.create_all(bind=self.engine)
         print('Database initialized')
         self.Session = sessionmaker(bind=self.engine, autoflush=False, autocommit=False)
+
+
+
     def get_session(self):
         return self.Session()
 

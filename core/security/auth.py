@@ -3,16 +3,16 @@ from datetime import datetime, timedelta
 from typing import Optional
 
 from fastapi import Depends, HTTPException, status
-from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm, HTTPBasic, HTTPBasicCredentials
+from fastapi.security import OAuth2PasswordBearer, HTTPBasic, HTTPBasicCredentials
 
 from jose import JWTError, jwt
 from passlib.context import CryptContext
 
 from sqlalchemy.orm import Session
 
-from core.data.models import user_model
+from core.data.schemas.user_model_schema import User
 from core.db.database import get_db_session
-from core.schema.token_schema import TokenData
+from core.data.models.token_model import TokenDataModel
 
 # Secret key to encode JWT tokens
 SECRET_KEY = "4f1dada27ca17e21e166dc7e7c8978e3d32d25832432b3fcde66e988c4c9de35"  # Replace with your own secret key
@@ -36,7 +36,7 @@ def get_password_hash(password):
 
 
 def get_user(db: Session, username: str):
-    return db.query(user_model.User).filter(user_model.User.username == username).first()
+    return db.query(User).filter(User.username == username).first()
 
 
 def get_user_by_basic(
@@ -84,7 +84,7 @@ async def get_user_by_token(
         username: str = payload.get("sub")
         if username is None:
             raise credentials_exception
-        token_data = TokenData(username=username)
+        token_data = TokenDataModel(username=username)
     except JWTError:
         raise credentials_exception
     user = get_user(db, token_data.username)
@@ -93,7 +93,7 @@ async def get_user_by_token(
     return user
 
 
-def get_user_permissions(user: user_model.User):
+def get_user_permissions(user: User):
     permissions = set()
     for role in user.roles:
         for perm in role.permissions:
@@ -101,5 +101,5 @@ def get_user_permissions(user: user_model.User):
     return permissions
 
 
-def has_permission(user: user_model.User, permission_name: str):
+def has_permission(user: User, permission_name: str):
     return permission_name in get_user_permissions(user)

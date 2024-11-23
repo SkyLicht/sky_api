@@ -6,7 +6,7 @@ from fastapi.security import OAuth2PasswordRequestForm
 from sqlalchemy.orm import Session
 
 from core.api.endpoints import user_endpoint
-from core.schema.token_schema import Token
+from core.data.models.token_model import TokenModel
 from core.security import auth
 from core.security.auth import authenticate_user, ACCESS_TOKEN_EXPIRE_MINUTES, create_access_token
 
@@ -21,7 +21,7 @@ def test():
 
 
 
-@app.post("/token", response_model=Token)
+@app.post("/token", response_model=TokenModel)
 async def login_for_access_token(
         form_data: OAuth2PasswordRequestForm = Depends(),
         db: Session = Depends(auth.get_db_session)
@@ -37,4 +37,4 @@ async def login_for_access_token(
     access_token = create_access_token(
         data={"sub": user.username}, expires_delta=access_token_expires
     )
-    return Token(access_token=access_token, token_type="bearer")
+    return TokenModel(access_token=access_token, token_type="bearer")

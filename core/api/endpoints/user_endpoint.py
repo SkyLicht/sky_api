@@ -2,9 +2,9 @@ from fastapi import APIRouter, Depends, HTTPException
 from typing import List
 from sqlalchemy.orm import Session
 
-from core.data.models import user_model
+from core.data.schemas import user_model_schema
 from core.db.database import get_db_session
-from core.schema import user_schema
+from core.data.models import user_model
 from core.security.auth import get_user_by_token, has_permission, get_user_by_basic
 
 router = APIRouter(
@@ -22,7 +22,7 @@ async def read_users(
 
     if not has_permission(current_user, "read"):
         raise HTTPException(status_code=403, detail="Not enough permissions")
-    users = db.query(user_model.User).offset(skip).limit(limit).all()
+    users = db.query(user_model_schema.User).offset(skip).limit(limit).all()
     return users
 
 
@@ -36,5 +36,5 @@ def read_users(
 
     if not has_permission(current_user, "read"):
         raise HTTPException(status_code=403, detail="Not enough permissions")
-    users = db.query(user_model.User).offset(skip).limit(limit).all()
+    users = db.query(user_model_schema.User).offset(skip).limit(limit).all()
     return users

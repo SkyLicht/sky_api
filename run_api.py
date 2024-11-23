@@ -18,7 +18,7 @@ def start_server():
     args = parser.parse_args()
     # Create a ConfigParser instance
     configs = configparser.ConfigParser()
-    configs.read('configs/api_config.ini')
+    configs.read('config/api_config.ini')
 
     if args.server == 'house':
         _host = configs.get('server_house', 'host')
@@ -53,7 +53,7 @@ def start_server():
         "core.api.main:app",
         host=_host,
         port=_port,
-        reload=_reload  # Remove reload=True in production or set in configs.ini
+        reload=_reload  # Remove reload=True in production or set in config.ini
     )
 
 if __name__ == "__main__":
