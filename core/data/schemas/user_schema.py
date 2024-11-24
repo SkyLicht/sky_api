@@ -2,6 +2,7 @@ from sqlalchemy import Column, Integer, String, Boolean, ForeignKey, Table, Text
 from sqlalchemy.orm import relationship
 
 from core.db.database import Base
+from core.db.util import generate_short_uuid
 
 user_roles = Table(
     'user_roles', Base.metadata,
@@ -22,44 +23,45 @@ role_permissions = Table(
 )
 
 
-class User(Base):
+class UserSchema(Base):
     __tablename__ = 'users'
 
-    id = Column(Integer, primary_key=True, index=True)
+    id = Column(String(16), primary_key=True, default=lambda: str(generate_short_uuid()), unique=True, nullable=False)
     username = Column(String, unique=True, index=True)
     hashed_password = Column(String)
     is_active = Column(Boolean, default=True)
 
-    roles = relationship("Role", secondary=user_roles, back_populates="users")
-    routes = relationship("Route", secondary=user_routes, back_populates="users")
+    roles = relationship("RoleSchema", secondary=user_roles, back_populates="users")
+    routes = relationship("RouteSchema", secondary=user_routes, back_populates="users")
 
-class Route(Base):
+
+class RouteSchema(Base):
     __tablename__ = 'routes'
 
-    id = Column(Integer, primary_key=True, index=True)
+    id = Column(String(16), primary_key=True, default=lambda: str(generate_short_uuid()), unique=True, nullable=False)
     path = Column(String, unique=True, index=True)  # Route path
     name = Column(String, unique=True, index=True)
     description = Column(Text, nullable=True)  # Optional description of the route
 
     # Relationships
-    users = relationship("User", secondary=user_routes, back_populates="routes")
+    users = relationship("UserSchema", secondary=user_routes, back_populates="routes")
 
-class Role(Base):
+class RoleSchema(Base):
     __tablename__ = 'roles'
 
-    id = Column(Integer, primary_key=True, index=True)
+    id = Column(String(16), primary_key=True, default=lambda: str(generate_short_uuid()), unique=True, nullable=False)
     name = Column(String, unique=True)
 
-    users = relationship("User", secondary=user_roles, back_populates="roles")
-    permissions = relationship("Permission", secondary=role_permissions, back_populates="roles")
+    users = relationship("UserSchema", secondary=user_roles, back_populates="roles")
+    permissions = relationship("PermissionSchema", secondary=role_permissions, back_populates="roles")
 
 
-class Permission(Base):
+class PermissionSchema(Base):
     __tablename__ = 'permissions'
 
-    id = Column(Integer, primary_key=True, index=True)
+    id = Column(String(16), primary_key=True, default=lambda: str(generate_short_uuid()), unique=True, nullable=False)
     name = Column(String, unique=True)
 
-    roles = relationship("Role", secondary=role_permissions, back_populates="permissions")
+    roles = relationship("RoleSchema", secondary=role_permissions, back_populates="permissions")
 
 

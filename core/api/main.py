@@ -14,12 +14,6 @@ app = FastAPI()
 
 # Include endpoints
 app.include_router(user_endpoint.router)
-@app.get("/test/", response_model=List[dict])
-def test():
-    return [{"Hello": "World"}]
-
-
-
 
 @app.post("/token", response_model=TokenModel)
 async def login_for_access_token(

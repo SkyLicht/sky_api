@@ -1,6 +1,6 @@
 from colorama import Fore, Style
 
-from core.data.handler.translator import translate_hour_by_hour_schema_list_to_model_list
+from core.data.handlers.translator import translate_hour_by_hour_schema_list_to_model_list
 from core.data.models.hour_by_hour_model import HourByHourModel
 from core.data.schemas.hour_by_hour_schema import HourByHourSchema
 

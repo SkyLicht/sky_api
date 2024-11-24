@@ -1,45 +1,121 @@
 from sqlalchemy import create_engine
 from sqlalchemy.exc import SQLAlchemyError
-from sqlalchemy.orm import sessionmaker, declarative_base
+from sqlalchemy.orm import sessionmaker, declarative_base, scoped_session
 
-DATABASE_URL = "sqlite:///./sky_db.db"  # SQLite database URL
+# Define the database URL - using SQLite with a local file named `sky_db_2.db`.
+DATABASE_URL = "sqlite:///./sky_db_2.db"
 
+# Base class for defining ORM models.
 Base = declarative_base()
-# engine = create_engine(
-#     DATABASE_URL, connect_args={"check_same_thread": False}
-# )
-# SessionLocal = sessionmaker(bind=engine, autoflush=False, autocommit=False)
-
 
 class DBConnection:
-    _instance = None
+    """
+    Singleton class to manage database connection and session factories.
+    Ensures only one database connection exists and provides thread-safe sessions.
+    """
+    _instance = None  # Class-level attribute to hold the singleton instance
 
     def __new__(cls):
+        # Singleton pattern: create only one instance of this class
         if cls._instance is None:
             cls._instance = super(DBConnection, cls).__new__(cls)
-            cls._instance._initialize()
+            cls._instance._initialize()  # Initialize the instance
         return cls._instance
 
     def _initialize(self):
+        """
+        Initialize the database engine, create tables, and setup session factories.
+        """
         self.engine = create_engine(
-            DATABASE_URL, connect_args={"check_same_thread": False}, echo=False
+            DATABASE_URL,
+            connect_args={"check_same_thread": False},  # Required for SQLite in multi-threaded apps
+            echo=False
         )
+
         Base.metadata.create_all(bind=self.engine)
-        print('Database initialized')
-        self.Session = sessionmaker(bind=self.engine, autoflush=False, autocommit=False)
+
+        # Create a session factory
+        self.SessionFactory = sessionmaker(
+            bind=self.engine,
+            autoflush=False,
+            autocommit=False
+        )
+
+        # Create a thread-safe scoped session
+        self.ScopedSession = scoped_session(self.SessionFactory)
 
 
+
+    def create_table(self, model):
+        """
+        Create a specific table in the database.
+
+        Args:
+            model (Base): SQLAlchemy ORM model class that inherits from Base.
+
+        Example:
+            class ExampleModel(Base):
+                __tablename__ = 'example'
+                id = Column(Integer, primary_key=True)
+                name = Column(String)
+
+            DBConnection().create_table(ExampleModel)
+        """
+        try:
+            model.metadata.create_all(self.engine)  # Create the table for the provided model
+            print(f"Table for model '{model.__tablename__}' created successfully.")
+        except SQLAlchemyError as e:
+            print(f"Error creating table for model '{model.__tablename__}': {e}")
 
     def get_session(self):
-        return self.Session()
+        """
+        Create and return a new database session.
 
-# Dependency to get DB session
+        **Use Case**:
+        - When you need a standalone database session for a single-threaded environment.
+        - Example: Using in a script for bulk data processing or data migration.
+
+        Example:
+            with DBConnection().get_session() as session:
+                session.add(new_object)
+                session.commit()
+        """
+        return self.SessionFactory()
+
+    def get_scoped_session(self):
+        """
+        Get a thread-safe scoped session.
+
+        **Use Case**:
+        - For use in multi-threaded applications or web frameworks where each thread requires its own session.
+        - Example: Flask or FastAPI applications with multiple simultaneous requests.
+
+        Example:
+            session = DBConnection().get_scoped_session()
+            session.query(Model).filter_by(id=1).first()
+        """
+        return self.ScopedSession
+
+
 def get_db_session():
-    db = DBConnection().get_session()
+    db = DBConnection().get_session()  # Create a new session
     try:
-        yield db
+        yield db  # Provide the session to the caller
     except SQLAlchemyError as e:
-        db.rollback()  # Rollback any active transaction if there's an error
-        raise e
+        db.rollback()  # Rollback transaction in case of an exception
+        raise e  # Re-raise the exception
     finally:
-        db.close()
+        db.close()  # Always close the session
+
+
+def get_scoped_db_session():
+    db = DBConnection().ScopedSession  # Get the ScopedSession instance
+
+    try:
+        yield db  # Provide the session to the caller
+    except SQLAlchemyError as e:
+        db.rollback()  # Rollback transaction in case of an exception
+        raise e  # Re-raise the exception
+    finally:
+        db.remove()  # Call remove() to clear the thread-local session
+

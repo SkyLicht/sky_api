@@ -10,7 +10,9 @@ from passlib.context import CryptContext
 
 from sqlalchemy.orm import Session
 
-from core.data.schemas.user_model_schema import User
+from core.data.handlers.translator import translate_user_schema_to_model
+from core.data.models.user_model import UserModel
+from core.data.schemas.user_schema import UserSchema
 from core.db.database import get_db_session
 from core.data.models.token_model import TokenDataModel
 
@@ -35,14 +37,14 @@ def get_password_hash(password):
     return pwd_context.hash(password)
 
 
-def get_user(db: Session, username: str):
-    return db.query(User).filter(User.username == username).first()
+def get_user(db: Session, username: str) -> Optional[UserSchema]:
+    return db.query(UserSchema).filter(UserSchema.username == username).first()
 
 
 def get_user_by_basic(
         credentials: HTTPBasicCredentials = Depends(security),
         db: Session = Depends(get_db_session)
-):
+)-> UserModel:
     user = get_user(db, credentials.username)
     if user is None or not verify_password(credentials.password, user.hashed_password):
         raise HTTPException(
@@ -52,7 +54,7 @@ def get_user_by_basic(
         )
     if not user.is_active:
         raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="Inactive user")
-    return user
+    return UserModel.model_validate(user)
 
 
 def authenticate_user(db: Session, username: str, password: str):
@@ -93,13 +95,23 @@ async def get_user_by_token(
     return user
 
 
-def get_user_permissions(user: User):
+def get_user_permissions(user: UserModel):
     permissions = set()
     for role in user.roles:
         for perm in role.permissions:
             permissions.add(perm.name)
     return permissions
 
+def get_user_roles(user: UserModel):
+    roles = set()
+    for role in user.roles:
+        roles.add(role.name)
+    return roles
 
-def has_permission(user: User, permission_name: str):
+
+def has_permission(user: UserModel, permission_name: str):
     return permission_name in get_user_permissions(user)
+
+def has_role_permission(user: UserModel, role_name: list[str]):
+    return any(role in get_user_roles(user) for role in role_name)
+
