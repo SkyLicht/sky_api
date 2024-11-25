@@ -12,7 +12,7 @@ def start_server():
         '--server',
         #default= 'house',
         type=str,
-        choices=['house', 'work_1', 'work_2', 'fuzion', 'production'],
+        choices=['house', 'work_1', 'work_2', 'fuzion', 'production', 'default'],
         help='Select the server to run (e.g., house, work)'
     )
     args = parser.parse_args()
@@ -40,6 +40,10 @@ def start_server():
         _host = configs.get('server_production', 'host')
         _port = configs.getint('server_production', 'port')
         _reload = configs.getboolean('server_production', 'reload')
+    elif args.server == 'default':
+        _host = '127.0.0.1'
+        _port = 8000
+        _reload = False
     else:
         #Set default values
         configs['server'] = {

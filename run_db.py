@@ -14,6 +14,8 @@ from core.data.types import SectionNickname
 from core.db.database import DBConnection
 
 from core.db.util import safe_execute
+from core.features.hour_by_hour.hbh_handlers import platform_to_db_from_json, work_plan_to_db_from_json, \
+    hour_by_hour_to_db_from_json
 from core.security.auth import get_password_hash
 
 from core.data.schemas.hour_by_hour_schema import HourByHourSchema, WorkPlanSchema, PlatformSchema
@@ -134,12 +136,17 @@ def populate_employee():
     )
 
 
+def populate_hour_by_hour():
+    #platform_to_db_from_json('config/data/platforms.json')
+    #work_plan_to_db_from_json('config/data/work_plans.json')
+    hour_by_hour_to_db_from_json('config/data/hour_by_hour.json')
+
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Manage database')
     parser.add_argument(
         '--db',
         type=str,
-        choices=['pop_user', 'create_tables', 'pop_employee'],
+        choices=['pop_user', 'create_tables', 'pop_employee', 'pop_hour_by_hour'],
         help='...'
     )
 
@@ -151,6 +158,8 @@ if __name__ == '__main__':
         populate_employee()
     elif arg.db == 'create_tables':
         create_tables()
+    elif arg.db == 'pop_hour_by_hour':
+        populate_hour_by_hour()
 
 # def add_route_to_user(db: Session, route_path: str, username: str, description: str = None):
 #     # Fetch or create the route

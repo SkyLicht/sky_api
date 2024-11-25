@@ -4,16 +4,26 @@ from fastapi import FastAPI, Depends, HTTPException, status
 
 from fastapi.security import OAuth2PasswordRequestForm
 from sqlalchemy.orm import Session
+from starlette.middleware.cors import CORSMiddleware
 
-from core.api.endpoints import user_endpoint
+from core.api.endpoints import user_endpoint, hbh_endpoint
 from core.data.models.token_model import TokenModel
 from core.security import auth
 from core.security.auth import authenticate_user, ACCESS_TOKEN_EXPIRE_MINUTES, create_access_token
 
 app = FastAPI()
-
+# Allow CORS for localhost:3000
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:3000"],  # Adjust origins as needed
+    # allow_origins=["*"],  # Allow all origins
+    allow_credentials=True,
+    allow_methods=["*"],  # Allow all HTTP methods
+    allow_headers=["*"],  # Allow all headers
+)
 # Include endpoints
 app.include_router(user_endpoint.router)
+app.include_router(hbh_endpoint.router)
 
 @app.post("/token", response_model=TokenModel)
 async def login_for_access_token(

@@ -11,14 +11,16 @@ class HbhService:
         try:
             get_current_day = datetime.now().strftime("%Y-%m-%d")
             get_current_hour_in_string = datetime.now().strftime("%H")
-            responds = api_respond_to_model(
+            responds = await api_respond_to_model(
                 get_hour_by_hour(transform_date_to_mackenzie(get_current_day), get_current_hour_in_string),
                 get_current_day,
             )
 
-            for keys, records in responds.items():
-                for record in records:
-                    self.hbh_dto.query_update_last_hour(record.to_schema())
+
+            print(responds)
+            # for keys, records in responds.items():
+            #     for record in records:
+            #         self.hbh_dto.query_update_last_hour(record.to_schema())
 
 
 

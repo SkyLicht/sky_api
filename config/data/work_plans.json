@@ -1,0 +1,5002 @@
+[
+  {
+    "date": "2024-11-22",
+    "line": "J09",
+    "planed_hours": 23.25,
+    "platform_id": "zc0yawrjl3ky8ml",
+    "state": "RUN",
+    "target_oee": 0.6,
+    "uph_i": 77,
+    "week": 47
+  },
+  {
+    "date": "2024-11-22",
+    "line": "J08",
+    "planed_hours": 23.25,
+    "platform_id": "h0pek593rjgt76g",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 105,
+    "week": 47
+  },
+  {
+    "date": "2024-11-22",
+    "line": "J06",
+    "planed_hours": 23.25,
+    "platform_id": "h0pek593rjgt76g",
+    "state": "RUN",
+    "target_oee": 0.78,
+    "uph_i": 109,
+    "week": 47
+  },
+  {
+    "date": "2024-11-22",
+    "line": "J02",
+    "planed_hours": 23.25,
+    "platform_id": "939lteoc1ut5wzv",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 195,
+    "week": 47
+  },
+  {
+    "date": "2024-11-22",
+    "line": "J01",
+    "planed_hours": 23.25,
+    "platform_id": "zc0yawrjl3ky8ml",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 96,
+    "week": 47
+  },
+  {
+    "date": "2024-11-21",
+    "line": "J09",
+    "planed_hours": 23.25,
+    "platform_id": "zc0yawrjl3ky8ml",
+    "state": "RUN",
+    "target_oee": 0.78,
+    "uph_i": 100,
+    "week": 47
+  },
+  {
+    "date": "2024-11-21",
+    "line": "J08",
+    "planed_hours": 23.25,
+    "platform_id": "h0pek593rjgt76g",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 105,
+    "week": 47
+  },
+  {
+    "date": "2024-11-21",
+    "line": "J06",
+    "planed_hours": 23.25,
+    "platform_id": "h0pek593rjgt76g",
+    "state": "RUN",
+    "target_oee": 0.78,
+    "uph_i": 109,
+    "week": 47
+  },
+  {
+    "date": "2024-11-21",
+    "line": "J02",
+    "planed_hours": 23.25,
+    "platform_id": "939lteoc1ut5wzv",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 195,
+    "week": 47
+  },
+  {
+    "date": "2024-11-21",
+    "line": "J01",
+    "planed_hours": 23.25,
+    "platform_id": "zc0yawrjl3ky8ml",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 96,
+    "week": 47
+  },
+  {
+    "date": "2024-11-20",
+    "line": "J09",
+    "planed_hours": 23.25,
+    "platform_id": "zc0yawrjl3ky8ml",
+    "state": "RUN",
+    "target_oee": 0.6,
+    "uph_i": 77,
+    "week": 47
+  },
+  {
+    "date": "2024-11-20",
+    "line": "J08",
+    "planed_hours": 17,
+    "platform_id": "cujtjjhpgyb2lg0",
+    "state": "RUN",
+    "target_oee": 0.73,
+    "uph_i": 91,
+    "week": 47
+  },
+  {
+    "date": "2024-11-20",
+    "line": "J06",
+    "planed_hours": 23.25,
+    "platform_id": "h0pek593rjgt76g",
+    "state": "RUN",
+    "target_oee": 0.78,
+    "uph_i": 109,
+    "week": 47
+  },
+  {
+    "date": "2024-11-20",
+    "line": "J02",
+    "planed_hours": 13.25,
+    "platform_id": "939lteoc1ut5wzv",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 195,
+    "week": 47
+  },
+  {
+    "date": "2024-11-20",
+    "line": "J01",
+    "planed_hours": 23.25,
+    "platform_id": "zc0yawrjl3ky8ml",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 96,
+    "week": 47
+  },
+  {
+    "date": "2024-11-19",
+    "line": "J06",
+    "planed_hours": 17,
+    "platform_id": "h0pek593rjgt76g",
+    "state": "RUN",
+    "target_oee": 0.78,
+    "uph_i": 109,
+    "week": 47
+  },
+  {
+    "date": "2024-11-19",
+    "line": "J03",
+    "planed_hours": 17,
+    "platform_id": "939lteoc1ut5wzv",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 190,
+    "week": 47
+  },
+  {
+    "date": "2024-11-19",
+    "line": "J02",
+    "planed_hours": 17,
+    "platform_id": "939lteoc1ut5wzv",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 190,
+    "week": 47
+  },
+  {
+    "date": "2024-11-19",
+    "line": "J01",
+    "planed_hours": 17,
+    "platform_id": "zc0yawrjl3ky8ml",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 96,
+    "week": 47
+  },
+  {
+    "date": "2024-11-15",
+    "line": "J09",
+    "planed_hours": 23.25,
+    "platform_id": "zc0yawrjl3ky8ml",
+    "state": "RUN",
+    "target_oee": 0.5,
+    "uph_i": 64,
+    "week": 46
+  },
+  {
+    "date": "2024-11-15",
+    "line": "J08",
+    "planed_hours": 23.25,
+    "platform_id": "cujtjjhpgyb2lg0",
+    "state": "RUN",
+    "target_oee": 0.73,
+    "uph_i": 91,
+    "week": 46
+  },
+  {
+    "date": "2024-11-15",
+    "line": "J06",
+    "planed_hours": 23.25,
+    "platform_id": "h0pek593rjgt76g",
+    "state": "RUN",
+    "target_oee": 0.78,
+    "uph_i": 109,
+    "week": 46
+  },
+  {
+    "date": "2024-11-15",
+    "line": "J02",
+    "planed_hours": 23.25,
+    "platform_id": "939lteoc1ut5wzv",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 195,
+    "week": 46
+  },
+  {
+    "date": "2024-11-15",
+    "line": "J01",
+    "planed_hours": 23.25,
+    "platform_id": "zc0yawrjl3ky8ml",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 96,
+    "week": 46
+  },
+  {
+    "date": "2024-11-14",
+    "line": "J08",
+    "planed_hours": 23.25,
+    "platform_id": "cujtjjhpgyb2lg0",
+    "state": "RUN",
+    "target_oee": 0.73,
+    "uph_i": 91,
+    "week": 46
+  },
+  {
+    "date": "2024-11-14",
+    "line": "J06",
+    "planed_hours": 23.25,
+    "platform_id": "h0pek593rjgt76g",
+    "state": "RUN",
+    "target_oee": 0.78,
+    "uph_i": 109,
+    "week": 46
+  },
+  {
+    "date": "2024-11-14",
+    "line": "J02",
+    "planed_hours": 23.25,
+    "platform_id": "939lteoc1ut5wzv",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 195,
+    "week": 46
+  },
+  {
+    "date": "2024-11-14",
+    "line": "J01",
+    "planed_hours": 19,
+    "platform_id": "zc0yawrjl3ky8ml",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 96,
+    "week": 46
+  },
+  {
+    "date": "2024-11-13",
+    "line": "J09",
+    "planed_hours": 12,
+    "platform_id": "zc0yawrjl3ky8ml",
+    "state": "RUN",
+    "target_oee": 0.5,
+    "uph_i": 64,
+    "week": 46
+  },
+  {
+    "date": "2024-11-13",
+    "line": "J08",
+    "planed_hours": 23.25,
+    "platform_id": "cujtjjhpgyb2lg0",
+    "state": "RUN",
+    "target_oee": 0.73,
+    "uph_i": 91,
+    "week": 46
+  },
+  {
+    "date": "2024-11-13",
+    "line": "J06",
+    "planed_hours": 23.25,
+    "platform_id": "h0pek593rjgt76g",
+    "state": "RUN",
+    "target_oee": 0.78,
+    "uph_i": 109,
+    "week": 46
+  },
+  {
+    "date": "2024-11-13",
+    "line": "J03",
+    "planed_hours": 12,
+    "platform_id": "939lteoc1ut5wzv",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 195,
+    "week": 46
+  },
+  {
+    "date": "2024-11-13",
+    "line": "J02",
+    "planed_hours": 13.25,
+    "platform_id": "939lteoc1ut5wzv",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 195,
+    "week": 46
+  },
+  {
+    "date": "2024-11-13",
+    "line": "J01",
+    "planed_hours": 23.25,
+    "platform_id": "zc0yawrjl3ky8ml",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 96,
+    "week": 46
+  },
+  {
+    "date": "2024-11-12",
+    "line": "J09",
+    "planed_hours": 23.25,
+    "platform_id": "zc0yawrjl3ky8ml",
+    "state": "RUN",
+    "target_oee": 0.5,
+    "uph_i": 64,
+    "week": 46
+  },
+  {
+    "date": "2024-11-12",
+    "line": "J08",
+    "planed_hours": 23.25,
+    "platform_id": "cujtjjhpgyb2lg0",
+    "state": "RUN",
+    "target_oee": 0.73,
+    "uph_i": 91,
+    "week": 46
+  },
+  {
+    "date": "2024-11-12",
+    "line": "J06",
+    "planed_hours": 23.25,
+    "platform_id": "h0pek593rjgt76g",
+    "state": "RUN",
+    "target_oee": 0.78,
+    "uph_i": 109,
+    "week": 46
+  },
+  {
+    "date": "2024-11-12",
+    "line": "J02",
+    "planed_hours": 23.25,
+    "platform_id": "939lteoc1ut5wzv",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 195,
+    "week": 46
+  },
+  {
+    "date": "2024-11-12",
+    "line": "J01",
+    "planed_hours": 23.25,
+    "platform_id": "zc0yawrjl3ky8ml",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 96,
+    "week": 46
+  },
+  {
+    "date": "2024-11-08",
+    "line": "J08",
+    "planed_hours": 23.25,
+    "platform_id": "h0pek593rjgt76g",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 105,
+    "week": 45
+  },
+  {
+    "date": "2024-11-08",
+    "line": "J06",
+    "planed_hours": 23.25,
+    "platform_id": "h0pek593rjgt76g",
+    "state": "RUN",
+    "target_oee": 0.78,
+    "uph_i": 109,
+    "week": 45
+  },
+  {
+    "date": "2024-11-08",
+    "line": "J03",
+    "planed_hours": 17,
+    "platform_id": "939lteoc1ut5wzv",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 195,
+    "week": 45
+  },
+  {
+    "date": "2024-11-08",
+    "line": "J02",
+    "planed_hours": 23.25,
+    "platform_id": "939lteoc1ut5wzv",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 195,
+    "week": 45
+  },
+  {
+    "date": "2024-11-08",
+    "line": "J01",
+    "planed_hours": 23.25,
+    "platform_id": "zc0yawrjl3ky8ml",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 96,
+    "week": 45
+  },
+  {
+    "date": "2024-11-07",
+    "line": "J08",
+    "planed_hours": 23.25,
+    "platform_id": "h0pek593rjgt76g",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 105,
+    "week": 45
+  },
+  {
+    "date": "2024-11-07",
+    "line": "J06",
+    "planed_hours": 23.25,
+    "platform_id": "h0pek593rjgt76g",
+    "state": "RUN",
+    "target_oee": 0.78,
+    "uph_i": 109,
+    "week": 45
+  },
+  {
+    "date": "2024-11-07",
+    "line": "J05",
+    "planed_hours": 23.25,
+    "platform_id": "ki2qvrtl90pyv11",
+    "state": "RUN",
+    "target_oee": 0.88,
+    "uph_i": 150,
+    "week": 45
+  },
+  {
+    "date": "2024-11-07",
+    "line": "J02",
+    "planed_hours": 23.25,
+    "platform_id": "939lteoc1ut5wzv",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 195,
+    "week": 45
+  },
+  {
+    "date": "2024-11-07",
+    "line": "J01",
+    "planed_hours": 23.25,
+    "platform_id": "zc0yawrjl3ky8ml",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 96,
+    "week": 45
+  },
+  {
+    "date": "2024-11-06",
+    "line": "J08",
+    "planed_hours": 23.25,
+    "platform_id": "h0pek593rjgt76g",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 105,
+    "week": 45
+  },
+  {
+    "date": "2024-11-06",
+    "line": "J06",
+    "planed_hours": 23.25,
+    "platform_id": "h0pek593rjgt76g",
+    "state": "RUN",
+    "target_oee": 0.78,
+    "uph_i": 109,
+    "week": 45
+  },
+  {
+    "date": "2024-11-06",
+    "line": "J05",
+    "planed_hours": 19,
+    "platform_id": "ki2qvrtl90pyv11",
+    "state": "RUN",
+    "target_oee": 0.88,
+    "uph_i": 150,
+    "week": 45
+  },
+  {
+    "date": "2024-11-06",
+    "line": "J02",
+    "planed_hours": 23.25,
+    "platform_id": "939lteoc1ut5wzv",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 195,
+    "week": 45
+  },
+  {
+    "date": "2024-11-06",
+    "line": "J01",
+    "planed_hours": 23.25,
+    "platform_id": "zc0yawrjl3ky8ml",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 96,
+    "week": 45
+  },
+  {
+    "date": "2024-11-05",
+    "line": "J01",
+    "planed_hours": 23.25,
+    "platform_id": "zc0yawrjl3ky8ml",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 96,
+    "week": 45
+  },
+  {
+    "date": "2024-11-05",
+    "line": "J08",
+    "planed_hours": 8,
+    "platform_id": "h0pek593rjgt76g",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 105,
+    "week": 45
+  },
+  {
+    "date": "2024-11-05",
+    "line": "J06",
+    "planed_hours": 23.25,
+    "platform_id": "h0pek593rjgt76g",
+    "state": "RUN",
+    "target_oee": 0.78,
+    "uph_i": 109,
+    "week": 45
+  },
+  {
+    "date": "2024-11-05",
+    "line": "J02",
+    "planed_hours": 14,
+    "platform_id": "939lteoc1ut5wzv",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 195,
+    "week": 45
+  },
+  {
+    "date": "2024-11-05",
+    "line": "J05",
+    "planed_hours": 23.25,
+    "platform_id": "zc0yawrjl3ky8ml",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 96,
+    "week": 45
+  },
+  {
+    "date": "2024-11-04",
+    "line": "J08",
+    "planed_hours": 17,
+    "platform_id": "h0pek593rjgt76g",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 105,
+    "week": 45
+  },
+  {
+    "date": "2024-11-04",
+    "line": "J06",
+    "planed_hours": 17,
+    "platform_id": "h0pek593rjgt76g",
+    "state": "RUN",
+    "target_oee": 0.78,
+    "uph_i": 109,
+    "week": 45
+  },
+  {
+    "date": "2024-11-04",
+    "line": "J05",
+    "planed_hours": 17,
+    "platform_id": "8t1wd54kad9a7a8",
+    "state": "RUN",
+    "target_oee": 0.88,
+    "uph_i": 150,
+    "week": 45
+  },
+  {
+    "date": "2024-11-04",
+    "line": "J02",
+    "planed_hours": 17,
+    "platform_id": "939lteoc1ut5wzv",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 195,
+    "week": 45
+  },
+  {
+    "date": "2024-11-04",
+    "line": "J01",
+    "planed_hours": 17,
+    "platform_id": "zc0yawrjl3ky8ml",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 96,
+    "week": 45
+  },
+  {
+    "date": "2024-11-01",
+    "line": "J08",
+    "planed_hours": 23.25,
+    "platform_id": "cujtjjhpgyb2lg0",
+    "state": "RUN",
+    "target_oee": 0.73,
+    "uph_i": 91,
+    "week": 44
+  },
+  {
+    "date": "2024-11-01",
+    "line": "J06",
+    "planed_hours": 23.25,
+    "platform_id": "h0pek593rjgt76g",
+    "state": "RUN",
+    "target_oee": 0.78,
+    "uph_i": 109,
+    "week": 44
+  },
+  {
+    "date": "2024-11-01",
+    "line": "J05",
+    "planed_hours": 23.25,
+    "platform_id": "8t1wd54kad9a7a8",
+    "state": "RUN",
+    "target_oee": 0.88,
+    "uph_i": 150,
+    "week": 44
+  },
+  {
+    "date": "2024-11-01",
+    "line": "J03",
+    "planed_hours": 23.25,
+    "platform_id": "939lteoc1ut5wzv",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 195,
+    "week": 44
+  },
+  {
+    "date": "2024-11-01",
+    "line": "J01",
+    "planed_hours": 23.25,
+    "platform_id": "zc0yawrjl3ky8ml",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 96,
+    "week": 44
+  },
+  {
+    "date": "2024-10-31",
+    "line": "J08",
+    "planed_hours": 8,
+    "platform_id": "cujtjjhpgyb2lg0",
+    "state": "RUN",
+    "target_oee": 0.73,
+    "uph_i": 91,
+    "week": 44
+  },
+  {
+    "date": "2024-10-31",
+    "line": "J06",
+    "planed_hours": 23.25,
+    "platform_id": "h0pek593rjgt76g",
+    "state": "RUN",
+    "target_oee": 0.78,
+    "uph_i": 109,
+    "week": 44
+  },
+  {
+    "date": "2024-10-31",
+    "line": "J05",
+    "planed_hours": 8,
+    "platform_id": "8t1wd54kad9a7a8",
+    "state": "RUN",
+    "target_oee": 0.88,
+    "uph_i": 150,
+    "week": 44
+  },
+  {
+    "date": "2024-10-31",
+    "line": "J03",
+    "planed_hours": 13.25,
+    "platform_id": "939lteoc1ut5wzv",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 195,
+    "week": 44
+  },
+  {
+    "date": "2024-10-31",
+    "line": "J02",
+    "planed_hours": 9,
+    "platform_id": "939lteoc1ut5wzv",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 195,
+    "week": 44
+  },
+  {
+    "date": "2024-10-31",
+    "line": "J01",
+    "planed_hours": 23.25,
+    "platform_id": "zc0yawrjl3ky8ml",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 96,
+    "week": 44
+  },
+  {
+    "date": "2024-10-30",
+    "line": "J08",
+    "planed_hours": 23.25,
+    "platform_id": "cujtjjhpgyb2lg0",
+    "state": "RUN",
+    "target_oee": 0.73,
+    "uph_i": 91,
+    "week": 44
+  },
+  {
+    "date": "2024-10-30",
+    "line": "J06",
+    "planed_hours": 23.25,
+    "platform_id": "h0pek593rjgt76g",
+    "state": "RUN",
+    "target_oee": 0.78,
+    "uph_i": 109,
+    "week": 44
+  },
+  {
+    "date": "2024-10-30",
+    "line": "J03",
+    "planed_hours": 23.25,
+    "platform_id": "939lteoc1ut5wzv",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 195,
+    "week": 44
+  },
+  {
+    "date": "2024-10-30",
+    "line": "J02",
+    "planed_hours": 23.25,
+    "platform_id": "939lteoc1ut5wzv",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 195,
+    "week": 44
+  },
+  {
+    "date": "2024-10-30",
+    "line": "J01",
+    "planed_hours": 23.25,
+    "platform_id": "zc0yawrjl3ky8ml",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 96,
+    "week": 44
+  },
+  {
+    "date": "2024-10-29",
+    "line": "J08",
+    "planed_hours": 23.25,
+    "platform_id": "cujtjjhpgyb2lg0",
+    "state": "RUN",
+    "target_oee": 0.73,
+    "uph_i": 91,
+    "week": 44
+  },
+  {
+    "date": "2024-10-29",
+    "line": "J06",
+    "planed_hours": 23.25,
+    "platform_id": "h0pek593rjgt76g",
+    "state": "RUN",
+    "target_oee": 0.78,
+    "uph_i": 109,
+    "week": 44
+  },
+  {
+    "date": "2024-10-29",
+    "line": "J03",
+    "planed_hours": 23.25,
+    "platform_id": "939lteoc1ut5wzv",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 195,
+    "week": 44
+  },
+  {
+    "date": "2024-10-29",
+    "line": "J02",
+    "planed_hours": 23.25,
+    "platform_id": "939lteoc1ut5wzv",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 195,
+    "week": 44
+  },
+  {
+    "date": "2024-10-29",
+    "line": "J01",
+    "planed_hours": 23.25,
+    "platform_id": "zc0yawrjl3ky8ml",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 96,
+    "week": 44
+  },
+  {
+    "date": "2024-10-21",
+    "line": "J02",
+    "planed_hours": 17,
+    "platform_id": "939lteoc1ut5wzv",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 195,
+    "week": 43
+  },
+  {
+    "date": "2024-10-28",
+    "line": "J03",
+    "planed_hours": 17,
+    "platform_id": "939lteoc1ut5wzv",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 195,
+    "week": 44
+  },
+  {
+    "date": "2024-10-28",
+    "line": "J06",
+    "planed_hours": 17,
+    "platform_id": "h0pek593rjgt76g",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 105,
+    "week": 44
+  },
+  {
+    "date": "2024-10-28",
+    "line": "J08",
+    "planed_hours": 17,
+    "platform_id": "h0pek593rjgt76g",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 105,
+    "week": 44
+  },
+  {
+    "date": "2024-10-28",
+    "line": "J01",
+    "planed_hours": 17,
+    "platform_id": "zc0yawrjl3ky8ml",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 96,
+    "week": 44
+  },
+  {
+    "date": "2024-10-25",
+    "line": "J08",
+    "planed_hours": 23.25,
+    "platform_id": "cujtjjhpgyb2lg0",
+    "state": "RUN",
+    "target_oee": 0.73,
+    "uph_i": 91,
+    "week": 43
+  },
+  {
+    "date": "2024-10-25",
+    "line": "J06",
+    "planed_hours": 23.25,
+    "platform_id": "h0pek593rjgt76g",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 105,
+    "week": 43
+  },
+  {
+    "date": "2024-10-25",
+    "line": "J03",
+    "planed_hours": 23.25,
+    "platform_id": "939lteoc1ut5wzv",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 195,
+    "week": 43
+  },
+  {
+    "date": "2024-10-25",
+    "line": "J02",
+    "planed_hours": 23.25,
+    "platform_id": "939lteoc1ut5wzv",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 195,
+    "week": 43
+  },
+  {
+    "date": "2024-10-25",
+    "line": "J01",
+    "planed_hours": 23.25,
+    "platform_id": "zc0yawrjl3ky8ml",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 96,
+    "week": 43
+  },
+  {
+    "date": "2024-10-24",
+    "line": "J08",
+    "planed_hours": 23.25,
+    "platform_id": "cujtjjhpgyb2lg0",
+    "state": "RUN",
+    "target_oee": 0.73,
+    "uph_i": 91,
+    "week": 43
+  },
+  {
+    "date": "2024-10-24",
+    "line": "J06",
+    "planed_hours": 23.25,
+    "platform_id": "h0pek593rjgt76g",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 105,
+    "week": 43
+  },
+  {
+    "date": "2024-10-24",
+    "line": "J05",
+    "planed_hours": 6,
+    "platform_id": "8t1wd54kad9a7a8",
+    "state": "RUN",
+    "target_oee": 0.78,
+    "uph_i": 133,
+    "week": 43
+  },
+  {
+    "date": "2024-10-24",
+    "line": "J03",
+    "planed_hours": 23.24,
+    "platform_id": "939lteoc1ut5wzv",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 195,
+    "week": 43
+  },
+  {
+    "date": "2024-10-24",
+    "line": "J02",
+    "planed_hours": 11,
+    "platform_id": "939lteoc1ut5wzv",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 195,
+    "week": 43
+  },
+  {
+    "date": "2024-10-24",
+    "line": "J01",
+    "planed_hours": 23.25,
+    "platform_id": "zc0yawrjl3ky8ml",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 96,
+    "week": 43
+  },
+  {
+    "date": "2024-10-23",
+    "line": "J08",
+    "planed_hours": 23.25,
+    "platform_id": "cujtjjhpgyb2lg0",
+    "state": "RUN",
+    "target_oee": 0.6,
+    "uph_i": 75,
+    "week": 43
+  },
+  {
+    "date": "2024-10-23",
+    "line": "J06",
+    "planed_hours": 23.25,
+    "platform_id": "h0pek593rjgt76g",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 105,
+    "week": 43
+  },
+  {
+    "date": "2024-10-23",
+    "line": "J05",
+    "planed_hours": 23.25,
+    "platform_id": "8t1wd54kad9a7a8",
+    "state": "RUN",
+    "target_oee": 0.78,
+    "uph_i": 133,
+    "week": 43
+  },
+  {
+    "date": "2024-10-23",
+    "line": "J03",
+    "planed_hours": 23.25,
+    "platform_id": "939lteoc1ut5wzv",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 195,
+    "week": 43
+  },
+  {
+    "date": "2024-10-23",
+    "line": "J01",
+    "planed_hours": 23.25,
+    "platform_id": "zc0yawrjl3ky8ml",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 96,
+    "week": 43
+  },
+  {
+    "date": "2024-10-22",
+    "line": "J08",
+    "planed_hours": 15,
+    "platform_id": "h0pek593rjgt76g",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 105,
+    "week": 43
+  },
+  {
+    "date": "2024-10-22",
+    "line": "J06",
+    "planed_hours": 23.25,
+    "platform_id": "h0pek593rjgt76g",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 105,
+    "week": 43
+  },
+  {
+    "date": "2024-10-22",
+    "line": "J05",
+    "planed_hours": 23.25,
+    "platform_id": "8t1wd54kad9a7a8",
+    "state": "RUN",
+    "target_oee": 0.78,
+    "uph_i": 133,
+    "week": 43
+  },
+  {
+    "date": "2024-10-22",
+    "line": "J03",
+    "planed_hours": 23.25,
+    "platform_id": "939lteoc1ut5wzv",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 195,
+    "week": 43
+  },
+  {
+    "date": "2024-10-22",
+    "line": "J01",
+    "planed_hours": 23.25,
+    "platform_id": "zc0yawrjl3ky8ml",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 96,
+    "week": 43
+  },
+  {
+    "date": "2024-10-21",
+    "line": "J08",
+    "planed_hours": 17,
+    "platform_id": "h0pek593rjgt76g",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 105,
+    "week": 43
+  },
+  {
+    "date": "2024-10-21",
+    "line": "J06",
+    "planed_hours": 15,
+    "platform_id": "h0pek593rjgt76g",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 105,
+    "week": 43
+  },
+  {
+    "date": "2024-10-21",
+    "line": "J05",
+    "planed_hours": 17,
+    "platform_id": "8t1wd54kad9a7a8",
+    "state": "RUN",
+    "target_oee": 0.78,
+    "uph_i": 133,
+    "week": 43
+  },
+  {
+    "date": "2024-10-21",
+    "line": "J03",
+    "planed_hours": 17,
+    "platform_id": "939lteoc1ut5wzv",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 195,
+    "week": 43
+  },
+  {
+    "date": "2024-10-21",
+    "line": "J01",
+    "planed_hours": 17,
+    "platform_id": "zc0yawrjl3ky8ml",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 96,
+    "week": 43
+  },
+  {
+    "date": "2024-10-18",
+    "line": "J08",
+    "planed_hours": 23.25,
+    "platform_id": "h0pek593rjgt76g",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 105,
+    "week": 42
+  },
+  {
+    "date": "2024-10-18",
+    "line": "J06",
+    "planed_hours": 23.25,
+    "platform_id": "h0pek593rjgt76g",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 105,
+    "week": 42
+  },
+  {
+    "date": "2024-10-18",
+    "line": "J05",
+    "planed_hours": 23.25,
+    "platform_id": "8t1wd54kad9a7a8",
+    "state": "RUN",
+    "target_oee": 0.78,
+    "uph_i": 133,
+    "week": 42
+  },
+  {
+    "date": "2024-10-18",
+    "line": "J03",
+    "planed_hours": 23.25,
+    "platform_id": "939lteoc1ut5wzv",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 195,
+    "week": 42
+  },
+  {
+    "date": "2024-10-18",
+    "line": "J01",
+    "planed_hours": 23.25,
+    "platform_id": "zc0yawrjl3ky8ml",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 96,
+    "week": 42
+  },
+  {
+    "date": "2024-10-17",
+    "line": "J05",
+    "planed_hours": 8,
+    "platform_id": "ki2qvrtl90pyv11",
+    "state": "RUN",
+    "target_oee": 0.78,
+    "uph_i": 133,
+    "week": 42
+  },
+  {
+    "date": "2024-10-17",
+    "line": "J03",
+    "planed_hours": 23.25,
+    "platform_id": "939lteoc1ut5wzv",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 195,
+    "week": 42
+  },
+  {
+    "date": "2024-10-17",
+    "line": "J02",
+    "planed_hours": 6,
+    "platform_id": "939lteoc1ut5wzv",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 195,
+    "week": 42
+  },
+  {
+    "date": "2024-10-17",
+    "line": "J01",
+    "planed_hours": 23.25,
+    "platform_id": "zc0yawrjl3ky8ml",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 96,
+    "week": 42
+  },
+  {
+    "date": "2024-10-16",
+    "line": "J08",
+    "planed_hours": 23.25,
+    "platform_id": "h0pek593rjgt76g",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 105,
+    "week": 42
+  },
+  {
+    "date": "2024-10-16",
+    "line": "J06",
+    "planed_hours": 23.25,
+    "platform_id": "h0pek593rjgt76g",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 105,
+    "week": 42
+  },
+  {
+    "date": "2024-10-16",
+    "line": "J03",
+    "planed_hours": 23.25,
+    "platform_id": "939lteoc1ut5wzv",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 195,
+    "week": 42
+  },
+  {
+    "date": "2024-10-16",
+    "line": "J02",
+    "planed_hours": 23.25,
+    "platform_id": "939lteoc1ut5wzv",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 195,
+    "week": 42
+  },
+  {
+    "date": "2024-10-16",
+    "line": "J01",
+    "planed_hours": 23.25,
+    "platform_id": "zc0yawrjl3ky8ml",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 96,
+    "week": 42
+  },
+  {
+    "date": "2024-10-15",
+    "line": "J08",
+    "planed_hours": 23.25,
+    "platform_id": "h0pek593rjgt76g",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 105,
+    "week": 42
+  },
+  {
+    "date": "2024-10-15",
+    "line": "J06",
+    "planed_hours": 23.25,
+    "platform_id": "h0pek593rjgt76g",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 105,
+    "week": 42
+  },
+  {
+    "date": "2024-10-15",
+    "line": "J03",
+    "planed_hours": 23.25,
+    "platform_id": "939lteoc1ut5wzv",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 195,
+    "week": 42
+  },
+  {
+    "date": "2024-10-15",
+    "line": "J02",
+    "planed_hours": 17,
+    "platform_id": "939lteoc1ut5wzv",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 195,
+    "week": 42
+  },
+  {
+    "date": "2024-10-15",
+    "line": "J01",
+    "planed_hours": 23.25,
+    "platform_id": "zc0yawrjl3ky8ml",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 96,
+    "week": 42
+  },
+  {
+    "date": "2024-10-14",
+    "line": "J08",
+    "planed_hours": 17,
+    "platform_id": "h0pek593rjgt76g",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 105,
+    "week": 42
+  },
+  {
+    "date": "2024-10-14",
+    "line": "J06",
+    "planed_hours": 17,
+    "platform_id": "h0pek593rjgt76g",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 105,
+    "week": 42
+  },
+  {
+    "date": "2024-10-14",
+    "line": "J05",
+    "planed_hours": 15,
+    "platform_id": "8t1wd54kad9a7a8",
+    "state": "RUN",
+    "target_oee": 0.78,
+    "uph_i": 133,
+    "week": 42
+  },
+  {
+    "date": "2024-10-14",
+    "line": "J03",
+    "planed_hours": 17,
+    "platform_id": "939lteoc1ut5wzv",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 195,
+    "week": 42
+  },
+  {
+    "date": "2024-10-14",
+    "line": "J01",
+    "planed_hours": 17,
+    "platform_id": "zc0yawrjl3ky8ml",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 96,
+    "week": 42
+  },
+  {
+    "date": "2024-10-11",
+    "line": "J03",
+    "planed_hours": 23.25,
+    "platform_id": "939lteoc1ut5wzv",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 195,
+    "week": 41
+  },
+  {
+    "date": "2024-10-11",
+    "line": "J08",
+    "planed_hours": 23.25,
+    "platform_id": "cujtjjhpgyb2lg0",
+    "state": "RUN",
+    "target_oee": 0.6,
+    "uph_i": 75,
+    "week": 41
+  },
+  {
+    "date": "2024-10-11",
+    "line": "J06",
+    "planed_hours": 23.25,
+    "platform_id": "h0pek593rjgt76g",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 105,
+    "week": 41
+  },
+  {
+    "date": "2024-10-11",
+    "line": "J05",
+    "planed_hours": 23.25,
+    "platform_id": "8t1wd54kad9a7a8",
+    "state": "RUN",
+    "target_oee": 0.78,
+    "uph_i": 133,
+    "week": 41
+  },
+  {
+    "date": "2024-10-11",
+    "line": "J02",
+    "planed_hours": 23.25,
+    "platform_id": "939lteoc1ut5wzv",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 195,
+    "week": 41
+  },
+  {
+    "date": "2024-10-11",
+    "line": "J01",
+    "planed_hours": 23.25,
+    "platform_id": "zc0yawrjl3ky8ml",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 96,
+    "week": 41
+  },
+  {
+    "date": "2024-10-08",
+    "line": "J08",
+    "planed_hours": 23.25,
+    "platform_id": "cujtjjhpgyb2lg0",
+    "state": "RUN",
+    "target_oee": 0.6,
+    "uph_i": 96,
+    "week": 41
+  },
+  {
+    "date": "2024-10-08",
+    "line": "J06",
+    "planed_hours": 23.25,
+    "platform_id": "h0pek593rjgt76g",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 105,
+    "week": 41
+  },
+  {
+    "date": "2024-10-08",
+    "line": "J03",
+    "planed_hours": 23.25,
+    "platform_id": "939lteoc1ut5wzv",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 96,
+    "week": 41
+  },
+  {
+    "date": "2024-10-08",
+    "line": "J02",
+    "planed_hours": 23.25,
+    "platform_id": "939lteoc1ut5wzv",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 96,
+    "week": 41
+  },
+  {
+    "date": "2024-10-08",
+    "line": "J01",
+    "planed_hours": 23.25,
+    "platform_id": "zc0yawrjl3ky8ml",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 96,
+    "week": 41
+  },
+  {
+    "date": "2024-10-07",
+    "line": "J08",
+    "planed_hours": 17,
+    "platform_id": "cujtjjhpgyb2lg0",
+    "state": "RUN",
+    "target_oee": 0.6,
+    "uph_i": 75,
+    "week": 41
+  },
+  {
+    "date": "2024-10-07",
+    "line": "J06",
+    "planed_hours": 17,
+    "platform_id": "h0pek593rjgt76g",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 105,
+    "week": 41
+  },
+  {
+    "date": "2024-10-07",
+    "line": "J03",
+    "planed_hours": 17,
+    "platform_id": "xjv0dogq2qxv4ke",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 195,
+    "week": 41
+  },
+  {
+    "date": "2024-10-07",
+    "line": "J02",
+    "planed_hours": 17,
+    "platform_id": "939lteoc1ut5wzv",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 195,
+    "week": 41
+  },
+  {
+    "date": "2024-10-07",
+    "line": "J01",
+    "planed_hours": 17,
+    "platform_id": "zc0yawrjl3ky8ml",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 96,
+    "week": 41
+  },
+  {
+    "date": "2024-10-10",
+    "line": "J08",
+    "planed_hours": 23.25,
+    "platform_id": "cujtjjhpgyb2lg0",
+    "state": "RUN",
+    "target_oee": 0.6,
+    "uph_i": 75,
+    "week": 41
+  },
+  {
+    "date": "2024-10-10",
+    "line": "J06",
+    "planed_hours": 23.25,
+    "platform_id": "h0pek593rjgt76g",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 105,
+    "week": 41
+  },
+  {
+    "date": "2024-10-10",
+    "line": "J05",
+    "planed_hours": 23.25,
+    "platform_id": "8t1wd54kad9a7a8",
+    "state": "RUN",
+    "target_oee": 0.78,
+    "uph_i": 133,
+    "week": 41
+  },
+  {
+    "date": "2024-10-10",
+    "line": "J03",
+    "planed_hours": 16,
+    "platform_id": "939lteoc1ut5wzv",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 195,
+    "week": 41
+  },
+  {
+    "date": "2024-10-10",
+    "line": "J02",
+    "planed_hours": 7,
+    "platform_id": "939lteoc1ut5wzv",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 195,
+    "week": 41
+  },
+  {
+    "date": "2024-10-10",
+    "line": "J01",
+    "planed_hours": 23.25,
+    "platform_id": "zc0yawrjl3ky8ml",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 96,
+    "week": 41
+  },
+  {
+    "date": "2024-10-09",
+    "line": "J08",
+    "planed_hours": 23.25,
+    "platform_id": "cujtjjhpgyb2lg0",
+    "state": "RUN",
+    "target_oee": 0.6,
+    "uph_i": 75,
+    "week": 41
+  },
+  {
+    "date": "2024-10-09",
+    "line": "J06",
+    "planed_hours": 23.25,
+    "platform_id": "h0pek593rjgt76g",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 105,
+    "week": 41
+  },
+  {
+    "date": "2024-10-09",
+    "line": "J05",
+    "planed_hours": 6,
+    "platform_id": "8t1wd54kad9a7a8",
+    "state": "RUN",
+    "target_oee": 0.78,
+    "uph_i": 133,
+    "week": 41
+  },
+  {
+    "date": "2024-10-09",
+    "line": "J03",
+    "planed_hours": 23.25,
+    "platform_id": "939lteoc1ut5wzv",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 195,
+    "week": 41
+  },
+  {
+    "date": "2024-10-09",
+    "line": "J02",
+    "planed_hours": 14,
+    "platform_id": "939lteoc1ut5wzv",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 195,
+    "week": 41
+  },
+  {
+    "date": "2024-10-09",
+    "line": "J01",
+    "planed_hours": 23.25,
+    "platform_id": "zc0yawrjl3ky8ml",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 96,
+    "week": 41
+  },
+  {
+    "date": "2024-09-11",
+    "line": "J13",
+    "planed_hours": 23.25,
+    "platform_id": "zc0yawrjl3ky8ml",
+    "state": "RUN",
+    "target_oee": 0.73,
+    "uph_i": 93,
+    "week": 37
+  },
+  {
+    "date": "2024-09-11",
+    "line": "J06",
+    "planed_hours": 23.25,
+    "platform_id": "h0pek593rjgt76g",
+    "state": "RUN",
+    "target_oee": 0.5,
+    "uph_i": 70,
+    "week": 37
+  },
+  {
+    "date": "2024-09-11",
+    "line": "J03",
+    "planed_hours": 23.25,
+    "platform_id": "939lteoc1ut5wzv",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 195,
+    "week": 37
+  },
+  {
+    "date": "2024-09-11",
+    "line": "J02",
+    "planed_hours": 6,
+    "platform_id": "939lteoc1ut5wzv",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 195,
+    "week": 37
+  },
+  {
+    "date": "2024-09-11",
+    "line": "J01",
+    "planed_hours": 23.25,
+    "platform_id": "zc0yawrjl3ky8ml",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 96,
+    "week": 37
+  },
+  {
+    "date": "2024-09-02",
+    "line": "J13",
+    "planed_hours": 4,
+    "platform_id": "zc0yawrjl3ky8ml",
+    "state": "RUN",
+    "target_oee": 0.73,
+    "uph_i": 93,
+    "week": 36
+  },
+  {
+    "date": "2024-09-02",
+    "line": "J08",
+    "planed_hours": 17,
+    "platform_id": "h0pek593rjgt76g",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 105,
+    "week": 36
+  },
+  {
+    "date": "2024-09-02",
+    "line": "J03",
+    "planed_hours": 17,
+    "platform_id": "939lteoc1ut5wzv",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 195,
+    "week": 36
+  },
+  {
+    "date": "2024-09-02",
+    "line": "J02",
+    "planed_hours": 17,
+    "platform_id": "939lteoc1ut5wzv",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 195,
+    "week": 36
+  },
+  {
+    "date": "2024-09-02",
+    "line": "J01",
+    "planed_hours": 14,
+    "platform_id": "zc0yawrjl3ky8ml",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 96,
+    "week": 36
+  },
+  {
+    "date": "2024-08-30",
+    "line": "J08",
+    "planed_hours": 23.25,
+    "platform_id": "h0pek593rjgt76g",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 105,
+    "week": 35
+  },
+  {
+    "date": "2024-08-30",
+    "line": "J03",
+    "planed_hours": 23.25,
+    "platform_id": "939lteoc1ut5wzv",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 195,
+    "week": 35
+  },
+  {
+    "date": "2024-08-30",
+    "line": "J02",
+    "planed_hours": 23.25,
+    "platform_id": "939lteoc1ut5wzv",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 195,
+    "week": 35
+  },
+  {
+    "date": "2024-08-30",
+    "line": "J01",
+    "planed_hours": 23.25,
+    "platform_id": "zc0yawrjl3ky8ml",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 96,
+    "week": 35
+  },
+  {
+    "date": "2024-08-20",
+    "line": "J10",
+    "planed_hours": 23.25,
+    "platform_id": "h0pek593rjgt76g",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 105,
+    "week": 34
+  },
+  {
+    "date": "2024-08-20",
+    "line": "J08",
+    "planed_hours": 23.25,
+    "platform_id": "h0pek593rjgt76g",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 105,
+    "week": 34
+  },
+  {
+    "date": "2024-08-20",
+    "line": "J05",
+    "planed_hours": 23.25,
+    "platform_id": "8t1wd54kad9a7a8",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 128,
+    "week": 34
+  },
+  {
+    "date": "2024-08-20",
+    "line": "J03",
+    "planed_hours": 23.25,
+    "platform_id": "939lteoc1ut5wzv",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 195,
+    "week": 34
+  },
+  {
+    "date": "2024-08-20",
+    "line": "J01",
+    "planed_hours": 23.25,
+    "platform_id": "zc0yawrjl3ky8ml",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 96,
+    "week": 34
+  },
+  {
+    "date": "2024-08-19",
+    "line": "J10",
+    "planed_hours": 17,
+    "platform_id": "h0pek593rjgt76g",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 105,
+    "week": 34
+  },
+  {
+    "date": "2024-08-19",
+    "line": "J08",
+    "planed_hours": 17,
+    "platform_id": "h0pek593rjgt76g",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 105,
+    "week": 34
+  },
+  {
+    "date": "2024-08-19",
+    "line": "J05",
+    "planed_hours": 17,
+    "platform_id": "8t1wd54kad9a7a8",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 128,
+    "week": 34
+  },
+  {
+    "date": "2024-08-19",
+    "line": "J03",
+    "planed_hours": 8,
+    "platform_id": "939lteoc1ut5wzv",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 195,
+    "week": 34
+  },
+  {
+    "date": "2024-08-19",
+    "line": "J01",
+    "planed_hours": 17,
+    "platform_id": "zc0yawrjl3ky8ml",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 96,
+    "week": 34
+  },
+  {
+    "date": "2024-08-16",
+    "line": "J10",
+    "planed_hours": 20.25,
+    "platform_id": "h0pek593rjgt76g",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 105,
+    "week": 33
+  },
+  {
+    "date": "2024-08-16",
+    "line": "J08",
+    "planed_hours": 22,
+    "platform_id": "h0pek593rjgt76g",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 105,
+    "week": 33
+  },
+  {
+    "date": "2024-08-16",
+    "line": "J03",
+    "planed_hours": 23.25,
+    "platform_id": "939lteoc1ut5wzv",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 195,
+    "week": 33
+  },
+  {
+    "date": "2024-08-16",
+    "line": "J01",
+    "planed_hours": 23.25,
+    "platform_id": "zc0yawrjl3ky8ml",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 93,
+    "week": 33
+  },
+  {
+    "date": "2024-08-15",
+    "line": "J10",
+    "planed_hours": 23.25,
+    "platform_id": "h0pek593rjgt76g",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 105,
+    "week": 33
+  },
+  {
+    "date": "2024-08-15",
+    "line": "J09",
+    "planed_hours": 23.25,
+    "platform_id": "cujtjjhpgyb2lg0",
+    "state": "RUN",
+    "target_oee": 0.56,
+    "uph_i": 105,
+    "week": 33
+  },
+  {
+    "date": "2024-08-15",
+    "line": "J08",
+    "planed_hours": 6,
+    "platform_id": "h0pek593rjgt76g",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 105,
+    "week": 33
+  },
+  {
+    "date": "2024-08-14",
+    "line": "J09",
+    "planed_hours": 23.25,
+    "platform_id": "cujtjjhpgyb2lg0",
+    "state": "RUN",
+    "target_oee": 0.56,
+    "uph_i": 70,
+    "week": 33
+  },
+  {
+    "date": "2024-08-15",
+    "line": "J03",
+    "planed_hours": 21,
+    "platform_id": "939lteoc1ut5wzv",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 195,
+    "week": 33
+  },
+  {
+    "date": "2024-08-15",
+    "line": "J01",
+    "planed_hours": 23.25,
+    "platform_id": "zc0yawrjl3ky8ml",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 93,
+    "week": 33
+  },
+  {
+    "date": "2024-08-14",
+    "line": "J10",
+    "planed_hours": 23.25,
+    "platform_id": "h0pek593rjgt76g",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 105,
+    "week": 33
+  },
+  {
+    "date": "2024-08-14",
+    "line": "J08",
+    "planed_hours": 21.25,
+    "platform_id": "h0pek593rjgt76g",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 105,
+    "week": 33
+  },
+  {
+    "date": "2024-08-14",
+    "line": "J03",
+    "planed_hours": 23.25,
+    "platform_id": "939lteoc1ut5wzv",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 195,
+    "week": 33
+  },
+  {
+    "date": "2024-08-14",
+    "line": "J01",
+    "planed_hours": 23.25,
+    "platform_id": "zc0yawrjl3ky8ml",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 22,
+    "week": 33
+  },
+  {
+    "date": "2024-08-13",
+    "line": "J10",
+    "planed_hours": 23.25,
+    "platform_id": "h0pek593rjgt76g",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 105,
+    "week": 33
+  },
+  {
+    "date": "2024-08-13",
+    "line": "J09",
+    "planed_hours": 23.25,
+    "platform_id": "cujtjjhpgyb2lg0",
+    "state": "RUN",
+    "target_oee": 0.56,
+    "uph_i": 70,
+    "week": 33
+  },
+  {
+    "date": "2024-08-13",
+    "line": "J08",
+    "planed_hours": 23.25,
+    "platform_id": "h0pek593rjgt76g",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 105,
+    "week": 33
+  },
+  {
+    "date": "2024-08-13",
+    "line": "J03",
+    "planed_hours": 21.25,
+    "platform_id": "939lteoc1ut5wzv",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 195,
+    "week": 33
+  },
+  {
+    "date": "2024-08-13",
+    "line": "J01",
+    "planed_hours": 23.25,
+    "platform_id": "zc0yawrjl3ky8ml",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 93,
+    "week": 33
+  },
+  {
+    "date": "2024-08-12",
+    "line": "J10",
+    "planed_hours": 17,
+    "platform_id": "h0pek593rjgt76g",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 105,
+    "week": 33
+  },
+  {
+    "date": "2024-08-12",
+    "line": "J09",
+    "planed_hours": 17,
+    "platform_id": "cujtjjhpgyb2lg0",
+    "state": "RUN",
+    "target_oee": 0.56,
+    "uph_i": 70,
+    "week": 33
+  },
+  {
+    "date": "2024-08-12",
+    "line": "J08",
+    "planed_hours": 17,
+    "platform_id": "h0pek593rjgt76g",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 105,
+    "week": 33
+  },
+  {
+    "date": "2024-08-12",
+    "line": "J03",
+    "planed_hours": 17,
+    "platform_id": "939lteoc1ut5wzv",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 195,
+    "week": 33
+  },
+  {
+    "date": "2024-08-12",
+    "line": "J01",
+    "planed_hours": 15,
+    "platform_id": "zc0yawrjl3ky8ml",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 93,
+    "week": 33
+  },
+  {
+    "date": "2024-08-09",
+    "line": "J10",
+    "planed_hours": 23.25,
+    "platform_id": "h0pek593rjgt76g",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 105,
+    "week": 32
+  },
+  {
+    "date": "2024-08-09",
+    "line": "J09",
+    "planed_hours": 23.25,
+    "platform_id": "cujtjjhpgyb2lg0",
+    "state": "RUN",
+    "target_oee": 0.56,
+    "uph_i": 105,
+    "week": 32
+  },
+  {
+    "date": "2024-08-09",
+    "line": "J08",
+    "planed_hours": 23.25,
+    "platform_id": "h0pek593rjgt76g",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 105,
+    "week": 32
+  },
+  {
+    "date": "2024-08-09",
+    "line": "J03",
+    "planed_hours": 23.25,
+    "platform_id": "939lteoc1ut5wzv",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 195,
+    "week": 32
+  },
+  {
+    "date": "2024-08-09",
+    "line": "J01",
+    "planed_hours": 23.25,
+    "platform_id": "zc0yawrjl3ky8ml",
+    "state": "RUN",
+    "target_oee": 0.73,
+    "uph_i": 93,
+    "week": 32
+  },
+  {
+    "date": "2024-08-08",
+    "line": "J10",
+    "planed_hours": 23.25,
+    "platform_id": "h0pek593rjgt76g",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 105,
+    "week": 32
+  },
+  {
+    "date": "2024-08-08",
+    "line": "J09",
+    "planed_hours": 23.25,
+    "platform_id": "cujtjjhpgyb2lg0",
+    "state": "RUN",
+    "target_oee": 0.56,
+    "uph_i": 70,
+    "week": 32
+  },
+  {
+    "date": "2024-08-08",
+    "line": "J08",
+    "planed_hours": 23.25,
+    "platform_id": "h0pek593rjgt76g",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 105,
+    "week": 32
+  },
+  {
+    "date": "2024-08-08",
+    "line": "J03",
+    "planed_hours": 23.25,
+    "platform_id": "939lteoc1ut5wzv",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 195,
+    "week": 32
+  },
+  {
+    "date": "2024-08-08",
+    "line": "J01",
+    "planed_hours": 23.25,
+    "platform_id": "zc0yawrjl3ky8ml",
+    "state": "RUN",
+    "target_oee": 0.73,
+    "uph_i": 93,
+    "week": 32
+  },
+  {
+    "date": "2024-08-07",
+    "line": "J10",
+    "planed_hours": 23.25,
+    "platform_id": "h0pek593rjgt76g",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 105,
+    "week": 32
+  },
+  {
+    "date": "2024-08-07",
+    "line": "J09",
+    "planed_hours": 23.25,
+    "platform_id": "cujtjjhpgyb2lg0",
+    "state": "RUN",
+    "target_oee": 0.56,
+    "uph_i": 70,
+    "week": 32
+  },
+  {
+    "date": "2024-08-07",
+    "line": "J08",
+    "planed_hours": 23.25,
+    "platform_id": "h0pek593rjgt76g",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 105,
+    "week": 32
+  },
+  {
+    "date": "2024-08-07",
+    "line": "J03",
+    "planed_hours": 23.25,
+    "platform_id": "939lteoc1ut5wzv",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 195,
+    "week": 32
+  },
+  {
+    "date": "2024-08-07",
+    "line": "J01",
+    "planed_hours": 13.25,
+    "platform_id": "zc0yawrjl3ky8ml",
+    "state": "RUN",
+    "target_oee": 0.73,
+    "uph_i": 93,
+    "week": 32
+  },
+  {
+    "date": "2024-08-06",
+    "line": "J13",
+    "planed_hours": 5,
+    "platform_id": "qa0welsuqna53gs",
+    "state": "RUN",
+    "target_oee": 0.73,
+    "uph_i": 93,
+    "week": 32
+  },
+  {
+    "date": "2024-08-06",
+    "line": "J10",
+    "planed_hours": 23.25,
+    "platform_id": "h0pek593rjgt76g",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 105,
+    "week": 32
+  },
+  {
+    "date": "2024-08-06",
+    "line": "J08",
+    "planed_hours": 23.25,
+    "platform_id": "h0pek593rjgt76g",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 105,
+    "week": 32
+  },
+  {
+    "date": "2024-08-06",
+    "line": "J03",
+    "planed_hours": 23.25,
+    "platform_id": "939lteoc1ut5wzv",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 195,
+    "week": 32
+  },
+  {
+    "date": "2024-08-06",
+    "line": "J01",
+    "planed_hours": 23.25,
+    "platform_id": "zc0yawrjl3ky8ml",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 93,
+    "week": 32
+  },
+  {
+    "date": "2024-08-05",
+    "line": "J13",
+    "planed_hours": 17,
+    "platform_id": "qa0welsuqna53gs",
+    "state": "RUN",
+    "target_oee": 0.73,
+    "uph_i": 93,
+    "week": 32
+  },
+  {
+    "date": "2024-08-05",
+    "line": "J08",
+    "planed_hours": 12,
+    "platform_id": "h0pek593rjgt76g",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 105,
+    "week": 32
+  },
+  {
+    "date": "2024-08-05",
+    "line": "J03",
+    "planed_hours": 17,
+    "platform_id": "939lteoc1ut5wzv",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 195,
+    "week": 32
+  },
+  {
+    "date": "2024-08-02",
+    "line": "J13",
+    "planed_hours": 23.25,
+    "platform_id": "qa0welsuqna53gs",
+    "state": "RUN",
+    "target_oee": 0.73,
+    "uph_i": 93,
+    "week": 31
+  },
+  {
+    "date": "2024-08-02",
+    "line": "J10",
+    "planed_hours": 23.25,
+    "platform_id": "98f9bonc8w7pp5d",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 105,
+    "week": 31
+  },
+  {
+    "date": "2024-08-02",
+    "line": "J08",
+    "planed_hours": 23.25,
+    "platform_id": "98f9bonc8w7pp5d",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 105,
+    "week": 31
+  },
+  {
+    "date": "2024-08-02",
+    "line": "J03",
+    "planed_hours": 23.25,
+    "platform_id": "939lteoc1ut5wzv",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 195,
+    "week": 31
+  },
+  {
+    "date": "2024-08-01",
+    "line": "J13",
+    "planed_hours": 23.25,
+    "platform_id": "zc0yawrjl3ky8ml",
+    "state": "RUN",
+    "target_oee": 0.73,
+    "uph_i": 93,
+    "week": 31
+  },
+  {
+    "date": "2024-08-01",
+    "line": "J10",
+    "planed_hours": 11,
+    "platform_id": "98f9bonc8w7pp5d",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 105,
+    "week": 31
+  },
+  {
+    "date": "2024-08-01",
+    "line": "J08",
+    "planed_hours": 17,
+    "platform_id": "98f9bonc8w7pp5d",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 105,
+    "week": 31
+  },
+  {
+    "date": "2024-08-01",
+    "line": "J03",
+    "planed_hours": 23.25,
+    "platform_id": "939lteoc1ut5wzv",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 195,
+    "week": 31
+  },
+  {
+    "date": "2024-07-31",
+    "line": "J13",
+    "planed_hours": 23.25,
+    "platform_id": "qa0welsuqna53gs",
+    "state": "RUN",
+    "target_oee": 0.73,
+    "uph_i": 93,
+    "week": 31
+  },
+  {
+    "date": "2024-07-31",
+    "line": "J10",
+    "planed_hours": 23.25,
+    "platform_id": "98f9bonc8w7pp5d",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 105,
+    "week": 31
+  },
+  {
+    "date": "2024-07-31",
+    "line": "J08",
+    "planed_hours": 13.25,
+    "platform_id": "98f9bonc8w7pp5d",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 105,
+    "week": 31
+  },
+  {
+    "date": "2024-07-31",
+    "line": "J03",
+    "planed_hours": 23.25,
+    "platform_id": "939lteoc1ut5wzv",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 195,
+    "week": 31
+  },
+  {
+    "date": "2024-07-30",
+    "line": "J13",
+    "planed_hours": 23.25,
+    "platform_id": "qa0welsuqna53gs",
+    "state": "RUN",
+    "target_oee": 0.73,
+    "uph_i": 93,
+    "week": 31
+  },
+  {
+    "date": "2024-07-30",
+    "line": "J10",
+    "planed_hours": 23.25,
+    "platform_id": "98f9bonc8w7pp5d",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 105,
+    "week": 31
+  },
+  {
+    "date": "2024-07-30",
+    "line": "J08",
+    "planed_hours": 23.25,
+    "platform_id": "98f9bonc8w7pp5d",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 105,
+    "week": 31
+  },
+  {
+    "date": "2024-07-30",
+    "line": "J03",
+    "planed_hours": 23.25,
+    "platform_id": "939lteoc1ut5wzv",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 195,
+    "week": 31
+  },
+  {
+    "date": "2024-07-29",
+    "line": "J13",
+    "planed_hours": 17,
+    "platform_id": "qa0welsuqna53gs",
+    "state": "RUN",
+    "target_oee": 0.73,
+    "uph_i": 93,
+    "week": 31
+  },
+  {
+    "date": "2024-07-29",
+    "line": "J10",
+    "planed_hours": 17,
+    "platform_id": "h0pek593rjgt76g",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 105,
+    "week": 31
+  },
+  {
+    "date": "2024-07-29",
+    "line": "J08",
+    "planed_hours": 17,
+    "platform_id": "98f9bonc8w7pp5d",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 104,
+    "week": 31
+  },
+  {
+    "date": "2024-07-29",
+    "line": "J03",
+    "planed_hours": 17,
+    "platform_id": "939lteoc1ut5wzv",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 195,
+    "week": 31
+  },
+  {
+    "date": "2024-09-05",
+    "line": "J13",
+    "planed_hours": 23.25,
+    "platform_id": "zc0yawrjl3ky8ml",
+    "state": "RUN",
+    "target_oee": 0.73,
+    "uph_i": 93,
+    "week": 36
+  },
+  {
+    "date": "2024-09-05",
+    "line": "J08",
+    "planed_hours": 23.25,
+    "platform_id": "h0pek593rjgt76g",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 105,
+    "week": 36
+  },
+  {
+    "date": "2024-09-05",
+    "line": "J03",
+    "planed_hours": 23.25,
+    "platform_id": "939lteoc1ut5wzv",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 195,
+    "week": 36
+  },
+  {
+    "date": "2024-09-05",
+    "line": "J02",
+    "planed_hours": 13.25,
+    "platform_id": "939lteoc1ut5wzv",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 195,
+    "week": 36
+  },
+  {
+    "date": "2024-09-05",
+    "line": "J01",
+    "planed_hours": 23.25,
+    "platform_id": "zc0yawrjl3ky8ml",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 96,
+    "week": 36
+  },
+  {
+    "date": "2024-09-04",
+    "line": "J13",
+    "planed_hours": 23.25,
+    "platform_id": "zc0yawrjl3ky8ml",
+    "state": "RUN",
+    "target_oee": 0.73,
+    "uph_i": 93,
+    "week": 36
+  },
+  {
+    "date": "2024-09-04",
+    "line": "J08",
+    "planed_hours": 23.25,
+    "platform_id": "h0pek593rjgt76g",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 105,
+    "week": 36
+  },
+  {
+    "date": "2024-09-04",
+    "line": "J03",
+    "planed_hours": 23.25,
+    "platform_id": "939lteoc1ut5wzv",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 195,
+    "week": 36
+  },
+  {
+    "date": "2024-09-04",
+    "line": "J02",
+    "planed_hours": 23.25,
+    "platform_id": "939lteoc1ut5wzv",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 195,
+    "week": 36
+  },
+  {
+    "date": "2024-09-04",
+    "line": "J01",
+    "planed_hours": 23.25,
+    "platform_id": "zc0yawrjl3ky8ml",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 96,
+    "week": 36
+  },
+  {
+    "date": "2024-09-03",
+    "line": "J13",
+    "planed_hours": 23.25,
+    "platform_id": "zc0yawrjl3ky8ml",
+    "state": "RUN",
+    "target_oee": 0.73,
+    "uph_i": 93,
+    "week": 36
+  },
+  {
+    "date": "2024-09-03",
+    "line": "J08",
+    "planed_hours": 23.25,
+    "platform_id": "h0pek593rjgt76g",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 105,
+    "week": 36
+  },
+  {
+    "date": "2024-09-03",
+    "line": "J03",
+    "planed_hours": 23.25,
+    "platform_id": "939lteoc1ut5wzv",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 195,
+    "week": 36
+  },
+  {
+    "date": "2024-09-03",
+    "line": "J02",
+    "planed_hours": 21.25,
+    "platform_id": "939lteoc1ut5wzv",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 195,
+    "week": 36
+  },
+  {
+    "date": "2024-09-03",
+    "line": "J01",
+    "planed_hours": 23.25,
+    "platform_id": "zc0yawrjl3ky8ml",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 96,
+    "week": 36
+  },
+  {
+    "date": "2024-08-29",
+    "line": "J08",
+    "planed_hours": 23.25,
+    "platform_id": "h0pek593rjgt76g",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 105,
+    "week": 35
+  },
+  {
+    "date": "2024-08-29",
+    "line": "J03",
+    "planed_hours": 23.25,
+    "platform_id": "939lteoc1ut5wzv",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 15,
+    "week": 35
+  },
+  {
+    "date": "2024-08-29",
+    "line": "J02",
+    "planed_hours": 23.25,
+    "platform_id": "939lteoc1ut5wzv",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 195,
+    "week": 35
+  },
+  {
+    "date": "2024-08-29",
+    "line": "J01",
+    "planed_hours": 23.25,
+    "platform_id": "zc0yawrjl3ky8ml",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 96,
+    "week": 35
+  },
+  {
+    "date": "2024-08-28",
+    "line": "J08",
+    "planed_hours": 23.25,
+    "platform_id": "h0pek593rjgt76g",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 105,
+    "week": 35
+  },
+  {
+    "date": "2024-08-28",
+    "line": "J03",
+    "planed_hours": 23.25,
+    "platform_id": "939lteoc1ut5wzv",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 195,
+    "week": 35
+  },
+  {
+    "date": "2024-08-28",
+    "line": "J02",
+    "planed_hours": 23.25,
+    "platform_id": "939lteoc1ut5wzv",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 195,
+    "week": 35
+  },
+  {
+    "date": "2024-08-28",
+    "line": "J01",
+    "planed_hours": 23.25,
+    "platform_id": "zc0yawrjl3ky8ml",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 96,
+    "week": 35
+  },
+  {
+    "date": "2024-08-27",
+    "line": "J08",
+    "planed_hours": 23.25,
+    "platform_id": "h0pek593rjgt76g",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 105,
+    "week": 35
+  },
+  {
+    "date": "2024-08-27",
+    "line": "J03",
+    "planed_hours": 23.25,
+    "platform_id": "939lteoc1ut5wzv",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 195,
+    "week": 35
+  },
+  {
+    "date": "2024-08-27",
+    "line": "J02",
+    "planed_hours": 23.25,
+    "platform_id": "939lteoc1ut5wzv",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 195,
+    "week": 35
+  },
+  {
+    "date": "2024-08-27",
+    "line": "J01",
+    "planed_hours": 13.25,
+    "platform_id": "qa0welsuqna53gs",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 96,
+    "week": 35
+  },
+  {
+    "date": "2024-08-26",
+    "line": "J08",
+    "planed_hours": 17,
+    "platform_id": "h0pek593rjgt76g",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 105,
+    "week": 35
+  },
+  {
+    "date": "2024-08-26",
+    "line": "J05",
+    "planed_hours": 17,
+    "platform_id": "ki2qvrtl90pyv11",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 128,
+    "week": 35
+  },
+  {
+    "date": "2024-08-26",
+    "line": "J03",
+    "planed_hours": 17,
+    "platform_id": "939lteoc1ut5wzv",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 195,
+    "week": 35
+  },
+  {
+    "date": "2024-08-26",
+    "line": "J02",
+    "planed_hours": 17,
+    "platform_id": "939lteoc1ut5wzv",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 195,
+    "week": 35
+  },
+  {
+    "date": "2024-08-26",
+    "line": "J01",
+    "planed_hours": 17,
+    "platform_id": "zc0yawrjl3ky8ml",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 96,
+    "week": 35
+  },
+  {
+    "date": "2024-08-23",
+    "line": "J08",
+    "planed_hours": 23.25,
+    "platform_id": "h0pek593rjgt76g",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 105,
+    "week": 34
+  },
+  {
+    "date": "2024-08-23",
+    "line": "J05",
+    "planed_hours": 23.25,
+    "platform_id": "ki2qvrtl90pyv11",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 128,
+    "week": 34
+  },
+  {
+    "date": "2024-08-23",
+    "line": "J03",
+    "planed_hours": 23.25,
+    "platform_id": "939lteoc1ut5wzv",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 195,
+    "week": 34
+  },
+  {
+    "date": "2024-08-23",
+    "line": "J02",
+    "planed_hours": 23.25,
+    "platform_id": "939lteoc1ut5wzv",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 195,
+    "week": 34
+  },
+  {
+    "date": "2024-08-23",
+    "line": "J01",
+    "planed_hours": 23.25,
+    "platform_id": "zc0yawrjl3ky8ml",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 96,
+    "week": 34
+  },
+  {
+    "date": "2024-08-22",
+    "line": "J10",
+    "planed_hours": 17,
+    "platform_id": "h0pek593rjgt76g",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 105,
+    "week": 34
+  },
+  {
+    "date": "2024-08-22",
+    "line": "J08",
+    "planed_hours": 23.25,
+    "platform_id": "h0pek593rjgt76g",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 105,
+    "week": 34
+  },
+  {
+    "date": "2024-08-22",
+    "line": "J05",
+    "planed_hours": 16,
+    "platform_id": "8t1wd54kad9a7a8",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 128,
+    "week": 34
+  },
+  {
+    "date": "2024-08-22",
+    "line": "J03",
+    "planed_hours": 23.25,
+    "platform_id": "939lteoc1ut5wzv",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 195,
+    "week": 34
+  },
+  {
+    "date": "2024-08-22",
+    "line": "J01",
+    "planed_hours": 23.25,
+    "platform_id": "zc0yawrjl3ky8ml",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 96,
+    "week": 34
+  },
+  {
+    "date": "2024-08-21",
+    "line": "J08",
+    "planed_hours": 23.25,
+    "platform_id": "h0pek593rjgt76g",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 105,
+    "week": 34
+  },
+  {
+    "date": "2024-08-21",
+    "line": "J10",
+    "planed_hours": 17,
+    "platform_id": "h0pek593rjgt76g",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 105,
+    "week": 34
+  },
+  {
+    "date": "2024-08-21",
+    "line": "J05",
+    "planed_hours": 23.25,
+    "platform_id": "8t1wd54kad9a7a8",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 128,
+    "week": 34
+  },
+  {
+    "date": "2024-08-21",
+    "line": "J03",
+    "planed_hours": 23.25,
+    "platform_id": "939lteoc1ut5wzv",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 195,
+    "week": 34
+  },
+  {
+    "date": "2024-08-21",
+    "line": "J01",
+    "planed_hours": 23.25,
+    "platform_id": "zc0yawrjl3ky8ml",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 128,
+    "week": 34
+  },
+  {
+    "date": "2024-07-24",
+    "line": "J03",
+    "planed_hours": 23.25,
+    "platform_id": "939lteoc1ut5wzv",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 195,
+    "week": 30
+  },
+  {
+    "date": "2024-07-20",
+    "line": "J12",
+    "planed_hours": 4,
+    "platform_id": "8t1wd54kad9a7a8",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 128,
+    "week": 29
+  },
+  {
+    "date": "2024-07-19",
+    "line": "J12",
+    "planed_hours": 23.25,
+    "platform_id": "8t1wd54kad9a7a8",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 128,
+    "week": 29
+  },
+  {
+    "date": "2024-07-18",
+    "line": "J12",
+    "planed_hours": 9,
+    "platform_id": "8t1wd54kad9a7a8",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 128,
+    "week": 29
+  },
+  {
+    "date": "2024-07-18",
+    "line": "J10",
+    "planed_hours": 6,
+    "platform_id": "98f9bonc8w7pp5d",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 105,
+    "week": 29
+  },
+  {
+    "date": "2024-07-17",
+    "line": "J10",
+    "planed_hours": 23.25,
+    "platform_id": "98f9bonc8w7pp5d",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 105,
+    "week": 29
+  },
+  {
+    "date": "2024-07-16",
+    "line": "J10",
+    "planed_hours": 23.25,
+    "platform_id": "98f9bonc8w7pp5d",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 105,
+    "week": 29
+  },
+  {
+    "date": "2024-07-15",
+    "line": "J10",
+    "planed_hours": 17,
+    "platform_id": "98f9bonc8w7pp5d",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 105,
+    "week": 29
+  },
+  {
+    "date": "2024-07-13",
+    "line": "J13",
+    "planed_hours": 4,
+    "platform_id": "qa0welsuqna53gs",
+    "state": "RUN",
+    "target_oee": 0.7,
+    "uph_i": 90,
+    "week": 28
+  },
+  {
+    "date": "2024-07-13",
+    "line": "J10",
+    "planed_hours": 4,
+    "platform_id": "98f9bonc8w7pp5d",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 105,
+    "week": 28
+  },
+  {
+    "date": "2024-07-13",
+    "line": "J08",
+    "planed_hours": 4,
+    "platform_id": "98f9bonc8w7pp5d",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 105,
+    "week": 28
+  },
+  {
+    "date": "2024-07-13",
+    "line": "J01",
+    "planed_hours": 4,
+    "platform_id": "qa0welsuqna53gs",
+    "state": "RUN",
+    "target_oee": 0.73,
+    "uph_i": 93,
+    "week": 28
+  },
+  {
+    "date": "2024-07-12",
+    "line": "J13",
+    "planed_hours": 23.25,
+    "platform_id": "qa0welsuqna53gs",
+    "state": "RUN",
+    "target_oee": 0.7,
+    "uph_i": 90,
+    "week": 28
+  },
+  {
+    "date": "2024-07-12",
+    "line": "J10",
+    "planed_hours": 23.25,
+    "platform_id": "98f9bonc8w7pp5d",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 105,
+    "week": 28
+  },
+  {
+    "date": "2024-07-12",
+    "line": "J08",
+    "planed_hours": 23.25,
+    "platform_id": "98f9bonc8w7pp5d",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 105,
+    "week": 28
+  },
+  {
+    "date": "2024-07-12",
+    "line": "J03",
+    "planed_hours": 23.25,
+    "platform_id": "939lteoc1ut5wzv",
+    "state": "RUN",
+    "target_oee": 0.7,
+    "uph_i": 182,
+    "week": 28
+  },
+  {
+    "date": "2024-07-12",
+    "line": "J01",
+    "planed_hours": 23.25,
+    "platform_id": "qa0welsuqna53gs",
+    "state": "RUN",
+    "target_oee": 0.73,
+    "uph_i": 93,
+    "week": 28
+  },
+  {
+    "date": "2024-07-11",
+    "line": "J13",
+    "planed_hours": 23.25,
+    "platform_id": "qa0welsuqna53gs",
+    "state": "RUN",
+    "target_oee": 0.7,
+    "uph_i": 90,
+    "week": 28
+  },
+  {
+    "date": "2024-07-11",
+    "line": "J09",
+    "planed_hours": 6,
+    "platform_id": "98f9bonc8w7pp5d",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 105,
+    "week": 28
+  },
+  {
+    "date": "2024-07-11",
+    "line": "J08",
+    "planed_hours": 23.25,
+    "platform_id": "98f9bonc8w7pp5d",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 105,
+    "week": 28
+  },
+  {
+    "date": "2024-07-11",
+    "line": "J06",
+    "planed_hours": 6,
+    "platform_id": "98f9bonc8w7pp5d",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 105,
+    "week": 28
+  },
+  {
+    "date": "2024-07-11",
+    "line": "J03",
+    "planed_hours": 23.25,
+    "platform_id": "939lteoc1ut5wzv",
+    "state": "RUN",
+    "target_oee": 0.7,
+    "uph_i": 182,
+    "week": 28
+  },
+  {
+    "date": "2024-07-11",
+    "line": "J10",
+    "planed_hours": 23.25,
+    "platform_id": "qa0welsuqna53gs",
+    "state": "RUN",
+    "target_oee": 0.73,
+    "uph_i": 93,
+    "week": 28
+  },
+  {
+    "date": "2024-07-10",
+    "line": "J13",
+    "planed_hours": 23.25,
+    "platform_id": "qa0welsuqna53gs",
+    "state": "RUN",
+    "target_oee": 0.7,
+    "uph_i": 90,
+    "week": 28
+  },
+  {
+    "date": "2024-07-10",
+    "line": "J08",
+    "planed_hours": 23.25,
+    "platform_id": "98f9bonc8w7pp5d",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 105,
+    "week": 28
+  },
+  {
+    "date": "2024-07-10",
+    "line": "J06",
+    "planed_hours": 23.25,
+    "platform_id": "98f9bonc8w7pp5d",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 105,
+    "week": 28
+  },
+  {
+    "date": "2024-07-10",
+    "line": "J03",
+    "planed_hours": 23.25,
+    "platform_id": "939lteoc1ut5wzv",
+    "state": "RUN",
+    "target_oee": 0.7,
+    "uph_i": 182,
+    "week": 28
+  },
+  {
+    "date": "2024-07-10",
+    "line": "J10",
+    "planed_hours": 13.25,
+    "platform_id": "qa0welsuqna53gs",
+    "state": "RUN",
+    "target_oee": 0.73,
+    "uph_i": 93,
+    "week": 28
+  },
+  {
+    "date": "2024-07-09",
+    "line": "J13",
+    "planed_hours": 23.25,
+    "platform_id": "qa0welsuqna53gs",
+    "state": "RUN",
+    "target_oee": 0.7,
+    "uph_i": 90,
+    "week": 28
+  },
+  {
+    "date": "2024-07-09",
+    "line": "J08",
+    "planed_hours": 23.25,
+    "platform_id": "98f9bonc8w7pp5d",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 105,
+    "week": 28
+  },
+  {
+    "date": "2024-07-09",
+    "line": "J06",
+    "planed_hours": 23.25,
+    "platform_id": "98f9bonc8w7pp5d",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 105,
+    "week": 28
+  },
+  {
+    "date": "2024-07-09",
+    "line": "J02",
+    "planed_hours": 17,
+    "platform_id": "939lteoc1ut5wzv",
+    "state": "RUN",
+    "target_oee": 0.7,
+    "uph_i": 182,
+    "week": 28
+  },
+  {
+    "date": "2024-07-09",
+    "line": "J10",
+    "planed_hours": 17,
+    "platform_id": "qa0welsuqna53gs",
+    "state": "RUN",
+    "target_oee": 0.73,
+    "uph_i": 93,
+    "week": 28
+  },
+  {
+    "date": "2024-07-08",
+    "line": "J08",
+    "planed_hours": 17,
+    "platform_id": "98f9bonc8w7pp5d",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 105,
+    "week": 28
+  },
+  {
+    "date": "2024-07-08",
+    "line": "J06",
+    "planed_hours": 17,
+    "platform_id": "98f9bonc8w7pp5d",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 105,
+    "week": 28
+  },
+  {
+    "date": "2024-07-08",
+    "line": "J02",
+    "planed_hours": 17,
+    "platform_id": "939lteoc1ut5wzv",
+    "state": "RUN",
+    "target_oee": 0.7,
+    "uph_i": 182,
+    "week": 28
+  },
+  {
+    "date": "2024-07-08",
+    "line": "J10",
+    "planed_hours": 17,
+    "platform_id": "qa0welsuqna53gs",
+    "state": "RUN",
+    "target_oee": 0.73,
+    "uph_i": 93,
+    "week": 28
+  },
+  {
+    "date": "2024-07-05",
+    "line": "J13",
+    "planed_hours": 23.25,
+    "platform_id": "939lteoc1ut5wzv",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 96,
+    "week": 27
+  },
+  {
+    "date": "2024-07-05",
+    "line": "J08",
+    "planed_hours": 23.25,
+    "platform_id": "98f9bonc8w7pp5d",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 105,
+    "week": 27
+  },
+  {
+    "date": "2024-07-05",
+    "line": "J06",
+    "planed_hours": 23.25,
+    "platform_id": "98f9bonc8w7pp5d",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 105,
+    "week": 27
+  },
+  {
+    "date": "2024-07-05",
+    "line": "J02",
+    "planed_hours": 23.25,
+    "platform_id": "939lteoc1ut5wzv",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 195,
+    "week": 27
+  },
+  {
+    "date": "2024-07-05",
+    "line": "J01",
+    "planed_hours": 13.25,
+    "platform_id": "qa0welsuqna53gs",
+    "state": "RUN",
+    "target_oee": 0.73,
+    "uph_i": 93,
+    "week": 27
+  },
+  {
+    "date": "2024-07-04",
+    "line": "J13",
+    "planed_hours": 23.25,
+    "platform_id": "939lteoc1ut5wzv",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 96,
+    "week": 27
+  },
+  {
+    "date": "2024-07-04",
+    "line": "J08",
+    "planed_hours": 23.25,
+    "platform_id": "98f9bonc8w7pp5d",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 105,
+    "week": 27
+  },
+  {
+    "date": "2024-07-04",
+    "line": "J06",
+    "planed_hours": 23.25,
+    "platform_id": "98f9bonc8w7pp5d",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 105,
+    "week": 27
+  },
+  {
+    "date": "2024-07-04",
+    "line": "J02",
+    "planed_hours": 23.25,
+    "platform_id": "939lteoc1ut5wzv",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 195,
+    "week": 27
+  },
+  {
+    "date": "2024-07-04",
+    "line": "J01",
+    "planed_hours": 23.25,
+    "platform_id": "qa0welsuqna53gs",
+    "state": "RUN",
+    "target_oee": 0.73,
+    "uph_i": 93,
+    "week": 27
+  },
+  {
+    "date": "2024-07-03",
+    "line": "J08",
+    "planed_hours": 23.25,
+    "platform_id": "98f9bonc8w7pp5d",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 105,
+    "week": 27
+  },
+  {
+    "date": "2024-07-03",
+    "line": "J13",
+    "planed_hours": 23.25,
+    "platform_id": "qa0welsuqna53gs",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 96,
+    "week": 27
+  },
+  {
+    "date": "2024-07-03",
+    "line": "J06",
+    "planed_hours": 23.25,
+    "platform_id": "98f9bonc8w7pp5d",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 105,
+    "week": 27
+  },
+  {
+    "date": "2024-07-03",
+    "line": "J02",
+    "planed_hours": 23.25,
+    "platform_id": "939lteoc1ut5wzv",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 195,
+    "week": 27
+  },
+  {
+    "date": "2024-07-03",
+    "line": "J01",
+    "planed_hours": 23.25,
+    "platform_id": "qa0welsuqna53gs",
+    "state": "RUN",
+    "target_oee": 0.73,
+    "uph_i": 93,
+    "week": 27
+  },
+  {
+    "date": "2024-07-02",
+    "line": "J13",
+    "planed_hours": 23.25,
+    "platform_id": "qa0welsuqna53gs",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 96,
+    "week": 27
+  },
+  {
+    "date": "2024-07-02",
+    "line": "J08",
+    "planed_hours": 23.25,
+    "platform_id": "98f9bonc8w7pp5d",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 105,
+    "week": 27
+  },
+  {
+    "date": "2024-07-02",
+    "line": "J06",
+    "planed_hours": 23.25,
+    "platform_id": "98f9bonc8w7pp5d",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 105,
+    "week": 27
+  },
+  {
+    "date": "2024-07-02",
+    "line": "J02",
+    "planed_hours": 23.25,
+    "platform_id": "939lteoc1ut5wzv",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 195,
+    "week": 27
+  },
+  {
+    "date": "2024-07-02",
+    "line": "J01",
+    "planed_hours": 23.25,
+    "platform_id": "qa0welsuqna53gs",
+    "state": "RUN",
+    "target_oee": 0.73,
+    "uph_i": 93,
+    "week": 27
+  },
+  {
+    "date": "2024-07-01",
+    "line": "J13",
+    "planed_hours": 17,
+    "platform_id": "qa0welsuqna53gs",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 96,
+    "week": 27
+  },
+  {
+    "date": "2024-07-01",
+    "line": "J12",
+    "planed_hours": 17,
+    "platform_id": "8t1wd54kad9a7a8",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 128,
+    "week": 27
+  },
+  {
+    "date": "2024-07-01",
+    "line": "J08",
+    "planed_hours": 17,
+    "platform_id": "98f9bonc8w7pp5d",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 105,
+    "week": 27
+  },
+  {
+    "date": "2024-07-01",
+    "line": "J06",
+    "planed_hours": 17,
+    "platform_id": "98f9bonc8w7pp5d",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 105,
+    "week": 27
+  },
+  {
+    "date": "2024-07-01",
+    "line": "J02",
+    "planed_hours": 17,
+    "platform_id": "939lteoc1ut5wzv",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 195,
+    "week": 27
+  },
+  {
+    "date": "2024-06-28",
+    "line": "J13",
+    "planed_hours": 23.25,
+    "platform_id": "qa0welsuqna53gs",
+    "state": "RUN",
+    "target_oee": 0.7,
+    "uph_i": 90,
+    "week": 26
+  },
+  {
+    "date": "2024-06-28",
+    "line": "J12",
+    "planed_hours": 23.25,
+    "platform_id": "8t1wd54kad9a7a8",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 128,
+    "week": 26
+  },
+  {
+    "date": "2024-06-28",
+    "line": "J08",
+    "planed_hours": 23.25,
+    "platform_id": "98f9bonc8w7pp5d",
+    "state": "RUN",
+    "target_oee": 0.7,
+    "uph_i": 105,
+    "week": 26
+  },
+  {
+    "date": "2024-06-28",
+    "line": "J02",
+    "planed_hours": 23.25,
+    "platform_id": "939lteoc1ut5wzv",
+    "state": "RUN",
+    "target_oee": 0.7,
+    "uph_i": 169,
+    "week": 26
+  },
+  {
+    "date": "2024-06-28",
+    "line": "J01",
+    "planed_hours": 23.25,
+    "platform_id": "qa0welsuqna53gs",
+    "state": "RUN",
+    "target_oee": 0.72,
+    "uph_i": 92,
+    "week": 26
+  },
+  {
+    "date": "2024-06-27",
+    "line": "J13",
+    "planed_hours": 23.25,
+    "platform_id": "qa0welsuqna53gs",
+    "state": "RUN",
+    "target_oee": 0.7,
+    "uph_i": 90,
+    "week": 26
+  },
+  {
+    "date": "2024-06-27",
+    "line": "J12",
+    "planed_hours": 23.25,
+    "platform_id": "8t1wd54kad9a7a8",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 23.25,
+    "week": 26
+  },
+  {
+    "date": "2024-06-27",
+    "line": "J08",
+    "planed_hours": 23.25,
+    "platform_id": "98f9bonc8w7pp5d",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 105,
+    "week": 26
+  },
+  {
+    "date": "2024-06-27",
+    "line": "J02",
+    "planed_hours": 23.25,
+    "platform_id": "939lteoc1ut5wzv",
+    "state": "RUN",
+    "target_oee": 0.7,
+    "uph_i": 182,
+    "week": 26
+  },
+  {
+    "date": "2024-06-27",
+    "line": "J01",
+    "planed_hours": 23.25,
+    "platform_id": "qa0welsuqna53gs",
+    "state": "RUN",
+    "target_oee": 0.72,
+    "uph_i": 92,
+    "week": 26
+  },
+  {
+    "date": "2024-06-26",
+    "line": "J13",
+    "planed_hours": 23.25,
+    "platform_id": "qa0welsuqna53gs",
+    "state": "RUN",
+    "target_oee": 0.7,
+    "uph_i": 95,
+    "week": 26
+  },
+  {
+    "date": "2024-06-26",
+    "line": "J12",
+    "planed_hours": 23.25,
+    "platform_id": "8t1wd54kad9a7a8",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 128,
+    "week": 26
+  },
+  {
+    "date": "2024-06-26",
+    "line": "J08",
+    "planed_hours": 23.25,
+    "platform_id": "98f9bonc8w7pp5d",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 108,
+    "week": 26
+  },
+  {
+    "date": "2024-06-26",
+    "line": "J03",
+    "planed_hours": 14,
+    "platform_id": "939lteoc1ut5wzv",
+    "state": "RUN",
+    "target_oee": 0.65,
+    "uph_i": 196,
+    "week": 26
+  },
+  {
+    "date": "2024-06-26",
+    "line": "J02",
+    "planed_hours": 23.25,
+    "platform_id": "939lteoc1ut5wzv",
+    "state": "RUN",
+    "target_oee": 0.7,
+    "uph_i": 196,
+    "week": 26
+  },
+  {
+    "date": "2024-06-25",
+    "line": "J13",
+    "planed_hours": 23.25,
+    "platform_id": "qa0welsuqna53gs",
+    "state": "NO_PLAN",
+    "target_oee": 0.7,
+    "uph_i": 95,
+    "week": 26
+  },
+  {
+    "date": "2024-06-25",
+    "line": "J12",
+    "planed_hours": 23.25,
+    "platform_id": "8t1wd54kad9a7a8",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 128,
+    "week": 26
+  },
+  {
+    "date": "2024-06-25",
+    "line": "J08",
+    "planed_hours": 23.25,
+    "platform_id": "98f9bonc8w7pp5d",
+    "state": "NO_PLAN",
+    "target_oee": 0.75,
+    "uph_i": 105,
+    "week": 26
+  },
+  {
+    "date": "2024-06-25",
+    "line": "J03",
+    "planed_hours": 23.25,
+    "platform_id": "939lteoc1ut5wzv",
+    "state": "RUN",
+    "target_oee": 0.65,
+    "uph_i": 196,
+    "week": 26
+  },
+  {
+    "date": "2024-06-25",
+    "line": "J02",
+    "planed_hours": 23.25,
+    "platform_id": "939lteoc1ut5wzv",
+    "state": "RUN",
+    "target_oee": 0.7,
+    "uph_i": 196,
+    "week": 26
+  },
+  {
+    "date": "2024-06-24",
+    "line": "J13",
+    "planed_hours": 17,
+    "platform_id": "qa0welsuqna53gs",
+    "state": "RUN",
+    "target_oee": 0.7,
+    "uph_i": 90,
+    "week": 26
+  },
+  {
+    "date": "2024-06-24",
+    "line": "J08",
+    "planed_hours": 17,
+    "platform_id": "98f9bonc8w7pp5d",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 105,
+    "week": 26
+  },
+  {
+    "date": "2024-06-24",
+    "line": "J03",
+    "planed_hours": 17,
+    "platform_id": "939lteoc1ut5wzv",
+    "state": "RUN",
+    "target_oee": 0.65,
+    "uph_i": 169,
+    "week": 26
+  },
+  {
+    "date": "2024-06-24",
+    "line": "J02",
+    "planed_hours": 17,
+    "platform_id": "939lteoc1ut5wzv",
+    "state": "RUN",
+    "target_oee": 0.7,
+    "uph_i": 182,
+    "week": 26
+  },
+  {
+    "date": "2024-06-22",
+    "line": "J02",
+    "planed_hours": 21,
+    "platform_id": "939lteoc1ut5wzv",
+    "state": "RUN",
+    "target_oee": 0.7,
+    "uph_i": 182,
+    "week": 25
+  },
+  {
+    "date": "2024-06-21",
+    "line": "J08",
+    "planed_hours": 23.25,
+    "platform_id": "98f9bonc8w7pp5d",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 105,
+    "week": 25
+  },
+  {
+    "date": "2024-06-21",
+    "line": "J06",
+    "planed_hours": 23.25,
+    "platform_id": "98f9bonc8w7pp5d",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 105,
+    "week": 25
+  },
+  {
+    "date": "2024-06-20",
+    "line": "J06",
+    "planed_hours": 23.25,
+    "platform_id": "98f9bonc8w7pp5d",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 105,
+    "week": 25
+  },
+  {
+    "date": "2024-06-19",
+    "line": "J06",
+    "planed_hours": 17.25,
+    "platform_id": "98f9bonc8w7pp5d",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 105,
+    "week": 25
+  },
+  {
+    "date": "2024-06-21",
+    "line": "J03",
+    "planed_hours": 21,
+    "platform_id": "939lteoc1ut5wzv",
+    "state": "RUN",
+    "target_oee": 0.55,
+    "uph_i": 143,
+    "week": 25
+  },
+  {
+    "date": "2024-06-21",
+    "line": "J02",
+    "planed_hours": 23.25,
+    "platform_id": "939lteoc1ut5wzv",
+    "state": "RUN",
+    "target_oee": 0.7,
+    "uph_i": 182,
+    "week": 25
+  },
+  {
+    "date": "2024-06-21",
+    "line": "J10",
+    "planed_hours": 18,
+    "platform_id": "qa0welsuqna53gs",
+    "state": "RUN",
+    "target_oee": 0.72,
+    "uph_i": 92,
+    "week": 25
+  },
+  {
+    "date": "2024-06-20",
+    "line": "J08",
+    "planed_hours": 23.25,
+    "platform_id": "98f9bonc8w7pp5d",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 105,
+    "week": 25
+  },
+  {
+    "date": "2024-06-20",
+    "line": "J03",
+    "planed_hours": 23.25,
+    "platform_id": "939lteoc1ut5wzv",
+    "state": "RUN",
+    "target_oee": 0.55,
+    "uph_i": 143,
+    "week": 25
+  },
+  {
+    "date": "2024-06-20",
+    "line": "J02",
+    "planed_hours": 23.25,
+    "platform_id": "939lteoc1ut5wzv",
+    "state": "RUN",
+    "target_oee": 0.7,
+    "uph_i": 182,
+    "week": 25
+  },
+  {
+    "date": "2024-06-20",
+    "line": "J10",
+    "planed_hours": 23.25,
+    "platform_id": "qa0welsuqna53gs",
+    "state": "RUN",
+    "target_oee": 0.72,
+    "uph_i": 90,
+    "week": 25
+  },
+  {
+    "date": "2024-06-19",
+    "line": "J13",
+    "planed_hours": 4,
+    "platform_id": "qa0welsuqna53gs",
+    "state": "RUN",
+    "target_oee": 0.7,
+    "uph_i": 90,
+    "week": 25
+  },
+  {
+    "date": "2024-06-19",
+    "line": "J08",
+    "planed_hours": 23.25,
+    "platform_id": "98f9bonc8w7pp5d",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 105,
+    "week": 25
+  },
+  {
+    "date": "2024-06-19",
+    "line": "J03",
+    "planed_hours": 23.25,
+    "platform_id": "939lteoc1ut5wzv",
+    "state": "RUN",
+    "target_oee": 0.55,
+    "uph_i": 143,
+    "week": 25
+  },
+  {
+    "date": "2024-06-19",
+    "line": "J02",
+    "planed_hours": 23.25,
+    "platform_id": "939lteoc1ut5wzv",
+    "state": "RUN",
+    "target_oee": 0.7,
+    "uph_i": 182,
+    "week": 25
+  },
+  {
+    "date": "2024-06-19",
+    "line": "J10",
+    "planed_hours": 23.25,
+    "platform_id": "qa0welsuqna53gs",
+    "state": "RUN",
+    "target_oee": 0.7,
+    "uph_i": 90,
+    "week": 25
+  },
+  {
+    "date": "2024-06-18",
+    "line": "J13",
+    "planed_hours": 23.25,
+    "platform_id": "qa0welsuqna53gs",
+    "state": "RUN",
+    "target_oee": 0.7,
+    "uph_i": 90,
+    "week": 25
+  },
+  {
+    "date": "2024-06-18",
+    "line": "J08",
+    "planed_hours": 13.25,
+    "platform_id": "98f9bonc8w7pp5d",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 91,
+    "week": 25
+  },
+  {
+    "date": "2024-06-18",
+    "line": "J03",
+    "planed_hours": 23.25,
+    "platform_id": "939lteoc1ut5wzv",
+    "state": "RUN",
+    "target_oee": 0.55,
+    "uph_i": 143,
+    "week": 25
+  },
+  {
+    "date": "2024-06-18",
+    "line": "J02",
+    "planed_hours": 20.25,
+    "platform_id": "939lteoc1ut5wzv",
+    "state": "RUN",
+    "target_oee": 0.7,
+    "uph_i": 90,
+    "week": 25
+  },
+  {
+    "date": "2024-06-18",
+    "line": "J10",
+    "planed_hours": 17,
+    "platform_id": "qa0welsuqna53gs",
+    "state": "RUN",
+    "target_oee": 0.7,
+    "uph_i": 90,
+    "week": 25
+  },
+  {
+    "date": "2024-06-17",
+    "line": "J13",
+    "planed_hours": 17,
+    "platform_id": "qa0welsuqna53gs",
+    "state": "RUN",
+    "target_oee": 0.7,
+    "uph_i": 90,
+    "week": 25
+  },
+  {
+    "date": "2024-06-17",
+    "line": "J08",
+    "planed_hours": 17,
+    "platform_id": "98f9bonc8w7pp5d",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 105,
+    "week": 25
+  },
+  {
+    "date": "2024-06-17",
+    "line": "J03",
+    "planed_hours": 17,
+    "platform_id": "939lteoc1ut5wzv",
+    "state": "RUN",
+    "target_oee": 0.55,
+    "uph_i": 143,
+    "week": 25
+  },
+  {
+    "date": "2024-06-17",
+    "line": "J02",
+    "planed_hours": 17,
+    "platform_id": "939lteoc1ut5wzv",
+    "state": "RUN",
+    "target_oee": 0.7,
+    "uph_i": 182,
+    "week": 25
+  },
+  {
+    "date": "2024-06-17",
+    "line": "J10",
+    "planed_hours": 17,
+    "platform_id": "qa0welsuqna53gs",
+    "state": "RUN",
+    "target_oee": 0.7,
+    "uph_i": 90,
+    "week": 25
+  },
+  {
+    "date": "2024-04-22",
+    "line": "J06",
+    "planed_hours": 17,
+    "platform_id": "wfjlaxcstp7d28l",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 105,
+    "week": 17
+  },
+  {
+    "date": "2024-04-22",
+    "line": "J03",
+    "planed_hours": 17,
+    "platform_id": "73hc63lfm81by9v",
+    "state": "RUN",
+    "target_oee": 0.45,
+    "uph_i": 63,
+    "week": 17
+  },
+  {
+    "date": "2024-04-18",
+    "line": "J13",
+    "planed_hours": 23.25,
+    "platform_id": "qa0welsuqna53gs",
+    "state": "RUN",
+    "target_oee": 0.5,
+    "uph_i": 64,
+    "week": 16
+  },
+  {
+    "date": "2024-04-18",
+    "line": "J11",
+    "planed_hours": 23.25,
+    "platform_id": "xjv0dogq2qxv4ke",
+    "state": "RUN",
+    "target_oee": 0.7,
+    "uph_i": 182,
+    "week": 16
+  },
+  {
+    "date": "2024-04-18",
+    "line": "J06",
+    "planed_hours": 23.25,
+    "platform_id": "wfjlaxcstp7d28l",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 105,
+    "week": 16
+  },
+  {
+    "date": "2024-04-18",
+    "line": "J01",
+    "planed_hours": 23.25,
+    "platform_id": "uz46momxxgaocp2",
+    "state": "RUN",
+    "target_oee": 0.5,
+    "uph_i": 64,
+    "week": 16
+  },
+  {
+    "date": "2024-04-13",
+    "line": "J13",
+    "planed_hours": 4,
+    "platform_id": "uz46momxxgaocp2",
+    "state": "RUN",
+    "target_oee": 0.55,
+    "uph_i": 70,
+    "week": 15
+  },
+  {
+    "date": "2024-04-13",
+    "line": "J10",
+    "planed_hours": 4,
+    "platform_id": "fhj8ubyjcfvp86c",
+    "state": "RUN",
+    "target_oee": 0.7,
+    "uph_i": 60,
+    "week": 15
+  },
+  {
+    "date": "2024-04-13",
+    "line": "J06",
+    "planed_hours": 4,
+    "platform_id": "wfjlaxcstp7d28l",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 105,
+    "week": 15
+  },
+  {
+    "date": "2024-04-13",
+    "line": "J01",
+    "planed_hours": 4,
+    "platform_id": "uz46momxxgaocp2",
+    "state": "RUN",
+    "target_oee": 0.65,
+    "uph_i": 83,
+    "week": 15
+  },
+  {
+    "date": "2024-04-06",
+    "line": "J11",
+    "planed_hours": 4,
+    "platform_id": "xjv0dogq2qxv4ke",
+    "state": "RUN",
+    "target_oee": 0.7,
+    "uph_i": 182,
+    "week": 14
+  },
+  {
+    "date": "2024-04-06",
+    "line": "J06",
+    "planed_hours": 4,
+    "platform_id": "wfjlaxcstp7d28l",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 105,
+    "week": 14
+  },
+  {
+    "date": "2024-04-06",
+    "line": "J02",
+    "planed_hours": 4,
+    "platform_id": "xjv0dogq2qxv4ke",
+    "state": "RUN",
+    "target_oee": 0.6,
+    "uph_i": 156,
+    "week": 14
+  },
+  {
+    "date": "2024-04-06",
+    "line": "J01",
+    "planed_hours": 4,
+    "platform_id": "uz46momxxgaocp2",
+    "state": "RUN",
+    "target_oee": 0.65,
+    "uph_i": 83,
+    "week": 14
+  },
+  {
+    "date": "2024-03-23",
+    "line": "J13",
+    "planed_hours": 4,
+    "platform_id": "qa0welsuqna53gs",
+    "state": "RUN",
+    "target_oee": 0.5,
+    "uph_i": 64,
+    "week": 12
+  },
+  {
+    "date": "2024-03-23",
+    "line": "J12",
+    "planed_hours": 4,
+    "platform_id": "8t1wd54kad9a7a8",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 128,
+    "week": 12
+  },
+  {
+    "date": "2024-03-23",
+    "line": "J11",
+    "planed_hours": 4,
+    "platform_id": "xjv0dogq2qxv4ke",
+    "state": "RUN",
+    "target_oee": 0.7,
+    "uph_i": 182,
+    "week": 12
+  },
+  {
+    "date": "2024-03-23",
+    "line": "J06",
+    "planed_hours": 4,
+    "platform_id": "wfjlaxcstp7d28l",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 105,
+    "week": 12
+  },
+  {
+    "date": "2024-03-23",
+    "line": "J05",
+    "planed_hours": 4,
+    "platform_id": "98f9bonc8w7pp5d",
+    "state": "RUN",
+    "target_oee": 0.57,
+    "uph_i": 80,
+    "week": 12
+  },
+  {
+    "date": "2024-03-23",
+    "line": "J01",
+    "planed_hours": 4,
+    "platform_id": "uz46momxxgaocp2",
+    "state": "RUN",
+    "target_oee": 0.65,
+    "uph_i": 83,
+    "week": 12
+  },
+  {
+    "date": "2024-04-17",
+    "line": "J13",
+    "planed_hours": 13.25,
+    "platform_id": "qa0welsuqna53gs",
+    "state": "RUN",
+    "target_oee": 0.5,
+    "uph_i": 64,
+    "week": 16
+  },
+  {
+    "date": "2024-04-17",
+    "line": "J12",
+    "planed_hours": 15,
+    "platform_id": "ki2qvrtl90pyv11",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 128,
+    "week": 16
+  },
+  {
+    "date": "2024-04-17",
+    "line": "J11",
+    "planed_hours": 2,
+    "platform_id": "xjv0dogq2qxv4ke",
+    "state": "RUN",
+    "target_oee": 0.7,
+    "uph_i": 182,
+    "week": 16
+  },
+  {
+    "date": "2024-04-17",
+    "line": "J09",
+    "planed_hours": 14,
+    "platform_id": "ut28smfx4zxa86j",
+    "state": "RUN",
+    "target_oee": 0.4,
+    "uph_i": 40,
+    "week": 16
+  },
+  {
+    "date": "2024-04-17",
+    "line": "J06",
+    "planed_hours": 23.25,
+    "platform_id": "wfjlaxcstp7d28l",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 105,
+    "week": 16
+  },
+  {
+    "date": "2024-04-17",
+    "line": "J05",
+    "planed_hours": 15,
+    "platform_id": "98f9bonc8w7pp5d",
+    "state": "RUN",
+    "target_oee": 0.6,
+    "uph_i": 84,
+    "week": 16
+  },
+  {
+    "date": "2024-04-17",
+    "line": "J01",
+    "planed_hours": 6,
+    "platform_id": "uz46momxxgaocp2",
+    "state": "RUN",
+    "target_oee": 0.65,
+    "uph_i": 83,
+    "week": 16
+  },
+  {
+    "date": "2024-04-16",
+    "line": "J13",
+    "planed_hours": 23.25,
+    "platform_id": "qa0welsuqna53gs",
+    "state": "RUN",
+    "target_oee": 0.5,
+    "uph_i": 64,
+    "week": 16
+  },
+  {
+    "date": "2024-04-16",
+    "line": "J12",
+    "planed_hours": 15,
+    "platform_id": "ki2qvrtl90pyv11",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 128,
+    "week": 16
+  },
+  {
+    "date": "2024-04-16",
+    "line": "J10",
+    "planed_hours": 2,
+    "platform_id": "fhj8ubyjcfvp86c",
+    "state": "RUN",
+    "target_oee": 0.7,
+    "uph_i": 60,
+    "week": 16
+  },
+  {
+    "date": "2024-04-16",
+    "line": "J09",
+    "planed_hours": 3,
+    "platform_id": "ut28smfx4zxa86j",
+    "state": "RUN",
+    "target_oee": 0.4,
+    "uph_i": 40,
+    "week": 16
+  },
+  {
+    "date": "2024-04-16",
+    "line": "J06",
+    "planed_hours": 23.25,
+    "platform_id": "wfjlaxcstp7d28l",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 105,
+    "week": 16
+  },
+  {
+    "date": "2024-04-16",
+    "line": "J05",
+    "planed_hours": 23.25,
+    "platform_id": "98f9bonc8w7pp5d",
+    "state": "RUN",
+    "target_oee": 0.6,
+    "uph_i": 84,
+    "week": 16
+  },
+  {
+    "date": "2024-04-16",
+    "line": "J01",
+    "planed_hours": 23.25,
+    "platform_id": "uz46momxxgaocp2",
+    "state": "RUN",
+    "target_oee": 0.65,
+    "uph_i": 83,
+    "week": 16
+  },
+  {
+    "date": "2024-04-15",
+    "line": "J13",
+    "planed_hours": 14,
+    "platform_id": "qa0welsuqna53gs",
+    "state": "RUN",
+    "target_oee": 0.5,
+    "uph_i": 64,
+    "week": 16
+  },
+  {
+    "date": "2024-04-15",
+    "line": "J12",
+    "planed_hours": 8,
+    "platform_id": "8t1wd54kad9a7a8",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 128,
+    "week": 16
+  },
+  {
+    "date": "2024-04-15",
+    "line": "J10",
+    "planed_hours": 8,
+    "platform_id": "fhj8ubyjcfvp86c",
+    "state": "RUN",
+    "target_oee": 0.7,
+    "uph_i": 60,
+    "week": 16
+  },
+  {
+    "date": "2024-04-15",
+    "line": "J06",
+    "planed_hours": 7,
+    "platform_id": "wfjlaxcstp7d28l",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 105,
+    "week": 16
+  },
+  {
+    "date": "2024-04-15",
+    "line": "J05",
+    "planed_hours": 17,
+    "platform_id": "98f9bonc8w7pp5d",
+    "state": "RUN",
+    "target_oee": 0.6,
+    "uph_i": 84,
+    "week": 16
+  },
+  {
+    "date": "2024-04-15",
+    "line": "J01",
+    "planed_hours": 17,
+    "platform_id": "uz46momxxgaocp2",
+    "state": "RUN",
+    "target_oee": 0.65,
+    "uph_i": 83,
+    "week": 16
+  },
+  {
+    "date": "2024-04-12",
+    "line": "J13",
+    "planed_hours": 23.25,
+    "platform_id": "uz46momxxgaocp2",
+    "state": "RUN",
+    "target_oee": 0.55,
+    "uph_i": 70,
+    "week": 15
+  },
+  {
+    "date": "2024-04-12",
+    "line": "J11",
+    "planed_hours": 6,
+    "platform_id": "xjv0dogq2qxv4ke",
+    "state": "RUN",
+    "target_oee": 0.7,
+    "uph_i": 182,
+    "week": 15
+  },
+  {
+    "date": "2024-04-12",
+    "line": "J10",
+    "planed_hours": 23.25,
+    "platform_id": "fhj8ubyjcfvp86c",
+    "state": "RUN",
+    "target_oee": 0.7,
+    "uph_i": 60,
+    "week": 15
+  },
+  {
+    "date": "2024-04-12",
+    "line": "J06",
+    "planed_hours": 23.25,
+    "platform_id": "wfjlaxcstp7d28l",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 105,
+    "week": 15
+  },
+  {
+    "date": "2024-04-12",
+    "line": "J05",
+    "planed_hours": 13.25,
+    "platform_id": "98f9bonc8w7pp5d",
+    "state": "RUN",
+    "target_oee": 0.6,
+    "uph_i": 84,
+    "week": 15
+  },
+  {
+    "date": "2024-04-12",
+    "line": "J02",
+    "planed_hours": 4,
+    "platform_id": "73hc63lfm81by9v",
+    "state": "RUN",
+    "target_oee": 0.6,
+    "uph_i": 156,
+    "week": 15
+  },
+  {
+    "date": "2024-04-12",
+    "line": "J01",
+    "planed_hours": 23.25,
+    "platform_id": "uz46momxxgaocp2",
+    "state": "RUN",
+    "target_oee": 0.65,
+    "uph_i": 83,
+    "week": 15
+  },
+  {
+    "date": "2024-04-11",
+    "line": "J13",
+    "planed_hours": 23.25,
+    "platform_id": "uz46momxxgaocp2",
+    "state": "RUN",
+    "target_oee": 0.55,
+    "uph_i": 70,
+    "week": 15
+  },
+  {
+    "date": "2024-04-11",
+    "line": "J12",
+    "planed_hours": 15,
+    "platform_id": "8t1wd54kad9a7a8",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 128,
+    "week": 15
+  },
+  {
+    "date": "2024-04-11",
+    "line": "J11",
+    "planed_hours": 23.25,
+    "platform_id": "xjv0dogq2qxv4ke",
+    "state": "RUN",
+    "target_oee": 0.7,
+    "uph_i": 182,
+    "week": 15
+  },
+  {
+    "date": "2024-04-11",
+    "line": "J06",
+    "planed_hours": 23.25,
+    "platform_id": "wfjlaxcstp7d28l",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 105,
+    "week": 15
+  },
+  {
+    "date": "2024-04-11",
+    "line": "J05",
+    "planed_hours": 20.25,
+    "platform_id": "98f9bonc8w7pp5d",
+    "state": "RUN",
+    "target_oee": 0.6,
+    "uph_i": 84,
+    "week": 15
+  },
+  {
+    "date": "2024-04-11",
+    "line": "J01",
+    "planed_hours": 13.25,
+    "platform_id": "uz46momxxgaocp2",
+    "state": "RUN",
+    "target_oee": 0.65,
+    "uph_i": 83,
+    "week": 15
+  },
+  {
+    "date": "2024-04-10",
+    "line": "J13",
+    "planed_hours": 23.25,
+    "platform_id": "uz46momxxgaocp2",
+    "state": "RUN",
+    "target_oee": 0.55,
+    "uph_i": 70,
+    "week": 15
+  },
+  {
+    "date": "2024-04-10",
+    "line": "J12",
+    "planed_hours": 15,
+    "platform_id": "8t1wd54kad9a7a8",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 128,
+    "week": 15
+  },
+  {
+    "date": "2024-04-10",
+    "line": "J11",
+    "planed_hours": 7,
+    "platform_id": "xjv0dogq2qxv4ke",
+    "state": "RUN",
+    "target_oee": 0.7,
+    "uph_i": 182,
+    "week": 15
+  },
+  {
+    "date": "2024-04-10",
+    "line": "J06",
+    "planed_hours": 23.25,
+    "platform_id": "wfjlaxcstp7d28l",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 105,
+    "week": 15
+  },
+  {
+    "date": "2024-04-10",
+    "line": "J05",
+    "planed_hours": 23.25,
+    "platform_id": "98f9bonc8w7pp5d",
+    "state": "RUN",
+    "target_oee": 0.6,
+    "uph_i": 84,
+    "week": 15
+  },
+  {
+    "date": "2024-04-10",
+    "line": "J02",
+    "planed_hours": 8,
+    "platform_id": "xjv0dogq2qxv4ke",
+    "state": "RUN",
+    "target_oee": 0.6,
+    "uph_i": 156,
+    "week": 15
+  },
+  {
+    "date": "2024-04-10",
+    "line": "J01",
+    "planed_hours": 23.25,
+    "platform_id": "uz46momxxgaocp2",
+    "state": "RUN",
+    "target_oee": 0.65,
+    "uph_i": 83,
+    "week": 15
+  },
+  {
+    "date": "2024-04-09",
+    "line": "J13",
+    "planed_hours": 23.25,
+    "platform_id": "uz46momxxgaocp2",
+    "state": "RUN",
+    "target_oee": 0.55,
+    "uph_i": 70,
+    "week": 15
+  },
+  {
+    "date": "2024-04-09",
+    "line": "J12",
+    "planed_hours": 10,
+    "platform_id": "8t1wd54kad9a7a8",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 128,
+    "week": 15
+  },
+  {
+    "date": "2024-04-09",
+    "line": "J11",
+    "planed_hours": 23.25,
+    "platform_id": "xjv0dogq2qxv4ke",
+    "state": "RUN",
+    "target_oee": 0.7,
+    "uph_i": 182,
+    "week": 15
+  },
+  {
+    "date": "2024-04-09",
+    "line": "J06",
+    "planed_hours": 23.25,
+    "platform_id": "wfjlaxcstp7d28l",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 105,
+    "week": 15
+  },
+  {
+    "date": "2024-04-09",
+    "line": "J05",
+    "planed_hours": 23.25,
+    "platform_id": "98f9bonc8w7pp5d",
+    "state": "RUN",
+    "target_oee": 0.6,
+    "uph_i": 84,
+    "week": 15
+  },
+  {
+    "date": "2024-04-09",
+    "line": "J02",
+    "planed_hours": 23.25,
+    "platform_id": "xjv0dogq2qxv4ke",
+    "state": "RUN",
+    "target_oee": 0.6,
+    "uph_i": 156,
+    "week": 15
+  },
+  {
+    "date": "2024-04-09",
+    "line": "J01",
+    "planed_hours": 23.25,
+    "platform_id": "uz46momxxgaocp2",
+    "state": "RUN",
+    "target_oee": 0.65,
+    "uph_i": 83,
+    "week": 15
+  },
+  {
+    "date": "2024-04-08",
+    "line": "J13",
+    "planed_hours": 17,
+    "platform_id": "uz46momxxgaocp2",
+    "state": "RUN",
+    "target_oee": 0.55,
+    "uph_i": 70,
+    "week": 15
+  },
+  {
+    "date": "2024-04-08",
+    "line": "J12",
+    "planed_hours": 7,
+    "platform_id": "8t1wd54kad9a7a8",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 128,
+    "week": 15
+  },
+  {
+    "date": "2024-04-08",
+    "line": "J11",
+    "planed_hours": 17,
+    "platform_id": "xjv0dogq2qxv4ke",
+    "state": "RUN",
+    "target_oee": 0.7,
+    "uph_i": 182,
+    "week": 15
+  },
+  {
+    "date": "2024-04-08",
+    "line": "J06",
+    "planed_hours": 17,
+    "platform_id": "wfjlaxcstp7d28l",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 105,
+    "week": 15
+  },
+  {
+    "date": "2024-04-08",
+    "line": "J05",
+    "planed_hours": 17,
+    "platform_id": "98f9bonc8w7pp5d",
+    "state": "RUN",
+    "target_oee": 0.6,
+    "uph_i": 84,
+    "week": 15
+  },
+  {
+    "date": "2024-04-08",
+    "line": "J02",
+    "planed_hours": 17,
+    "platform_id": "xjv0dogq2qxv4ke",
+    "state": "RUN",
+    "target_oee": 0.6,
+    "uph_i": 156,
+    "week": 15
+  },
+  {
+    "date": "2024-04-08",
+    "line": "J01",
+    "planed_hours": 17,
+    "platform_id": "uz46momxxgaocp2",
+    "state": "RUN",
+    "target_oee": 0.65,
+    "uph_i": 83,
+    "week": 15
+  },
+  {
+    "date": "2024-04-05",
+    "line": "J12",
+    "planed_hours": 23.25,
+    "platform_id": "8t1wd54kad9a7a8",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 128,
+    "week": 14
+  },
+  {
+    "date": "2024-04-05",
+    "line": "J11",
+    "planed_hours": 23.25,
+    "platform_id": "xjv0dogq2qxv4ke",
+    "state": "RUN",
+    "target_oee": 0.7,
+    "uph_i": 182,
+    "week": 14
+  },
+  {
+    "date": "2024-04-05",
+    "line": "J06",
+    "planed_hours": 23.25,
+    "platform_id": "wfjlaxcstp7d28l",
+    "state": "RUN",
+    "target_oee": 0.75,
+    "uph_i": 105,
+    "week": 14
+  },
+  {
+    "date": "2024-04-05",
+    "line": "J05",
+    "planed_hours": 23.25,
+    "platform_id": "98f9bonc8w7pp5d",
+    "state": "RUN",
+    "target_oee": 0.6,
+    "uph_i": 84,
+    "week": 14
+  },
+  {
+    "date": "2024-04-05",
+    "line": "J02",
+    "planed_hours": 20.25,
+    "platform_id": "xjv0dogq2qxv4ke",
+    "state": "RUN",
+    "target_oee": 0.6,
+    "uph_i": 156,
+    "week": 14
+  },
+  {
+    "date": "2024-04-05",
+    "line": "J01",
+    "planed_hours": 23.25,
+    "platform_id": "uz46momxxgaocp2",
+    "state": "RUN",
+    "target_oee": 0.65,
+    "uph_i": 83,
+    "week": 14
+  },
+  {
+    "date": "2024-04-04",
+    "line": "J13",
+    "planed_hours": 15.25,
+    "platform_id": "uz46momxxgaocp2",
+    "state": "RUN",
+    "target_oee": 0.55,
+    "uph_i": 70,
+    "week": 14
+  }
+]

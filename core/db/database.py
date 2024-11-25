@@ -2,8 +2,8 @@ from sqlalchemy import create_engine
 from sqlalchemy.exc import SQLAlchemyError
 from sqlalchemy.orm import sessionmaker, declarative_base, scoped_session
 
-# Define the database URL - using SQLite with a local file named `sky_db_2.db`.
-DATABASE_URL = "sqlite:///./sky_db_2.db"
+# Define the database URL - using SQLite with a local file named `sky_db.db`.
+DATABASE_URL = "sqlite:///./sky_db.db"
 
 # Base class for defining ORM models.
 Base = declarative_base()
