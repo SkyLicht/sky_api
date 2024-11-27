@@ -21,15 +21,20 @@ if __name__ == "__main__":
         json_file_path = 'config/tasks.json'
 
         # Create an instance of the executor
-        executor = AsyncPeriodicExecutor("api_db", json_file_path)
+        executor = AsyncPeriodicExecutor("api_db")
 
         # Schedule the tasks
+
+        async def ttes():
+            print("Hello")
 
         hbh_service = HbhService(dao=HbhDAO(connection=DBConnection().get_session()))
 
         async def schedule_tasks():
-            await executor.schedule_custom_task(hbh_service.update_at_intervals, interval_seconds=30)
-            await executor.schedule_custom_task(hbh_service.update_at_first_minute_of_the_hour, hourly=True)
+
+            await executor.schedule_task(hbh_service.update_currently_hour, interval_seconds=30)
+            await executor.schedule_task(hbh_service.update_day_hours, hourly=True)
+            await executor.schedule_task(hbh_service.update_previews_day, daily= "01:00")
 
 
         async def main():

@@ -53,7 +53,7 @@ class HbhDAO:
             print(f"{Fore.GREEN}Session close{Style.RESET_ALL}")
 
     # if record exists, update it. Otherwise, insert it
-    def query_update_last_hour(self, record):
+    def query_update_hour(self, record):
         try:
             last_hour = self.session.query(HourByHourSchema).filter(HourByHourSchema.date == record.date).filter(
                 HourByHourSchema.hour == record.hour).filter(HourByHourSchema.line == record.line).first()
@@ -71,6 +71,28 @@ class HbhDAO:
             print(f"{Fore.RED}{e}{Style.RESET_ALL}")
             self.session.close()
         finally:
+            print(f"{Fore.GREEN}Session close{Style.RESET_ALL}")
+
+    def query_update_hours(self, records):
+        try:
+            for record in records:
+                last_hour = self.session.query(HourByHourSchema).filter(HourByHourSchema.date == record.date).filter(
+                    HourByHourSchema.hour == record.hour).filter(HourByHourSchema.line == record.line).first()
+                if last_hour is not None:
+                    last_hour.smt_in = record.smt_in
+                    last_hour.smt_out = record.smt_out
+                    last_hour.packing = record.packing
+                    print(f"{Fore.GREEN}Record {Fore.YELLOW}{record.to_dict()} {Fore.BLUE}updated{Style.RESET_ALL}")
+                else:
+                    self.session.add(record)
+                    print(f"{Fore.GREEN}Record {Fore.YELLOW}{record.to_dict()} {Fore.BLUE}pushed{Style.RESET_ALL}")
+            self.session.commit()
+            return True
+        except Exception as e:
+            print(f"{Fore.RED}{e}{Style.RESET_ALL}")
+            self.session.rollback()
+        finally:
+            self.session.close()
             print(f"{Fore.GREEN}Session close{Style.RESET_ALL}")
 
 
@@ -123,7 +145,7 @@ class WorkPlanDAO:
         try:
             result = self.session.query(WorkPlanSchema).all()
             print(f"{Fore.GREEN}Data fetched from work_plan.{Style.RESET_ALL}")
-            return []
+            return result
         except Exception as e:
             print(f"{Fore.RED}{e}{Style.RESET_ALL}")
             self.session.close()

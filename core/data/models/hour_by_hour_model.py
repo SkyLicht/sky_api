@@ -12,9 +12,10 @@ class HourByHourModel(BaseModel):
     smt_out: int
     packing: int
 
-    def to_schema(self)-> HourByHourSchema:
+    def to_schema(self, factory:str)-> HourByHourSchema:
         return HourByHourSchema(
             line=self.line,
+            factory=factory,
             date=self.date,
             hour=self.hour,
             smt_in=self.smt_in,

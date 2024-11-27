@@ -1,12 +1,10 @@
 import asyncio
 import logging
-import json
-import os
-import aiohttp
-import aiomysql
+import calendar
 from datetime import datetime, timedelta
 from threading import Lock
-# Configure logging
+
+# Configure logging to output messages with a specific format
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
@@ -15,10 +13,19 @@ logger = logging.getLogger(__name__)
 
 
 class AsyncPeriodicExecutor:
-    _instances = {}
-    _lock = Lock()  # To make singleton creation thread-safe
+    """
+    An asynchronous task scheduler that allows scheduling tasks at specific intervals,
+    daily times, hourly, weekly, or monthly. Supports programmable tasks.
+    """
+
+    _instances = {}  # Dictionary to hold singleton instances by name
+    _lock = Lock()   # Lock to ensure thread-safe singleton creation
 
     def __new__(cls, name, *args, **kwargs):
+        """
+        Overrides the default method to implement the singleton pattern.
+        Ensures that only one instance per name exists.
+        """
         with cls._lock:
             if name in cls._instances:
                 logger.debug(f"Instance with name '{name}' already exists. Returning existing instance.")
@@ -27,34 +34,44 @@ class AsyncPeriodicExecutor:
                 logger.debug(f"Creating new instance with name '{name}'.")
                 instance = super(AsyncPeriodicExecutor, cls).__new__(cls)
                 cls._instances[name] = instance
-                instance._initialized = False  # Flag to prevent multiple initializations
+                instance._initialized = False  # Prevents multiple initializations
                 return instance
 
     @classmethod
     def get_instance(cls, name):
-        """Access the singleton instance by name."""
+        """
+        Class method to access the singleton instance by name.
+
+        :param name: The name of the executor instance.
+        :return: The executor instance with the given name, or None if it doesn't exist.
+        """
         return cls._instances.get(name)
 
-    def __init__(self, name, json_file_path=None):
+    def __init__(self, name):
+        """
+        Initializes the executor with a name.
+
+        :param name: The name of the executor instance.
+        """
         if getattr(self, '_initialized', False):
             return  # Avoid re-initialization
         self._initialized = True
         self.name = name
-        self.json_file_path = json_file_path
-        self.custom_tasks = {}  # Mapping of task names to configurations (hard-coded tasks)
-        self.json_tasks = {}    # Mapping of task names to configurations (JSON-defined tasks)
-        self.executor_tasks = {}  # Mapping of task names to asyncio Tasks
-        self.loop_task = None
-        self.task_lock = asyncio.Lock()  # To protect access to executor_tasks
-        self.stop_event = asyncio.Event()  # Event to signal tasks to stop
-        self.file_mtime = None  # To track JSON file modification time
+        self.programmable_tasks = {}  # Stores programmable tasks
+        self.executor_tasks = {}      # Maps task names to asyncio Tasks
+        self.loop_task = None         # The main loop task
+        self.task_lock = asyncio.Lock()    # Async lock to protect shared resources
+        self.stop_event = asyncio.Event()  # Event to signal stopping of tasks
         logger.info(f"Initialized AsyncPeriodicExecutor instance with name '{self.name}'.")
 
     async def start(self):
-        """Start the execution loop."""
+        """
+        Starts the executor's main loop. Aligns to the next minute and begins
+        scheduling tasks.
+        """
         self.on_start()
         try:
-            # Align to the start of the next minute
+            # Align to the start of the next minute for consistency
             await self._wait_until_next_minute()
             self.loop_task = asyncio.create_task(self._run_loop())
             await self.loop_task
@@ -62,31 +79,44 @@ class AsyncPeriodicExecutor:
             self.on_end()
 
     def on_start(self):
-        """Function to execute when the loop starts."""
+        """
+        Called when the executor starts. Can be overridden for custom behavior.
+        """
         logger.info(f"AsyncPeriodicExecutor '{self.name}' started.")
 
     def on_end(self):
-        """Function to execute when the loop ends."""
+        """
+        Called when the executor stops. Can be overridden for custom behavior.
+        """
         logger.info(f"AsyncPeriodicExecutor '{self.name}' stopped.")
 
+    async def stop(self):
+        """
+        Stops the executor by setting the stop event.
+        """
+        self.stop_event.set()
+        if self.loop_task:
+            await self.loop_task  # Wait for the main loop to finish
 
-    async def schedule_custom_task(
-            self, func, interval_seconds=None, run_at=None, hourly= None, weekly_day=None, monthly_day=None, task_name=None
+    async def schedule_task(
+            self, func, interval_seconds=None, daily=None, hourly=None,
+            weekly_day=None, monthly_day=None, task_name=None,
     ):
         """
-        Schedule a custom (hard-coded) task.
+        Schedules a programmable task based on the provided scheduling parameters.
 
-        :param func: An async function to execute.
-        :param interval_seconds: Execute the task at regular intervals (seconds).
-        :param hourly: Execute the task at the first minute of each hour.
-        :param run_at: Execute the task at a specific time daily (HH:MM).
-        :param weekly_day: Execute the task weekly on a specific day (0=Monday, ..., 6=Sunday).
-        :param monthly_day: Execute the task monthly on a specific day (1-31).
-        :param task_name: Optional name for the task.
+        :param func: The async function to execute.
+        :param interval_seconds: Schedule task at regular intervals (in seconds).
+        :param daily: Schedule task at a specific daily time (HH:MM format).
+        :param hourly: If True, schedule task at the top of each hour.
+        :param weekly_day: Schedule task weekly on a specific day (0=Monday to 6=Sunday).
+        :param monthly_day: Schedule task monthly on a specific day (1-31).
+        :param task_name: Optional name for the task; defaults to the function's name.
         """
         if not asyncio.iscoroutinefunction(func):
             raise ValueError("Function must be an async function.")
 
+        # Determine the task type and create the task information dictionary
         task_info = None
         if interval_seconds is not None:
             task_info = {
@@ -94,22 +124,19 @@ class AsyncPeriodicExecutor:
                 "func": func,
                 "interval": interval_seconds,
                 "name": task_name or func.__name__,
-                "source": "hardcoded"
             }
-        elif run_at is not None:
+        elif daily is not None:
             task_info = {
                 "type": "daily",
                 "func": func,
-                "time": run_at,
+                "time": daily,
                 "name": task_name or func.__name__,
-                "source": "hardcoded"
             }
-        elif hourly is not None:
+        elif hourly:
             task_info = {
                 "type": "hourly",
                 "func": func,
                 "name": task_name or func.__name__,
-                "source": "hardcoded"
             }
         elif weekly_day is not None:
             task_info = {
@@ -117,7 +144,6 @@ class AsyncPeriodicExecutor:
                 "func": func,
                 "day": weekly_day,
                 "name": task_name or func.__name__,
-                "source": "hardcoded"
             }
         elif monthly_day is not None:
             task_info = {
@@ -125,23 +151,23 @@ class AsyncPeriodicExecutor:
                 "func": func,
                 "day": monthly_day,
                 "name": task_name or func.__name__,
-                "source": "hardcoded"
             }
         else:
             raise ValueError(
-                "Specify one of interval_seconds, run_at, weekly_day, or monthly_day."
+                "Specify one of interval_seconds, run_at, hourly, weekly_day, or monthly_day."
             )
 
-        self.custom_tasks[task_info["name"]] = task_info
+        # Add the task to the programmable tasks dictionary
+        self.programmable_tasks[task_info["name"]] = task_info
 
-        # Schedule the task immediately if the executor is running
+        # If the executor is already running, schedule the task immediately
         if self.loop_task and not self.loop_task.done():
-            await self._schedule_task(task_info, source='hardcoded')
-
-
+            await self._schedule_task(task_info)
 
     async def _wait_until_next_minute(self):
-        """Wait until the start of the next minute."""
+        """
+        Waits until the start of the next minute to align task scheduling.
+        """
         now = datetime.now()
         seconds_until_next_minute = 60 - now.second - now.microsecond / 1_000_000
         if seconds_until_next_minute > 0:
@@ -151,443 +177,203 @@ class AsyncPeriodicExecutor:
             await asyncio.sleep(seconds_until_next_minute)
 
     async def _run_loop(self):
-        """Run the main asynchronous loop."""
-        # Schedule hard-coded tasks
-        await self._schedule_hardcoded_tasks()
-        # Initial load of tasks from the JSON file, if provided
-        if self.json_file_path:
-            await self.load_tasks_from_json()
-            # Start the file watcher coroutine
-            file_watcher_task = asyncio.create_task(self._watch_json_file())
-        else:
-            file_watcher_task = None
+        """
+        The main loop that runs scheduled tasks.
+        """
+        # Schedule any programmable tasks
+        await self._schedule_programmable_tasks()
 
-        # Wait for the stop event to be set
+        # Wait until the stop event is set
         await self.stop_event.wait()
 
-        # Cancel all running tasks
+        # Cancel all running tasks when stopping
         async with self.task_lock:
             for task in self.executor_tasks.values():
                 task.cancel()
             self.executor_tasks.clear()
 
-        # Cancel the file watcher task
-        if file_watcher_task:
-            file_watcher_task.cancel()
-            try:
-                await file_watcher_task
-            except asyncio.CancelledError:
-                pass
+    async def _schedule_programmable_tasks(self):
+        """
+        Schedules all the programmable tasks stored in self.programmable_tasks.
+        """
+        for task_name, task_info in self.programmable_tasks.items():
+            await self._schedule_task(task_info)
 
-    async def _schedule_hardcoded_tasks(self):
-        """Schedule hard-coded tasks."""
-        for task_name, task_info in self.custom_tasks.items():
-            await self._schedule_task(task_info, source='hardcoded')
+    async def _schedule_task(self, task_info):
+        """
+        Schedules a task based on its type.
 
-    async def _watch_json_file(self):
-        """Watch the JSON file for changes and reload tasks."""
-        while not self.stop_event.is_set():
-            try:
-                await asyncio.sleep(1)  # Check every second
-                current_mtime = os.path.getmtime(self.json_file_path)
-                if self.file_mtime is None or current_mtime != self.file_mtime:
-                    self.file_mtime = current_mtime
-                    logger.info("Detected change in JSON file. Reloading tasks.")
-                    await self.load_tasks_from_json()
-            except Exception as e:
-                logger.exception("Error watching JSON file.")
-                await asyncio.sleep(5)  # Wait before retrying
-
-    async def load_tasks_from_json(self):
-        """Load tasks from the JSON file and update the executor."""
-        try:
-            with open(self.json_file_path, 'r') as f:
-                tasks_data = json.load(f)
-
-            # Convert list to dictionary keyed by task name
-            tasks_dict = {task['name']: task for task in tasks_data}
-
-            async with self.task_lock:
-                # Update tasks
-                await self._update_json_tasks(tasks_dict)
-
-        except Exception as e:
-            logger.exception("Error loading tasks from JSON file.")
-
-    async def _update_json_tasks(self, tasks_dict):
-        """Update tasks based on the new tasks dictionary from JSON."""
-        # Cancel and remove tasks that are no longer active or present
-        for task_name in list(self.json_tasks.keys()):
-            new_task_info = tasks_dict.get(task_name)
-            if not new_task_info or not new_task_info.get('is_active', False):
-                logger.info(f"Removing JSON-defined task '{task_name}'.")
-                await self._remove_task(task_name)
-
-        # Add or update tasks
-        for task_name, task_info in tasks_dict.items():
-            if not task_info.get('is_active', False):
-                continue  # Skip inactive tasks
-            if task_name not in self.json_tasks:
-                logger.info(f"Adding new JSON-defined task '{task_name}'.")
-                await self._add_task(task_name, task_info, source='json')
-            else:
-                # Check if the task configuration has changed
-                if task_info != self.json_tasks[task_name]:
-                    logger.info(f"Updating JSON-defined task '{task_name}'.")
-                    await self._remove_task(task_name)
-                    await self._add_task(task_name, task_info, source='json')
-
-    async def _add_task(self, task_name, task_info, source):
-        """Add and schedule a new task."""
-        if source == 'json':
-            task_config = {
-                "type": task_info.get('type'),
-                "action": task_info.get('action'),
-                "name": task_name,
-                "source": "json"
-            }
-
-            # Scheduling parameters
-            if task_config["type"] == "interval":
-                task_config["interval"] = task_info.get("interval_seconds")
-            elif task_config["type"] == "daily":
-                task_config["time"] = task_info.get("time")
-            elif task_config["type"] == "weekly":
-                task_config["day"] = task_info.get("weekly_day")
-            elif task_config["type"] == "monthly":
-                task_config["day"] = task_info.get("monthly_day")
-            else:
-                logger.error(f"Unknown task type '{task_config['type']}' for task '{task_name}'.")
-                return
-
-            self.json_tasks[task_name] = task_info
-            await self._schedule_task(task_config, source='json')
-        elif source == 'hardcoded':
-            # Already have task_info in the correct format
-            self.custom_tasks[task_name] = task_info
-            await self._schedule_task(task_info, source='hardcoded')
-        else:
-            logger.error(f"Unknown task source '{source}' for task '{task_name}'.")
-
-    async def _remove_task(self, task_name):
-        """Remove and cancel a task."""
-        self.json_tasks.pop(task_name, None)
-        self.custom_tasks.pop(task_name, None)
-        task = self.executor_tasks.pop(task_name, None)
-        if task:
-            task.cancel()
-            try:
-                await task
-            except asyncio.CancelledError:
-                pass
-
-    async def _schedule_task(self, task_info, source):
-        """Schedule a single task based on its type and source."""
-        task_type = task_info["type"]
+        :param task_info: Configuration dictionary of the task.
+        """
         task_name = task_info.get("name")
-        scheduled_task = None
+        # Create an asyncio task to run the programmable task
+        scheduled_task = asyncio.create_task(self._run_programmable_task(task_info))
 
-        if source == 'json':
-            # For JSON-defined tasks
-            scheduled_task = asyncio.create_task(self._run_generic_task(task_info))
-        elif source == 'hardcoded':
-            # For hard-coded tasks
-            if task_type == "interval":
-                scheduled_task = asyncio.create_task(self._run_interval(task_info))
-            elif task_type == "daily":
-                scheduled_task = asyncio.create_task(self._run_daily(task_info))
-            elif task_type == "hourly":
-                scheduled_task = asyncio.create_task(self._run_hourly(task_info))
-            elif task_type == "weekly":
-                scheduled_task = asyncio.create_task(self._run_weekly(task_info))
-            elif task_type == "monthly":
-                scheduled_task = asyncio.create_task(self._run_monthly(task_info))
-            else:
-                logger.error(f"Unknown task type: {task_type}")
-                return
-        else:
-            logger.error(f"Unknown task source '{source}' for task '{task_name}'.")
-            return
-
+        # Add the scheduled task to the executor_tasks dictionary
         async with self.task_lock:
             self.executor_tasks[task_name] = scheduled_task
 
-    async def _run_generic_task(self, task_info):
-        """Run a task based on its scheduling and action (JSON-defined tasks)."""
-        task_type = task_info["type"]
-        action = task_info["action"]
-        task_name = task_info.get("name", "Unnamed Task")
+    async def _run_programmable_task(self, task_info):
+        """
+        Runs a programmable task based on its scheduling parameters.
+
+        :param task_info: Configuration dictionary of the task.
+        """
+        func = task_info["func"]            # The function to execute
+        task_name = task_info.get("name", func.__name__)  # Task name
+        task_type = task_info["type"]       # Type of scheduling (interval, daily, etc.)
+
         logger.info(f"Starting {task_type} task '{task_name}'.")
 
         while not self.stop_event.is_set():
             try:
-                # Wait until the next scheduled time
-                # (Same logic as before for scheduling)
-                # ...
+                schedule = {}
+                if task_type == "interval":
+                    # For interval tasks, wait for the specified interval
+                    interval = task_info["interval"]
+                    next_run = datetime.now() + timedelta(seconds=interval)
+                    schedule["interval"] = interval
+                    # Wait until the next run time or stop event
+                    should_continue = await self._wait_until(next_run)
+                    if not should_continue:
+                        break  # Stop event was set
+                    # Execute the function
+                    await func()
+                    logger.info(f"Task '{task_name}' executed successfully.")
+                else:
+                    # For other types, calculate the next run time
+                    if task_type == "daily":
+                        schedule["time"] = task_info["time"]
+                    elif task_type == "hourly":
+                        schedule["hourly"] = True
+                    elif task_type == "weekly":
+                        schedule["day"] = task_info["day"]
+                    elif task_type == "monthly":
+                        schedule["day"] = task_info["day"]
+                    else:
+                        logger.error(f"Unknown task type: {task_type}")
+                        break
 
-                # Execute the action
-                await self.execute_action(action, task_name)
-            except Exception as e:
+                    # Calculate when the task should run next
+                    next_run = await self._calculate_next_run(task_type, schedule)
+                    if not next_run:
+                        logger.error(f"Invalid schedule for task '{task_name}'.")
+                        break
+
+                    # Wait until the next scheduled time or stop event
+                    should_continue = await self._wait_until(next_run)
+                    if not should_continue:
+                        break  # Stop event was set
+
+                    # Execute the function
+                    await func()
+                    logger.info(f"Task '{task_name}' executed successfully.")
+            except Exception:
+                # Log exceptions without stopping the entire executor
                 logger.exception(f"Exception occurred in task '{task_name}'.")
-                break  # Exit the loop on error
+                continue  # Continue to the next iteration
 
         logger.info(f"Task '{task_name}' stopped.")
 
-    async def _run_interval(self, task):
-        """Run a custom task at specified intervals."""
-        interval = task["interval"]
-        func = task["func"]
-        task_name = func.__name__
-        logger.info(f"Starting interval task '{task_name}' every {interval} seconds.")
-        while not self.stop_event.is_set():
-            start_time = datetime.now()
-            next_run = start_time + timedelta(seconds=interval)
-            try:
-                await func()
-                duration = (datetime.now() - start_time).total_seconds()
-                logger.info(
-                    f"Task '{task_name}' executed successfully in {duration:.2f} seconds. Next run at {next_run}."
-                )
-            except Exception:
-                logger.exception(f"Exception occurred in interval task '{task_name}'.")
-            # Calculate the exact time to sleep to align with the interval
-            sleep_time = interval - (datetime.now().timestamp() % interval)
-            try:
-                await asyncio.wait_for(self.stop_event.wait(), timeout=sleep_time)
-            except asyncio.TimeoutError:
-                continue  # Timeout occurred, loop continues
-        logger.info(f"Interval task '{task_name}' stopped.")
+    async def _wait_until(self, next_run):
+        """
+        Waits until the specified datetime, or returns early if the stop event is set.
 
-    async def _run_hourly(self, task):
-        """Run a custom task at the first minute of each hour."""
-        func = task["func"]
-        task_name = func.__name__
-        logger.info(f"Starting hourly task '{task_name}' at the first minute of each hour.")
+        :param next_run: The datetime to wait until.
+        :return: True if time to run the task, False if stop event was set.
+        """
+        now = datetime.now()
+        seconds_until_next_run = (next_run - now).total_seconds()
+        if seconds_until_next_run <= 0:
+            return True  # It's time to run the task
+        try:
+            # Wait for the required time or until the stop event is set
+            await asyncio.wait_for(self.stop_event.wait(), timeout=seconds_until_next_run)
+            return False  # Stop event was set during the wait
+        except asyncio.TimeoutError:
+            return True  # Time to run the task
 
-        while not self.stop_event.is_set():
-            now = datetime.now()
-            # Set the next run to the first minute of the next hour (e.g., 01:01, 02:01, etc.)
-            next_run = (now + timedelta(hours=1)).replace(minute=1, second=0, microsecond=0)
+    def add_months(self, sourcedate, months):
+        """
+        Adds or subtracts months from a datetime object.
 
-            seconds_until_next_run = (next_run - now).total_seconds()
-            logger.info(f"Task '{task_name}' scheduled to run at {next_run}.")
+        :param sourcedate: The original datetime.
+        :param months: Number of months to add (can be negative).
+        :return: A new datetime with the months added.
+        """
+        # Calculate the target month and year
+        month = sourcedate.month - 1 + months
+        year = sourcedate.year + month // 12
+        month = month % 12 + 1
+        # Get the last day of the target month to avoid invalid dates
+        day = min(sourcedate.day, calendar.monthrange(year, month)[1])
+        # Return the new datetime object
+        return datetime(year, month, day, sourcedate.hour, sourcedate.minute, sourcedate.second)
 
-            try:
-                # Wait until the next run time or until the stop event is set
-                await asyncio.wait_for(self.stop_event.wait(), timeout=seconds_until_next_run)
-                break  # Stop event was set
-            except asyncio.TimeoutError:
-                pass  # Timeout occurred, execute the task
+    async def _calculate_next_run(self, task_type, schedule):
+        """
+        Calculates the next run time for a task based on its type and schedule.
 
-            try:
-                await func()  # Execute the task
-                logger.info(f"Task '{task_name}' executed successfully. Next run at {next_run + timedelta(hours=1)}.")
-            except Exception:
-                logger.exception(f"Exception occurred in hourly task '{task_name}'.")
-
-        logger.info(f"Hourly task '{task_name}' stopped.")
-
-    async def _run_daily(self, task):
-        """Run a custom task daily at a specific time."""
-        target_time = datetime.strptime(task["time"], "%H:%M").time()
-        func = task["func"]
-        task_name = func.__name__
-        logger.info(f"Starting daily task '{task_name}' at {target_time.strftime('%H:%M')} each day.")
-        while not self.stop_event.is_set():
-            now = datetime.now()
+        :param task_type: Type of the task (interval, daily, hourly, etc.).
+        :param schedule: Scheduling parameters for the task.
+        :return: The next datetime when the task should run.
+        """
+        now = datetime.now()
+        if task_type == "interval":
+            # For interval tasks, the next run is after the interval
+            interval = schedule.get("interval")
+            if interval is None:
+                return None
+            return now + timedelta(seconds=interval)
+        elif task_type == "daily":
+            # For daily tasks, schedule at the specified time
+            time_str = schedule.get("time")
+            if not time_str:
+                return None
+            target_time = datetime.strptime(time_str, "%H:%M").time()
             next_run = datetime.combine(now.date(), target_time)
             if now.time() >= target_time:
+                # If the time has passed today, schedule for tomorrow
                 next_run += timedelta(days=1)
-            seconds_until_next_run = (next_run - now).total_seconds()
-            logger.info(f"Task '{task_name}' scheduled to run at {next_run}.")
-            try:
-                await asyncio.wait_for(self.stop_event.wait(), timeout=seconds_until_next_run)
-                break  # Stop event was set
-            except asyncio.TimeoutError:
-                pass  # Timeout occurred, execute the task
-            try:
-                await func()
-                logger.info(
-                    f"Task '{task_name}' executed successfully. Next run at {next_run + timedelta(days=1)}."
-                )
-            except Exception:
-                logger.exception(f"Exception occurred in daily task '{task_name}'.")
-        logger.info(f"Daily task '{task_name}' stopped.")
-
-    async def _run_weekly(self, task):
-        """Run a custom task weekly on a specific day."""
-        day_of_week = task["day"]
-        func = task["func"]
-        task_name = func.__name__
-        logger.info(f"Starting weekly task '{task_name}' on day {day_of_week} (0=Monday, ..., 6=Sunday).")
-        while not self.stop_event.is_set():
-            now = datetime.now()
+            return next_run
+        elif task_type == "hourly":
+            # For hourly tasks, schedule at the top of the next hour
+            next_run = now.replace(minute=0, second=0, microsecond=0) + timedelta(hours=1)
+            return next_run
+        elif task_type == "weekly":
+            # For weekly tasks, schedule on the specified weekday
+            day_of_week = schedule.get("day")
+            if day_of_week is None:
+                return None
             days_ahead = (day_of_week - now.weekday()) % 7
-            next_run = (now + timedelta(days=days_ahead)).replace(
-                hour=0, minute=0, second=0, microsecond=0
-            )
+            next_run = now + timedelta(days=days_ahead)
+            next_run = next_run.replace(hour=0, minute=0, second=0, microsecond=0)
             if days_ahead == 0 and now.time() >= datetime.min.time():
+                # If today is the day but the time has passed, schedule for next week
                 next_run += timedelta(weeks=1)
-            seconds_until_next_run = (next_run - now).total_seconds()
-            logger.info(f"Task '{task_name}' scheduled to run at {next_run}.")
+            return next_run
+        elif task_type == "monthly":
+            # For monthly tasks, schedule on the specified day
+            day_of_month = schedule.get("day")
+            if day_of_month is None:
+                return None
             try:
-                await asyncio.wait_for(self.stop_event.wait(), timeout=seconds_until_next_run)
-                break  # Stop event was set
-            except asyncio.TimeoutError:
-                pass  # Timeout occurred, execute the task
-            try:
-                await func()
-                logger.info(
-                    f"Task '{task_name}' executed successfully. Next run at {next_run + timedelta(weeks=1)}."
-                )
-            except Exception:
-                logger.exception(f"Exception occurred in weekly task '{task_name}'.")
-        logger.info(f"Weekly task '{task_name}' stopped.")
-
-    async def _run_monthly(self, task):
-        """Run a custom task monthly on a specific day."""
-        day_of_month = task["day"]
-        func = task["func"]
-        task_name = func.__name__
-        logger.info(f"Starting monthly task '{task_name}' on day {day_of_month} of each month.")
-        while not self.stop_event.is_set():
-            now = datetime.now()
-            year = now.year
-            month = now.month
-
-            if now.day >= day_of_month:
-                # Move to the next month
-                month += 1
-                if month > 12:
-                    month = 1
-                    year += 1
-
-            try:
-                next_run = datetime(year, month, day_of_month)
+                # Try to create a date with the specified day
+                next_run = now.replace(day=day_of_month, hour=0, minute=0, second=0, microsecond=0)
+                if now.day > day_of_month or (now.day == day_of_month and now.time() >= datetime.min.time()):
+                    # If the day has passed this month, add one month
+                    next_run = self.add_months(next_run, 1)
             except ValueError:
-                # Handle invalid day (e.g., February 30)
-                last_day = (datetime(year, month + 1, 1) - timedelta(days=1)).day
-                next_run = datetime(year, month, last_day)
-                logger.warning(
-                    f"Adjusted day for task '{task_name}' to the last day of the month: {next_run.day}"
-                )
-
-            seconds_until_next_run = (next_run - now).total_seconds()
-            logger.info(f"Task '{task_name}' scheduled to run at {next_run}.")
-            try:
-                await asyncio.wait_for(self.stop_event.wait(), timeout=seconds_until_next_run)
-                break  # Stop event was set
-            except asyncio.TimeoutError:
-                pass  # Timeout occurred, execute the task
-            try:
-                await func()
-                logger.info(
-                    f"Task '{task_name}' executed successfully. Next run at {next_run + timedelta(days=30)}."
-                )
-            except Exception:
-                logger.exception(f"Exception occurred in monthly task '{task_name}'.")
-        logger.info(f"Monthly task '{task_name}' stopped.")
-
-
-    async def execute_action(self, action, task_name):
-        """Execute an action based on its description."""
-        action_type = action.get('type')
-        if action_type == 'api_call':
-            await self.handle_api_call(action, task_name)
-        elif action_type == 'db_update':
-            await self.handle_db_update(action, task_name)
-        elif action_type == 'api_call_db_update':
-            await self.handle_api_call_db_update(action, task_name)
+                # Handle cases where the day does not exist in the current month
+                # Find the last day of the current month
+                last_day = calendar.monthrange(now.year, now.month)[1]
+                if day_of_month > last_day:
+                    # Set to the last day of the month
+                    next_run = now.replace(day=last_day, hour=0, minute=0, second=0, microsecond=0)
+                    next_run = self.add_months(next_run, 1)
+                else:
+                    next_run = now.replace(day=day_of_month, hour=0, minute=0, second=0, microsecond=0)
+            return next_run
         else:
-            logger.error(f"Unknown action type '{action_type}' in task '{task_name}'.")
-
-    async def handle_api_call(self, action, task_name):
-        """Handle API call actions."""
-        url = action.get('url')
-        method = action.get('method', 'GET').upper()
-        params = action.get('params', {})
-        headers = action.get('headers', {})
-        data = action.get('data', {})
-
-        logger.info(f"Task '{task_name}': Making API call to {url} with method {method}.")
-
-        async with aiohttp.ClientSession() as session:
-            try:
-                async with session.request(method, url, params=params, headers=headers, json=data) as response:
-                    response_data = await response.json()
-                    logger.info(f"Task '{task_name}': Received response: {response_data}")
-                    # Process the response as needed
-            except Exception as e:
-                logger.exception(f"Task '{task_name}': API call failed.")
-
-    async def handle_db_update(self, action, task_name):
-        """Handle database update actions."""
-        # Database connection parameters
-        db_config = action.get('db_config', {})
-        query = action.get('query')
-        params = action.get('params', [])
-
-        if not query:
-            logger.error(f"Task '{task_name}': No query provided for DB update.")
-            return
-
-        logger.info(f"Task '{task_name}': Executing DB query.")
-
-        try:
-            pool = await aiomysql.create_pool(**db_config)
-            async with pool.acquire() as conn:
-                async with conn.cursor() as cur:
-                    await cur.execute(query, params)
-                    await conn.commit()
-                    logger.info(f"Task '{task_name}': DB update successful.")
-            pool.close()
-            await pool.wait_closed()
-        except Exception as e:
-            logger.exception(f"Task '{task_name}': DB update failed.")
-
-    async def handle_api_call_db_update(self, action, task_name):
-        """Handle actions that involve making an API GET request and updating the database with the results."""
-        url = action.get('url')
-        method = action.get('method', 'GET').upper()
-        params = action.get('params', {})
-        headers = action.get('headers', {})
-        db_config = action.get('db_config', {})
-        query = action.get('query')
-        query_params_mapping = action.get('query_params_mapping', [])
-
-        if not url or not query or not query_params_mapping:
-            logger.error(f"Task '{task_name}': Missing required parameters for 'api_call_db_update' action.")
-            return
-
-        logger.info(f"Task '{task_name}': Making API call to {url} and updating DB.")
-
-        async with aiohttp.ClientSession() as session:
-            try:
-                async with session.request(method, url, params=params, headers=headers) as response:
-                    response_data = await response.json()
-                    logger.debug(f"Task '{task_name}': Received response: {response_data}")
-
-                    # Build query parameters based on the mapping
-                    query_params = []
-                    for key in query_params_mapping:
-                        value = response_data
-                        # Support nested keys using dot notation
-                        for subkey in key.split('.'):
-                            if isinstance(value, dict):
-                                value = value.get(subkey)
-                            else:
-                                value = None
-                                break
-                        query_params.append(value)
-
-                    # Now execute the DB update
-                    await self.handle_db_update({
-                        'db_config': db_config,
-                        'query': query,
-                        'params': query_params
-                    }, task_name)
-            except Exception as e:
-                logger.exception(f"Task '{task_name}': API call or DB update failed.")
-
-
-
+            # Unknown task type
+            return None

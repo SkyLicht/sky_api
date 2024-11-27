@@ -1,15 +1,18 @@
 import json
 
-from websockets.version import commit
+from requests import session
 
-from core.data.dao.hbh_dao import WorkPlanDAO
+from core.data.dao.hbh_dao import WorkPlanDAO, HbhDAO
+from core.db.database import DBConnection
 from core.db.util import scoped_execute, http_handle_error
+from core.features.hour_by_hour.hbh_service import HbhService
 
 
 class HourByHourRepository:
 
     def __init__(self, db):
         self.dao = WorkPlanDAO(db)
+        self.hbh_dao = HbhDAO(db)
 
     async def get_eff_by_week(self, data: dict):
 
@@ -82,7 +85,7 @@ class HourByHourRepository:
 
                 _result.append({
                     "date": record['date'],
-                    #"lines": _temp,
+                    # "lines": _temp,
                     "gen_eff": {
                         "third_shift": {
                             "smt": [{"line": record['line'], "eff": record['third_shift']['eff_smt']} for record in
@@ -107,7 +110,63 @@ class HourByHourRepository:
                         }
                     }
                 })
-                #print(json.dumps(_result, indent=4))
+                # print(json.dumps(_result, indent=4))
 
             return _result
         return []
+
+
+    async def update_previews_day(self):
+        service = HbhService(dao=self.hbh_dao)
+        return service.update_previews_day()
+
+    async def update_range_of_dates(self, start_date: str, end_date: str):
+        service = HbhService(dao=self.hbh_dao)
+        _responds = await service.update_hours_form_range_of_dates(start_date, end_date)
+        return _responds
+
+
+if __name__ == '__main__':
+    session = DBConnection().get_session()
+    dao = WorkPlanDAO(session)
+
+    data = {
+        "year": 2024,
+        "week": 47,
+        "dates": [
+            {
+                "date": "2024-11-22",
+                "lines": [
+                    {
+                        "name": "J09",
+                        "output": "smt",
+                        "shift": "first"
+                    }, {
+                        "name": "J09",
+                        "output": "smt",
+                        "shift": "first"
+                    }
+                ]
+            },
+            {
+                "date": "2024-11-23",
+                "lines": [
+                    {
+                        "name": "J09",
+                        "output": "smt",
+                        "shift": "first"
+                    }, {
+                        "name": "J09",
+                        "output": "smt",
+                        "shift": "first"
+                    }
+                ]
+            }
+        ]
+    }
+    result = scoped_execute(
+        session_factory=session,
+        query_function=lambda _session: dao.get_work_hour_by_week(week=data.get('week')),
+        on_complete=lambda query_result: print(f'data fetched'),
+        handle_error=http_handle_error
+    )

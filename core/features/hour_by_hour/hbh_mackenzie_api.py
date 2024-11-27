@@ -1,12 +1,16 @@
 import logging
 import re
 from collections import OrderedDict, defaultdict
+from datetime import datetime
 from enum import Enum
 from typing import Dict, Any
 
 import requests
+from watchfiles import awatch
 
 from core.data.models.hour_by_hour_model import HourByHourModel
+from core.features.util.date_util import transform_date_to_mackenzie
+
 logger = logging.getLogger(__name__)
 
 class TransType(Enum):
@@ -16,69 +20,7 @@ class TransType(Enum):
 
 
 # http://10.13.89.96:83/home/reporte?entrada=2024112100&salida=202411210100&transtype=INPUT
-# e.g. respond
-# [
-#     {
-#         "LINE": "00",
-#         "HOURS": "0000",
-#         "QTY": 416,
-#         "NEXTDAY": 0
-#     },
-#     {
-#         "LINE": "00",
-#         "HOURS": "0100",
-#         "QTY": 381,
-#         "NEXTDAY": 0
-#     },
-#     {
-#         "LINE": "SMTJ01A",
-#         "HOURS": "0000",
-#         "QTY": 99,
-#         "NEXTDAY": 0
-#     },
-#     {
-#         "LINE": "SMTJ01A",
-#         "HOURS": "0100",
-#         "QTY": 99,
-#         "NEXTDAY": 0
-#     },
-#     {
-#         "LINE": "SMTJ02A",
-#         "HOURS": "0000",
-#         "QTY": 148,
-#         "NEXTDAY": 0
-#     },
-#     {
-#         "LINE": "SMTJ02A",
-#         "HOURS": "0100",
-#         "QTY": 155,
-#         "NEXTDAY": 0
-#     },
-#     {
-#         "LINE": "SMTJ06",
-#         "HOURS": "0000",
-#         "QTY": 120,
-#         "NEXTDAY": 0
-#     },
-#     {
-#         "LINE": "SMTJ06",
-#         "HOURS": "0100",
-#         "QTY": 77,
-#         "NEXTDAY": 0
-#     },
-#     {
-#         "LINE": "SMTJ09A",
-#         "HOURS": "0000",
-#         "QTY": 49,
-#         "NEXTDAY": 0
-#     },
-#     {
-#         "LINE": "SMTJ09A",
-#         "HOURS": "0100",
-#         "QTY": 50,
-#         "NEXTDAY": 0
-#     }
-# ]
+
 
 def url(
         start_day: str,
@@ -109,7 +51,7 @@ def fetch_data(
         trans_type=trans_type
     )
     logger.debug(f"Fetching data from URL: {_url}")
-    print(f"Fetching data from URL: {_url}")
+    # print(f"Fetching data from URL: {_url}")
     try:
         response = requests.get(_url)
         response.raise_for_status()
@@ -151,8 +93,13 @@ def get_hour_by_hour(day: str, hour: str) -> Dict[str, Any]:
 def get_all_day(day: str) -> Dict[str, Any]:
     return get_transactions(day=day, start_hour="00", end_hour="23")
 
-def api_respond_to_model(data, date:str):
-    _data = defaultdict(list)
+
+async def api_respond_to_model(data, date: str):
+    if not data:
+        return None
+    # Dictionary to store unique records with keys as "line-hour"
+    unique_records = {}
+
     data_fields = ['smt_in', 'smt_out', 'packing']
 
     for field in data_fields:
@@ -165,15 +112,16 @@ def api_respond_to_model(data, date:str):
             hour = item.get('HOURS', '')[:2]
             qty = item.get('QTY', 0)
 
-            records = _data[line]
-            # Find existing record for this line and hour
-            existing_record = next((record for record in records if record.hour == hour), None)
-            if existing_record:
-                # Update the appropriate field
-                setattr(existing_record, field, qty)
+            # Create a unique key for each "line-hour" combination
+            key = f"{line}-{hour}"
+
+            # Check if the record already exists
+            if key in unique_records:
+                # Update the existing record
+                setattr(unique_records[key], field, qty)
             else:
                 # Create a new record with default values
-                new_record = HourByHourModel(
+                unique_records[key] = HourByHourModel(
                     date=date,
                     line=line,
                     hour=hour,
@@ -181,37 +129,47 @@ def api_respond_to_model(data, date:str):
                     smt_out=0,
                     packing=0
                 )
-                setattr(new_record, field, qty)
-                records.append(new_record)
+                # Set the appropriate field
+                setattr(unique_records[key], field, qty)
 
-    # Sort the _data dictionary by line keys
-    sorted_data = OrderedDict(sorted(_data.items()))
-    # Sort the records within each line by hour
-    for records in sorted_data.values():
-        records.sort(key=lambda record: record.hour)
+    # Sort records by line and hour
 
+    sorted_records = OrderedDict(sorted(unique_records.items()))
 
-        # **Print the result with formatting**
-    # for line, records in sorted_data.items():
-    #     print(f"\nLine: {line}")
-    #     print(f"{'Date':<12} {'Hour':<6} {'SMT In':<8} {'SMT Out':<8} {'Packing':<8}")
-    #     print("-" * 50)
-    #     for record in records:
-    #         print(f"{record.date:<12} {record.hour:<6} {record.smt_in:<8} {record.smt_out:<8} {record.packing:<8}")
+    # Print the result with formatting
+    #print_records(sorted_records.values())
 
-
-    return sorted_data
+    return sorted_records
 
 
 
+def print_records(records):
+    """
+    Utility function to print formatted records.
+    """
+    current_line = None
+    for record in records:
+        if record.line != current_line:
+            if current_line is not None:
+                print()  # New line between lines
+            current_line = record.line
+            print(f"Line: {record.line}")
+            print(f"{'Date':<12} {'Hour':<6} {'SMT In':<8} {'SMT Out':<8} {'Packing':<8}")
+            print("-" * 50)
+
+        print(f"{record.date:<12} {record.hour:<6} {record.smt_in:<8} {record.smt_out:<8} {record.packing:<8}")
 
 
 
-# if __name__ == "__main__":
-#     # get_all_day("20241121")
-#     date = "2024-11-21"
-#     # api_respond_to_model(get_all_day(transform_date_to_mackenzie(date)),date)
-#     api_respond_to_model(get_hour_by_hour(transform_date_to_mackenzie(date), "01"),date)
-#
-#     # print(get_all_day("20241120"))
-#     pass
+if __name__ == "__main__":
+    get_current_day = datetime.now().strftime("%Y-%m-%d")
+    get_current_hour_in_string = datetime.now().strftime("%H")
+    responds =  api_respond_to_model(
+        get_hour_by_hour(transform_date_to_mackenzie(get_current_day), get_current_hour_in_string),
+        get_current_day,
+    )
+
+    for keys, records in responds.items():
+        print(records)
+
+    pass
