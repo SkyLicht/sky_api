@@ -1,12 +1,14 @@
-from sqlalchemy import Column, Integer, String, Float, JSON, ForeignKey, UniqueConstraint
+from datetime import datetime
+
+from sqlalchemy import Column, Integer, String, Float, JSON, ForeignKey, UniqueConstraint, DateTime
 from sqlalchemy.orm import relationship
 
 from core.db.database import Base
-from core.db.util import generate_short_uuid
+from core.db.util import generate_16_uuid
 
 class PlatformSchema(Base):
     __tablename__ = 'platforms'
-    id = Column(String(16), primary_key=True, default=lambda: str(generate_short_uuid()), unique=True, nullable=False)
+    id = Column(String(16), primary_key=True, default=lambda: str(generate_16_uuid()), unique=True, nullable=False)
     sku = Column(String(5), nullable=False)
     name = Column(String(50), nullable=False)
     uph = Column(Integer, nullable=False)
@@ -37,20 +39,29 @@ class PlatformSchema(Base):
 
 class WorkPlanSchema(Base):
     __tablename__ = 'work_plans'
-    id = Column(String(16), primary_key=True, default=lambda: str(generate_short_uuid()), unique=True, nullable=False)
+    id = Column(String(16), primary_key=True, default=lambda: str(generate_16_uuid()), unique=True, nullable=False)
+    factory = Column(String(10), nullable=False)
     line = Column(String(3), nullable=False)
     date = Column(String(10), nullable=False)
     uph_i = Column(Integer, nullable=False)
     target_oee = Column(Float, nullable=False)
     planned_hours = Column(Float, nullable=False)
     week = Column(Integer, nullable=False)
-    state = Column(Integer, nullable=False)
+    state = Column(String(10), nullable=False)
+
 
     # Foreign key to Platform
     platform_id = Column(String(16), ForeignKey('platforms.id'), nullable=False)
 
+
+    #created date
+    created_at = Column(DateTime, default=datetime.now)
+    updated_at = Column(DateTime, default=datetime.now, onupdate=datetime.now)
+
     # Relationship to Platform
     platforms = relationship("PlatformSchema", back_populates="work_plans")
+
+
 
     def to_dict(self):
         return {
@@ -83,7 +94,7 @@ class HourByHourSchema(Base):
     )
 
 
-    id = Column(String(16), primary_key=True, default=lambda: str(generate_short_uuid()), unique=True, nullable=False)
+    id = Column(String(16), primary_key=True, default=lambda: str(generate_16_uuid()), unique=True, nullable=False)
     factory = Column(String(10), nullable=False)
     line = Column(String(3), nullable=False)
     date = Column(String(10), nullable=False)

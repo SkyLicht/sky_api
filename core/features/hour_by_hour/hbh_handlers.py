@@ -146,6 +146,7 @@ def work_plan_to_db_from_json(file_path: str):
 
     data = [WorkPlanSchema(
         date=record.get('date'),
+        factory="A6",
         line=record.get('line'),
         planned_hours=record.get('planed_hours'),
         platform_id=record.get('platform_id'),

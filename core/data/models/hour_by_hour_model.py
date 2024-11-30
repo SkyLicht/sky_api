@@ -1,6 +1,6 @@
 from pydantic import BaseModel
 
-from core.data.schemas.hour_by_hour_schema import HourByHourSchema
+from core.data.schemas.hour_by_hour_schema import HourByHourSchema, WorkPlanSchema
 
 
 class HourByHourModel(BaseModel):
@@ -38,6 +38,8 @@ class HourByHourModel(BaseModel):
         return str(self.to_dict())
 
 
+
+
 class PlatformModel(BaseModel):
     id: str = None
     sku: str
@@ -62,27 +64,44 @@ class PlatformModel(BaseModel):
 
 class WorkPlanModel(BaseModel):
     id: str = None
+    factory: str
     line: str
     date: str
     uph_i: int
-    target_ooe: float
+    target_oee: float
     planned_hours: float
     week: int
-    state: int
+    state: str
     platform_id: str
 
     def to_dict(self):
         return {
             "id": self.id,
+            "factory": self.factory,
             "line": self.line,
             "date": self.date,
             "uph_i": self.uph_i,
-            "target_ooe": self.target_ooe,
+            "target_ooe": self.target_oee,
             "planned_hours": self.planned_hours,
             "week": self.week,
             "state": self.state,
             "platform_id": self.platform_id
         }
 
+    def to_schema(self, factory:str)-> WorkPlanSchema:
+        return WorkPlanSchema(
+            line=self.line,
+            factory=factory,
+            date=self.date,
+            uph_i=self.uph_i,
+            target_oee=self.target_oee,
+            planned_hours=self.planned_hours,
+            week=self.week,
+            state=self.state,
+            platform_id=self.platform_id
+        )
+
     def __str__(self):
         return str(self.to_dict())
+
+

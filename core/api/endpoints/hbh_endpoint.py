@@ -1,8 +1,7 @@
-import re
-
 from fastapi import APIRouter, Depends, HTTPException
 
-from core.api.fat_util import validate_date_range
+from core.api.fast_util import validate_date_range
+from core.data.models.request_model import RequestWeekEffModel
 from core.data.repositories.hbhRepo import HourByHourRepository
 from core.db.database import get_scoped_db_session
 
@@ -30,7 +29,19 @@ async def read_by_week(
     except Exception as e:
         raise HTTPException(status_code=400, detail=str(e))
 
+@router.post("/get_eff_by_week")
+async def get_eff_by_week(
+        body: RequestWeekEffModel,
+        repo: HourByHourRepository = Depends(get_hbh_repository),
 
+):
+
+    try:
+        if body is None:
+            raise HTTPException(status_code=400, detail=str("No data provided"))
+        return await repo.get_kpi_by_week(body)
+    except Exception as e:
+        raise HTTPException(status_code=400, detail=str(e))
 @router.get("/test")
 async def test():
     return {"test": "test"}

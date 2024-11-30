@@ -6,7 +6,7 @@ from fastapi.security import OAuth2PasswordRequestForm
 from sqlalchemy.orm import Session
 from starlette.middleware.cors import CORSMiddleware
 
-from core.api.endpoints import user_endpoint, hbh_endpoint
+from core.api.endpoints import user_endpoint, hbh_endpoint, work_plan_endpoint
 from core.data.models.token_model import TokenModel
 from core.security import auth
 from core.security.auth import authenticate_user, ACCESS_TOKEN_EXPIRE_MINUTES, create_access_token
@@ -24,6 +24,8 @@ app.add_middleware(
 # Include endpoints
 app.include_router(user_endpoint.router)
 app.include_router(hbh_endpoint.router)
+
+app.include_router(work_plan_endpoint.router)
 
 @app.post("/token", response_model=TokenModel)
 async def login_for_access_token(

@@ -7,7 +7,7 @@ from enum import Enum
 from fastapi import HTTPException
 from sqlalchemy.exc import SQLAlchemyError
 
-def generate_short_uuid():
+def generate_16_uuid():
     # Generate a UUID and remove the hyphens
     uuid_str = uuid.uuid4()
 

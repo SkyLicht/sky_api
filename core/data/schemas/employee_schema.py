@@ -4,7 +4,7 @@ from sqlalchemy.orm import relationship
 
 from sqlalchemy.schema import CheckConstraint
 from core.db.database import Base
-from core.db.util import generate_short_uuid
+from core.db.util import generate_16_uuid
 
 
 
@@ -16,7 +16,7 @@ class EmployeeSchema(Base):
         CheckConstraint("shift IN ('first', 'second', 'third')", name='valid_shift'),
     )
 
-    id = Column(String(16), primary_key=True, default=lambda: str(generate_short_uuid()), unique=True, nullable=False)
+    id = Column(String(16), primary_key=True, default=lambda: str(generate_16_uuid()), unique=True, nullable=False)
     clock_id = Column(String, unique=True, nullable=False)  # Clock identifier
     name = Column(String, nullable=False)
     last_name = Column(String, nullable=False)
@@ -45,7 +45,7 @@ class EmployeeSchema(Base):
 class DepartmentSchema(Base):
     __tablename__ = 'departments'
 
-    id = Column(String(16), primary_key=True, default=lambda: str(generate_short_uuid()), unique=True, nullable=False)
+    id = Column(String(16), primary_key=True, default=lambda: str(generate_16_uuid()), unique=True, nullable=False)
     name = Column(String, unique=True, nullable=False)
     factory = Column(String(10), nullable=False)
 
@@ -56,7 +56,7 @@ class DepartmentSchema(Base):
 class PositionSchema(Base):
     __tablename__ = 'positions'
 
-    id = Column(String(16), primary_key=True, default=lambda: str(generate_short_uuid()), unique=True, nullable=False)
+    id = Column(String(16), primary_key=True, default=lambda: str(generate_16_uuid()), unique=True, nullable=False)
     name = Column(String, unique=True, nullable=False)
 
     def __repr__(self):
@@ -65,7 +65,7 @@ class PositionSchema(Base):
 class LineSchema(Base):
     __tablename__ = 'lines'
 
-    id = Column(String(16), primary_key=True, default=lambda: str(generate_short_uuid()), unique=True, nullable=False)
+    id = Column(String(16), primary_key=True, default=lambda: str(generate_16_uuid()), unique=True, nullable=False)
     name = Column(String, unique=True, nullable=False)
     is_active = Column(Boolean, nullable=False, default=True)
     factory = Column(String(10), nullable=False)
@@ -82,7 +82,7 @@ class SectionSchema(Base):
         UniqueConstraint('name', 'factory', name='unique_name_factory'),
     )
 
-    id = Column(String(16), primary_key=True, default=lambda: str(generate_short_uuid()), unique=True, nullable=False)
+    id = Column(String(16), primary_key=True, default=lambda: str(generate_16_uuid()), unique=True, nullable=False)
     name = Column(String, nullable=False)
     nickname = Column(String(10), nullable=False)
     factory = Column(String(10), nullable=False)
@@ -96,7 +96,7 @@ class SectionSchema(Base):
 class AssignmentSchema(Base):
     __tablename__ = 'assignments'
 
-    id = Column(String(16), primary_key=True, default=lambda: str(generate_short_uuid()), unique=True, nullable=False)
+    id = Column(String(16), primary_key=True, default=lambda: str(generate_16_uuid()), unique=True, nullable=False)
     name = Column(String, unique=True, nullable=False)
     description = Column(String, nullable=True)
 
@@ -113,7 +113,7 @@ class WorkRecordSchema(Base):
         CheckConstraint("shift IN ('first', 'second', 'third')", name='valid_shift'),
     )
 
-    id = Column(String(16), primary_key=True, default=lambda: str(generate_short_uuid()), unique=True, nullable=False)
+    id = Column(String(16), primary_key=True, default=lambda: str(generate_16_uuid()), unique=True, nullable=False)
     shift = Column(String, nullable=False, default='first', server_default='first')
     date = Column(Date, nullable=False)
     week = Column(Integer, nullable=False)

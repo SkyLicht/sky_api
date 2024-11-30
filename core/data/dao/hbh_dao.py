@@ -6,7 +6,7 @@ from sqlalchemy import and_
 from core.data.handlers.translator import translate_hour_by_hour_schema_list_to_model_list
 from core.data.models.hour_by_hour_model import HourByHourModel, PlatformModel, WorkPlanModel
 from core.data.schemas.hour_by_hour_schema import HourByHourSchema, PlatformSchema, WorkPlanSchema
-from core.db.util import QueryResult
+from core.db.util import QueryResult, QueryResultError, QueryResultErrorType
 
 
 class HbhDAO:
@@ -180,9 +180,10 @@ class WorkPlanDAO:
     def get_work_hour_by_week(self, week: int = None, date: str = None, date_range: tuple = None, dates: list = None):
         """
         Join PlatformSchema, WorkPlanSchema, and HourByHourSchema, filtered by week.
-
-        :param session: SQLAlchemy session for database interaction.
         :param week: The week number to filter by.
+        :param date: The date to filter by.
+        :param date_range: The date range to filter by.
+        :param dates: A list of dates to filter by.
         :return: List of joined records as dictionaries.
         """
         query = (
@@ -230,12 +231,7 @@ class WorkPlanDAO:
                     "hour_by_hour": []
                 }
 
-            by_work_plan[work_plan.date][work_plan.line]['hour_by_hour'].append({
-                "hour": hour.hour,
-                "smt_in": hour.smt_in,
-                "smt_out": hour.smt_out,
-                "packing": hour.packing
-            })
+            by_work_plan[work_plan.date][work_plan.line]['hour_by_hour'].append(hour.to_dict())
 
         # sort hour_by_hour records by hour
         for date, lines in by_work_plan.items():
@@ -244,3 +240,72 @@ class WorkPlanDAO:
 
         # print(json.dumps(by_work_plan, indent=4))
         return QueryResult(data=by_work_plan)
+
+    def query_create_record(self, record: WorkPlanSchema) -> QueryResult:
+
+        find_platform = self.session.query(PlatformSchema).filter(
+            PlatformSchema.id == record.platform_id
+        ).first()
+
+        if find_platform is None:
+            return QueryResult(error=QueryResultError(message=f"Platform with id {record.platform_id} not found",
+                                                      error_type=QueryResultErrorType.DATABASE_ERROR, tip=""))
+
+        find_work_plan = self.session.query(WorkPlanSchema).filter(
+            WorkPlanSchema.date == record.date,
+            WorkPlanSchema.line == record.line,
+            WorkPlanSchema.factory == record.factory
+        ).first()
+
+        if find_work_plan:
+            find_work_plan.uph_i = record.uph_i
+            find_work_plan.target_oee = record.target_oee
+            find_work_plan.planned_hours = record.planned_hours
+            find_work_plan.week = record.week
+            find_work_plan.state = record.state
+            self.session.commit()
+            return QueryResult(data=find_work_plan)
+        else:
+            self.session.add(record)
+            self.session.commit()
+            return QueryResult(data=record)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
