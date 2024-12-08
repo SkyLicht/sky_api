@@ -2,6 +2,11 @@ import configparser
 import argparse
 import uvicorn
 
+from core.logger.logger import Logger
+
+# Initialize the logger
+app_logger = Logger.get_logger(name="FastApi", log_file="config/logs/fastApi.log")
+
 def start_server():
     _host = None
     _port = None
@@ -53,12 +58,22 @@ def start_server():
         }
         return
 
-    uvicorn.run(
-        "core.api.main:app",
-        host=_host,
-        port=_port,
-        reload=_reload  # Remove reload=True in production or set in config.ini
-    )
+
+
+    try:
+        app_logger.info(f"Starting server on {_host}:{_port}")
+        uvicorn.run(
+            "core.api.main:app",
+            host=_host,
+            port=_port,
+            reload=_reload  # Remove reload=True in production or set in config.ini
+        )
+        app_logger.info("Server ended")
+    except Exception as e:
+        app_logger.error(f"Error starting server: {e}")
+
+
+
 
 if __name__ == "__main__":
     start_server()

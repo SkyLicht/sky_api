@@ -7,9 +7,10 @@ from core.data.schemas.user_schema import UserSchema
 def translate_hour_by_hour_schema_to_model(schema) -> HourByHourModel:
     return HourByHourModel(
         id=schema.id,
+        factory=schema.factory,
         line=schema.line,
         date=schema.date,
-        hour=str(schema.hour),
+        hour=schema.hour,
         smt_in=schema.smt_in,
         smt_out=schema.smt_out,
         packing=schema.packing
@@ -19,8 +20,9 @@ def translate_hour_by_hour_schema_to_model(schema) -> HourByHourModel:
 def translate_hour_by_hour_model_to_schema(model) -> HourByHourSchema:
     return HourByHourSchema(
         line=model.line,
+        factory=model.factory,
         date=model.date,
-        hour=str(model.hour),
+        hour=model.hour,
         smt_in=model.smt_in,
         smt_out=model.smt_out,
         packing=model.packing)

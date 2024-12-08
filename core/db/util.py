@@ -155,7 +155,6 @@ def scoped_execute(
     try:
         # Execute the query
         query_result = query_function(session, *args, **kwargs)
-
         # Check for query errors
         if hasattr(query_result, 'data') and query_result.data is None:
             if handle_error:
@@ -169,14 +168,17 @@ def scoped_execute(
         return query_result  # Return result if no on_complete
 
     except SQLAlchemyError as e:
-        # Rollback transaction on error
-        session.rollback()
+
+
 
         # Invoke handle_error if provided
         if handle_error:
             handle_error(e)
         else:
             raise e  # Re-raise the exception if no error handler is specified
+
+        # Rollback transaction on error
+        session.rollback()
 
     finally:
         # Invoke on_finally if provided
@@ -193,7 +195,7 @@ def scoped_execute(
 def http_handle_error(query_error: QueryResultError | str ):
     """Handle errors by raising an HTTPException."""
 
-    print(f"Query error: {query_error}")
+    #print(f"Query error: {query_error}")
     if isinstance(query_error, QueryResultError):
         error_map = {
             QueryResultErrorType.NOT_FOUND: (404, query_error.message),
@@ -207,3 +209,66 @@ def http_handle_error(query_error: QueryResultError | str ):
         raise HTTPException(status_code=status_code, detail=str(detail))
 
     raise HTTPException(status_code=500, detail=str(query_error))
+
+
+
+
+from sqlalchemy.ext.asyncio import AsyncSession
+from sqlalchemy.exc import SQLAlchemyError
+
+async def scoped_execute_async(
+        session_factory,
+        query_function,
+        *args,
+        on_complete=None,
+        handle_http_error=None,
+        on_finally=None,
+        **kwargs
+):
+    """
+    Asynchronously execute a query in a database session with scoped error and resource handling.
+
+    Args:
+        session_factory: A callable or object providing an async database session (e.g., AsyncSession).
+        query_function: Coroutine that executes the query, taking the session as the first argument.
+        on_complete: Callback for successful execution, receives the result.
+        handle_http_error: Callback for handling errors, receives the error object.
+        on_finally: Callback for cleanup operations, called in the finally block.
+        *args, **kwargs: Additional arguments passed to the query function.
+
+    Returns:
+        The result of the query function, if successful.
+    """
+    # Create or retrieve a session
+    session = session_factory
+
+    try:
+        # Execute the query function and await the result
+        query_result = await query_function(session, *args, **kwargs)
+
+        # Invoke on_complete if provided
+        if on_complete:
+            on_complete(query_result)
+
+        return query_result  # Return result if no on_complete
+
+    except SQLAlchemyError as e:
+        # Invoke handle_error if provided
+        if handle_http_error:
+            handle_http_error(e)
+        else:
+            raise e  # Re-raise the exception if no error handler is specified
+
+        # Rollback transaction on error
+        session.rollback()
+
+    finally:
+        # Invoke on_finally if provided
+        if on_finally:
+            on_finally()
+
+        # Cleanup session (remove for ScopedSession, close otherwise)
+        if hasattr(session, "remove"):  # ScopedSession
+            session.remove()
+        else:  # AsyncSession
+            session.close()

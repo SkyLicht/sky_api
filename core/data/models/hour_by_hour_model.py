@@ -1,16 +1,28 @@
+from datetime import datetime
+
 from pydantic import BaseModel
 
 from core.data.schemas.hour_by_hour_schema import HourByHourSchema, WorkPlanSchema
 
 
 class HourByHourModel(BaseModel):
+    """
+    Model for the Hour by Hour data.
+    date format: YYYY-MM-DD
+    """
+
     id: str = None
+    factory: str
     line: str
     date: str
     hour: int
     smt_in: int
     smt_out: int
     packing: int
+
+    @property
+    def week(self):
+        return datetime.strptime(self.date, "%Y-%m-%d").isocalendar()[1]
 
     def to_schema(self, factory:str)-> HourByHourSchema:
         return HourByHourSchema(
@@ -36,8 +48,6 @@ class HourByHourModel(BaseModel):
 
     def __str__(self):
         return str(self.to_dict())
-
-
 
 
 class PlatformModel(BaseModel):

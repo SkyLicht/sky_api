@@ -55,8 +55,8 @@ class WorkPlanSchema(Base):
 
 
     #created date
-    created_at = Column(DateTime, default=datetime.now)
-    updated_at = Column(DateTime, default=datetime.now, onupdate=datetime.now)
+    # created_at = Column(DateTime, default=datetime.now)
+    # updated_at = Column(DateTime, default=datetime.now, onupdate=datetime.now)
 
     # Relationship to Platform
     platforms = relationship("PlatformSchema", back_populates="work_plans")

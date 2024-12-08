@@ -95,6 +95,15 @@ class HbhDAO:
             self.session.close()
             print(f"{Fore.GREEN}Session close{Style.RESET_ALL}")
 
+    # To use in api call
+    # -------------------------------------------------------------------------------
+
+    async def fetch_get_all_record_by_date(self, date: str):
+        return self.session.query(HourByHourSchema).filter(HourByHourSchema.date == date).all()
+
+    async def fetch_get_all_record_by_date_range(self, start_date: str, end_date: str) -> list[HourByHourSchema]:
+        return self.session.query(HourByHourSchema).filter(HourByHourSchema.date.between(start_date, end_date)).all()
+
 
 class PlatformDAO:
     def __init__(self, connection):
@@ -186,6 +195,8 @@ class WorkPlanDAO:
         :param dates: A list of dates to filter by.
         :return: List of joined records as dictionaries.
         """
+
+
         query = (
             self.session.query(
                 WorkPlanSchema,
@@ -238,7 +249,6 @@ class WorkPlanDAO:
             for line, records in lines.items():
                 records['hour_by_hour'] = sorted(records['hour_by_hour'], key=lambda x: x['hour'])
 
-        # print(json.dumps(by_work_plan, indent=4))
         return QueryResult(data=by_work_plan)
 
     def query_create_record(self, record: WorkPlanSchema) -> QueryResult:
@@ -271,6 +281,18 @@ class WorkPlanDAO:
             return QueryResult(data=record)
 
 
+
+    # To use in api call
+    # -------------------------------------------------------------------------------
+    def query_get_hour_by_hour_by_date(self, date: str):
+        result = self.session.query(HourByHourSchema).filter(HourByHourSchema.date == date).all()
+
+
+    def query_get_hour_by_hour_by_week(self, week: int):
+        pass
+
+    def query_get_hour_by_hour_by_date_range(self, start_date: str, end_date: str):
+        pass
 
 
 

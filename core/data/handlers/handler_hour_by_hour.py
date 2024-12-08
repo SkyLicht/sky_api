@@ -116,17 +116,20 @@ def handle_weekly_kpi(request_body: RequestWeekEffModel, data) -> dict:
         },
 
     }
-    for records in request_body.dates:
-        _day = data.get(records.day, None)
-        if _day is None:
-            continue
-        _line_and_eff = []
-        for line in records.lines:
 
-            _line = _day.get(line.name, None)
-            if _line is None:
+    try:
+
+        for records in request_body.dates:
+            _day = data.get(records.day, None)
+            if _day is None:
                 continue
-            try:
+            _line_and_eff = []
+            for line in records.lines:
+
+                _line = _day.get(line.name, None)
+                if _line is None:
+                         continue
+
                 _total = handle_total_output_by_shift_and_output(
                     hbh=handle_normalized_hbh([HourByHourModel(**record) for record in _line['hour_by_hour']]),
                     output=OutputType.from_string(line.output),
@@ -157,25 +160,32 @@ def handle_weekly_kpi(request_body: RequestWeekEffModel, data) -> dict:
                     "utilization": round(kpi.get('utilization') * 100, 2)
 
                 })
-            except ValueError as e:
-                print(e)
 
-        _week_summary['days'].append({
-            "id": generate_custom_id(),
-            "day": records.day,
-            "lines": _line_and_eff,
-            "summary": {
-                "efficiency": round(sum([line['efficiency'] for line in _line_and_eff]) / len(_line_and_eff), 2),
-                "oee": round(sum([line['oee'] for line in _line_and_eff]) / len(_line_and_eff), 2),
-                "utilization": round(sum([line['utilization'] for line in _line_and_eff]) / len(_line_and_eff), 2)
-            }
-        })
+            if len(_line_and_eff) == 0:
+                continue
 
-    _week_summary['week_summary']['efficiency'] = round(
-        sum([day['summary']['efficiency'] for day in _week_summary['days']]) / len(_week_summary['days']), 2)
-    _week_summary['week_summary']['oee'] = round(
-        sum([day['summary']['oee'] for day in _week_summary['days']]) / len(_week_summary['days']), 2)
-    _week_summary['week_summary']['utilization'] = round(
-        sum([day['summary']['utilization'] for day in _week_summary['days']]) / len(_week_summary['days']), 2)
+
+            _week_summary['days'].append({
+                "id": generate_custom_id(),
+                "day": records.day,
+                "lines": _line_and_eff,
+                "summary": {
+                    "efficiency": round(sum([line['efficiency'] for line in _line_and_eff]) / len(_line_and_eff), 2),
+                    "oee": round(sum([line['oee'] for line in _line_and_eff]) / len(_line_and_eff), 2),
+                    "utilization": round(sum([line['utilization'] for line in _line_and_eff]) / len(_line_and_eff), 2)
+                }
+            })
+
+        _week_summary['week_summary']['efficiency'] = round(
+            sum([day['summary']['efficiency'] for day in _week_summary['days']]) / len(_week_summary['days']), 2)
+        _week_summary['week_summary']['oee'] = round(
+            sum([day['summary']['oee'] for day in _week_summary['days']]) / len(_week_summary['days']), 2)
+        _week_summary['week_summary']['utilization'] = round(
+            sum([day['summary']['utilization'] for day in _week_summary['days']]) / len(_week_summary['days']), 2)
+
+    except Exception as e:
+
+        print(e)
+
 
     return _week_summary
