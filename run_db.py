@@ -1,14 +1,12 @@
 import argparse
 from sqlite3 import IntegrityError
 
-from requests import session
 
 from core.data.dao.employee_dao import LineDAO, SectionDAO, AssignmentDAO, EmployeeDAO, PositionDAO, DepartmentDAO
 from core.data.schemas.defaults_schema import sections_schemas, return_assignments, positions_schemas, \
     departments_schemas
 from core.data.schemas.employee_schema import LineSchema, EmployeeSchema, SectionSchema, AssignmentSchema, \
     WorkRecordSchema
-from core.data.schemas.hour_by_hour_schema import HourByHourSchema, WorkPlanSchema, PlatformSchema
 from core.data.schemas.user_schema import UserSchema, RoleSchema, RouteSchema, PermissionSchema
 from core.data.types import SectionNickname
 from core.db.database import DBConnection
@@ -19,7 +17,7 @@ from core.features.hour_by_hour.hbh_handlers import platform_to_db_from_json, wo
 from core.security.auth import get_password_hash
 
 from core.data.schemas.hour_by_hour_schema import HourByHourSchema, WorkPlanSchema, PlatformSchema
-
+from core.data.schemas.cycle_time_schema import CycleTimeSchema
 
 def create_tables():
     # Create tables
@@ -35,6 +33,7 @@ def create_tables():
     DBConnection().create_table(RoleSchema)
     DBConnection().create_table(RouteSchema)
     DBConnection().create_table(PermissionSchema)
+    DBConnection().create_table(CycleTimeSchema)
     print('Database initialized')
 
 

@@ -1,22 +1,64 @@
+from datetime import datetime
+
 from pydantic import BaseModel
 
 from core.data.models.employee_model import LineModel
 from core.data.models.hour_by_hour_model import PlatformModel
+from core.data.schemas.cycle_time_schema import CycleTimeSchema
 
 
-class CycleModel(BaseModel):
+class CycleTimeModel(BaseModel):
     type: str
     start: float
     end: float
     time: float
-    date: str
+    created: str
+
+    def to_json(self):
+        return {
+            'type': self.type,
+            'start': self.start,
+            'end': self.end,
+            'time': self.time,
+            'create': self.created
+        }
 
 class CycleTimeInputModel(BaseModel):
 
     id: str
+    str_date: str
+    week: int
     line: LineModel
     platform: PlatformModel
-    cycles: list[CycleModel]
+    cycles: list[CycleTimeModel]
+
+    created_at: datetime
+    updated_at: datetime
+
+
+    @staticmethod
+    def cycles_to_json(cycles):
+        return [cycle.to_json() for cycle in cycles]
+
+
+    @classmethod
+    def from_schema(cls,schema: CycleTimeSchema) -> 'CycleTimeInputModel':
+        return cls(
+            id=schema.id,
+            str_date=schema.str_date,
+            week=schema.week,
+            line= LineModel.from_schema(schema.line),#LineModel.form_schema(schema.line),
+            platform= PlatformModel.from_schema(schema.platform),#PlatformModel.form_schema(schema.platform)
+            cycles=[CycleTimeModel(
+                type=cycle['type'],
+                start=cycle['start'],
+                end=cycle['end'],
+                time=cycle['time'],
+                created=cycle['created']
+            ) for cycle in schema.cycles],
+            created_at=schema.created_at,
+            updated_at=schema.updated_at
+        )
 
     # def __init__(self, model: str):
     #     self.model = model

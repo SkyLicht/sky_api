@@ -72,6 +72,15 @@ class LineSchema(Base):
     # Relationship with work records
     work_records = relationship('WorkRecordSchema', back_populates='line')
 
+
+
+    def to_json(self):
+        return {
+            'id': self.id,
+            'name': self.name,
+            'is_active': self.is_active,
+            'factory': self.factory
+        }
     def __repr__(self):
         return f"<Line(name='{self.name}')>"
 
