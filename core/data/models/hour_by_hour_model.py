@@ -2,7 +2,7 @@ from datetime import datetime
 
 from pydantic import BaseModel
 
-from core.data.schemas.hour_by_hour_schema import HourByHourSchema, WorkPlanSchema
+from core.data.schemas.hour_by_hour_schema import HourByHourSchema, WorkPlanSchema, PlatformSchema
 
 
 class HourByHourModel(BaseModel):
@@ -24,7 +24,7 @@ class HourByHourModel(BaseModel):
     def week(self):
         return datetime.strptime(self.date, "%Y-%m-%d").isocalendar()[1]
 
-    def to_schema(self, factory:str)-> HourByHourSchema:
+    def to_schema(self, factory: str) -> HourByHourSchema:
         return HourByHourSchema(
             line=self.line,
             factory=factory,
@@ -56,7 +56,6 @@ class PlatformModel(BaseModel):
     name: str
     uph: int
     f_n: float
-    heller_t: dict
 
     def to_dict(self):
         return {
@@ -70,6 +69,25 @@ class PlatformModel(BaseModel):
 
     def __str__(self):
         return str(self.to_dict())
+
+    def to_schema(self) -> PlatformSchema:
+        return PlatformSchema(
+            sku=self.sku,
+            name=self.name,
+            uph=self.uph,
+            f_n=self.f_n,
+        )
+
+    @classmethod
+    def from_schema(cls, schema: PlatformSchema) -> 'PlatformModel':
+        """Create a Pydantic model from SQLAlchemy schema."""
+        return cls(
+            id=schema.id,
+            sku=schema.sku,
+            name=schema.name,
+            uph=schema.uph,
+            f_n=schema.f_n,
+        )
 
 
 class WorkPlanModel(BaseModel):
@@ -98,7 +116,7 @@ class WorkPlanModel(BaseModel):
             "platform_id": self.platform_id
         }
 
-    def to_schema(self, factory:str)-> WorkPlanSchema:
+    def to_schema(self, factory: str) -> WorkPlanSchema:
         return WorkPlanSchema(
             line=self.line,
             factory=factory,
@@ -113,5 +131,3 @@ class WorkPlanModel(BaseModel):
 
     def __str__(self):
         return str(self.to_dict())
-
-

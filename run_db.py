@@ -1,18 +1,14 @@
 import argparse
-import json
 from sqlite3 import IntegrityError
 
 from requests import session
 
 from core.data.dao.employee_dao import LineDAO, SectionDAO, AssignmentDAO, EmployeeDAO, PositionDAO, DepartmentDAO
 from core.data.schemas.defaults_schema import sections_schemas, return_assignments, positions_schemas, \
-    departments_schemas, return_layout
-from core.data.schemas.all_schemas import StationSchema, LayoutSectionSchema, MachineTypeSchema, MachineSchema, \
-    LineSchema, EmployeeSchema, SectionSchema, AssignmentSchema, \
-    WorkRecordSchema, LayoutSchema, ClusterSchema
-
+    departments_schemas
+from core.data.schemas.employee_schema import LineSchema, EmployeeSchema, SectionSchema, AssignmentSchema, \
+    WorkRecordSchema
 from core.data.schemas.hour_by_hour_schema import HourByHourSchema, WorkPlanSchema, PlatformSchema
-
 from core.data.schemas.user_schema import UserSchema, RoleSchema, RouteSchema, PermissionSchema
 from core.data.types import SectionNickname
 from core.db.database import DBConnection
@@ -39,16 +35,12 @@ def create_tables():
     DBConnection().create_table(RoleSchema)
     DBConnection().create_table(RouteSchema)
     DBConnection().create_table(PermissionSchema)
-    DBConnection().create_table(StationSchema)
-    DBConnection().create_table(LayoutSectionSchema)
-    DBConnection().create_table(MachineTypeSchema)
-    DBConnection().create_table(MachineSchema)
-    DBConnection().create_table(ClusterSchema)
-    DBConnection().create_table(LayoutSchema)
     print('Database initialized')
 
 
 def populate_user():
+
+
     session = DBConnection().get_session()
     try:
         # Fetch or create permissions
@@ -81,7 +73,7 @@ def populate_user():
         iradi_user = session.query(UserSchema).filter_by(username="iradi").first()
         if not iradi_user:
             iradi_user = UserSchema(username="iradi",
-                                    hashed_password=get_password_hash('root'))  # Replace with a hashed password
+                              hashed_password=get_password_hash('root'))  # Replace with a hashed password
             session.add(iradi_user)
             session.commit()
 
@@ -101,12 +93,14 @@ def populate_user():
         session.close()
 
 
+
 def populate_employee():
-    # Composite lambda to execute all queries in one transaction
+    #Composite lambda to execute all queries in one transaction
     # Callbacks
     # on_complete = lambda result: print("All queries executed successfully.")
     # on_error = lambda e: print(f"An error occurred: {e}")
     # on_finally = lambda: print("Query execution finished.")
+
 
     safe_execute(
         session_factory=DBConnection().get_session,
@@ -142,103 +136,17 @@ def populate_employee():
     )
 
 
-def populate_layout():
-    # Composite
-    _session = DBConnection().get_session()
-
-    try:
-
-        # create layout section
-        # layout_section_smt_bot = LayoutSectionSchema(id = "3oKQl-OoSVC2TWf",name='SMT BOT', area= 'SMT', index=1)
-        # layout_section_smt_top = LayoutSectionSchema(id = "tW2BtQcYR9ud6F4" ,name='SMT TOP', area= 'SMT', index=2)
-        # layout_section_pth = LayoutSectionSchema(id= "xQLyjx92QryA2tO",name='PTH', area= 'PTH', index=3)
-        # layout_section_itc = LayoutSectionSchema(id="ug-bMoFCTmysZGo", name='ICT', area= 'PTH', index=4)
-        # layout_section_ft = LayoutSectionSchema(id = "SnRJEuJqTvetxeE",name='FT', area= 'PTH', index=5)
-        # layout_section_manual_assy = LayoutSectionSchema(id = "AvZmpfzNSd64UlF",name='Manual Assy', area= 'PTH', index=6)
-        # layout_section_packing = LayoutSectionSchema(id = "EwzKOvRXS8OkhKB" , name='Packing', area= 'PTH', index=7)
-        #
-        # _session.add_all([
-        #     layout_section_smt_bot,
-        #     layout_section_smt_top,
-        #     layout_section_pth,
-        #     layout_section_itc,
-        #     layout_section_ft,
-        #     layout_section_manual_assy,
-        #     layout_section_packing
-        # ])
-        #
-        # _session.commit()
-
-        # with open('./config/data/stations.json', 'r') as f:
-        #     data = json.load(f)
-        #
-        # data = [StationSchema(
-        #     id = record.get('id'),
-        #     label=record.get('short_name'),
-        #     name=record.get('name'),
-        #     description=record.get('description'),
-        #     is_automatic= True
-        # ) for record in data]
-        #
-        # if not data:
-        #     print("No data to save")
-        #     return
-        #
-        # for record in data:
-        #     print(record)
-        #     _session.add(record)
-        #
-        # _session.commit()
-        #
-        # _session.close()
-
-        # print(json.dumps(data, indent= 4))
-
-        # _session.add_all(data)
-        # _session.commit()
-
-
-
-        # assay
-
-        _session.close()
-
-    except IntegrityError as e:
-        _session.rollback()
-        print(f"An error occurred: {e}")
-        _session.close()
-
-
-def populate_layout_station():
-    layout = return_layout()
-
-    _session = DBConnection().get_session()
-
-    try:
-        _session.add_all(layout)
-        _session.commit()
-        _session.close()
-    except IntegrityError as e:
-        _session.rollback()
-        print(f"An error occurred: {e}")
-        _session.close()
-
-
-    pass
-
 def populate_hour_by_hour():
-    # platform_to_db_from_json('config/data/platforms.json')
+    #platform_to_db_from_json('config/data/platforms.json')
     work_plan_to_db_from_json('config/data/work_plans.json')
-    # hour_by_hour_to_db_from_json('config/data/hour_by_hour.json')
-    pass
-
+    #hour_by_hour_to_db_from_json('config/data/hour_by_hour.json')
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Manage database')
     parser.add_argument(
         '--db',
         type=str,
-        choices=['pop_user', 'create_tables', 'pop_employee', 'pop_hour_by_hour', 'populate_layout', 'pop_ls'],
+        choices=['pop_user', 'create_tables', 'pop_employee', 'pop_hour_by_hour'],
         help='...'
     )
 
@@ -252,10 +160,6 @@ if __name__ == '__main__':
         create_tables()
     elif arg.db == 'pop_hour_by_hour':
         populate_hour_by_hour()
-    elif arg.db == 'populate_layout':
-        populate_layout()
-    elif arg.db == 'pop_ls':
-        populate_layout_station()
 
 # def add_route_to_user(db: Session, route_path: str, username: str, description: str = None):
 #     # Fetch or create the route

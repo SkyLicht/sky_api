@@ -1,6 +1,4 @@
-from datetime import datetime
-
-from sqlalchemy import Column, Integer, String, Float, JSON, ForeignKey, UniqueConstraint, DateTime
+from sqlalchemy import Column, Integer, String, Float, JSON, ForeignKey, UniqueConstraint
 from sqlalchemy.orm import relationship
 
 from core.db.database import Base
@@ -17,6 +15,16 @@ class PlatformSchema(Base):
 
     # Relationship to WorkPlan
     work_plans = relationship("WorkPlanSchema", back_populates="platforms")
+
+    def to_json(self):
+        return {
+            "id": self.id,
+            "sku": self.sku,
+            "name": self.name,
+            "uph": self.uph,
+            "f_n": self.f_n,
+            "heller_t": self.heller_t
+        }
 
     def to_dict(self):
         return {
@@ -35,6 +43,8 @@ class PlatformSchema(Base):
             "uph": self.uph,
             "f_n": self.f_n,
         }
+
+
 
 
 class WorkPlanSchema(Base):
@@ -60,6 +70,8 @@ class WorkPlanSchema(Base):
 
     # Relationship to Platform
     platforms = relationship("PlatformSchema", back_populates="work_plans")
+
+
 
 
 
