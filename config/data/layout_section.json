@@ -1,0 +1,44 @@
+[
+  {
+    "id": "3oKQl-OoSVC2TWf",
+    "index": 1,
+    "name": "SMT BOT",
+    "area": "SMT"
+  },
+  {
+    "id": "tW2BtQcYR9ud6F4",
+    "index": 2,
+    "name": "SMT TOP",
+    "area": "SMT"
+  },
+  {
+    "id": "xQLyjx92QryA2tO",
+    "index": 3,
+    "name": "PTH",
+    "area": "PTH"
+  },
+  {
+    "id": "ug-bMoFCTmysZGo",
+    "index": 4,
+    "name": "ICT",
+    "area": "PTH"
+  },
+  {
+    "id": "SnRJEuJqTvetxeE",
+    "index": 5,
+    "name": "FT",
+    "area": "PTH"
+  },
+  {
+    "id": "AvZmpfzNSd64UlF",
+    "index": 6,
+    "name": "Manual Assy",
+    "area": "PTH"
+  },
+  {
+    "id": "EwzKOvRXS8OkhKB",
+    "index": 7,
+    "name": "Packing",
+    "area": "PTH"
+  }
+]

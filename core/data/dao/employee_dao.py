@@ -1,5 +1,5 @@
 # DAO (Data Access Object) Classes
-from core.data.schemas.employee_schema import EmployeeSchema, SectionSchema, AssignmentSchema, WorkRecordSchema, \
+from core.data.schemas.all_schemas import EmployeeSchema, SectionSchema, AssignmentSchema, WorkRecordSchema, \
     LineSchema, DepartmentSchema, PositionSchema
 
 

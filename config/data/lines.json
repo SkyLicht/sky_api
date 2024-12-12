@@ -1,0 +1,50 @@
+[
+  {
+    "id": "lxL6Pz3KSOmnefj",
+    "name": "J01",
+    "is_active": 1,
+    "factory": "A6"
+  },
+  {
+    "id": "Qsnc5hMQRKCVN8y",
+    "name": "J02",
+    "is_active": 1,
+    "factory": "A6"
+  },
+  {
+    "id": "IOAI6cUASquGIUL",
+    "name": "J03",
+    "is_active": 1,
+    "factory": "A6"
+  },
+  {
+    "id": "gVYUuvWlT4qiYX1",
+    "name": "J05",
+    "is_active": 1,
+    "factory": "A6"
+  },
+  {
+    "id": "vJZ9Eiu_SjC2HWr",
+    "name": "J06",
+    "is_active": 1,
+    "factory": "A6"
+  },
+  {
+    "id": "NuOEj8H2TZ6axcU",
+    "name": "J07",
+    "is_active": 1,
+    "factory": "A6"
+  },
+  {
+    "id": "5w6c2wxLROikCOB",
+    "name": "J08",
+    "is_active": 1,
+    "factory": "A6"
+  },
+  {
+    "id": "JGUPiL6oSzuelSR",
+    "name": "J09",
+    "is_active": 1,
+    "factory": "A6"
+  }
+]
