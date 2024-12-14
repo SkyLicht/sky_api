@@ -18,6 +18,8 @@ class LayoutRepository:
         except Exception as e:
             print(e)
             return []
+        finally:
+            self.dao.session.remove()
 
     async def get_layout_by_id(self, layout_id):
         try:
@@ -30,6 +32,8 @@ class LayoutRepository:
         except Exception as e:
             print(e)
             return None
+        finally:
+            self.dao.session.remove()
 
 
 
@@ -44,3 +48,5 @@ class LayoutRepository:
         except Exception as e:
             print(e)
             return None
+        finally:
+            self.dao.session.remove()

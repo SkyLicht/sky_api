@@ -146,6 +146,10 @@ class PlatformDAO:
             print(f"{Fore.GREEN}Session close{Style.RESET_ALL}")
 
 
+    async def fetch_get_platforms(self) -> list[PlatformSchema]:
+        return self.session.query(PlatformSchema).all()
+
+
 class WorkPlanDAO:
     def __init__(self, connection):
         self.session = connection

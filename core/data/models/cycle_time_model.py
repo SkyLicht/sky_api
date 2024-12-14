@@ -4,23 +4,23 @@ from pydantic import BaseModel
 
 from core.data.models.employee_model import LineModel
 from core.data.models.hour_by_hour_model import PlatformModel
-from core.data.schemas.cycle_time_schema import CycleTimeSchema
+from core.data.schemas.all_schemas import CycleTimeSchema
 
 
 class CycleTimeModel(BaseModel):
     type: str
-    start: float
-    end: float
     time: float
     created: str
+    finished: str
+    updated_at: str
 
-    def to_json(self):
+    def to_dict(self):
         return {
             'type': self.type,
-            'start': self.start,
-            'end': self.end,
             'time': self.time,
-            'create': self.created
+            'create': self.created,
+            'finished': self.finished,
+            'updated_at': self.updated_at
         }
 
 class CycleTimeInputModel(BaseModel):
@@ -41,24 +41,22 @@ class CycleTimeInputModel(BaseModel):
         return [cycle.to_json() for cycle in cycles]
 
 
-    @classmethod
-    def from_schema(cls,schema: CycleTimeSchema) -> 'CycleTimeInputModel':
-        return cls(
-            id=schema.id,
-            str_date=schema.str_date,
-            week=schema.week,
-            line= LineModel.from_schema(schema.line),#LineModel.form_schema(schema.line),
-            platform= PlatformModel.from_schema(schema.platform),#PlatformModel.form_schema(schema.platform)
-            cycles=[CycleTimeModel(
-                type=cycle['type'],
-                start=cycle['start'],
-                end=cycle['end'],
-                time=cycle['time'],
-                created=cycle['created']
-            ) for cycle in schema.cycles],
-            created_at=schema.created_at,
-            updated_at=schema.updated_at
-        )
+    # @classmethod
+    # def from_schema(cls,schema: CycleTimeSchema) -> 'CycleTimeInputModel':
+    #     return cls(
+    #         id=schema.id,
+    #         line= LineModel.from_schema(schema.line),#LineModel.form_schema(schema.line),
+    #         platform= PlatformModel.from_schema(schema.platform),#PlatformModel.form_schema(schema.platform)
+    #         cycles=[CycleTimeModel(
+    #             type=cycle['type'],
+    #             start=cycle['start'],
+    #             end=cycle['end'],
+    #             time=cycle['time'],
+    #             created=cycle['created']
+    #         ) for cycle in schema.cycles],
+    #         created_at=schema.created_at,
+    #         updated_at=schema.updated_at
+    #     )
 
     # def __init__(self, model: str):
     #     self.model = model

@@ -6,9 +6,9 @@ from requests import session
 from core.data.dao.employee_dao import LineDAO, SectionDAO, AssignmentDAO, EmployeeDAO, PositionDAO, DepartmentDAO
 from core.data.schemas.defaults_schema import sections_schemas, return_assignments, positions_schemas, \
     departments_schemas
-from core.data.schemas.employee_schema import LineSchema, EmployeeSchema, SectionSchema, AssignmentSchema, \
-    WorkRecordSchema
-from core.data.schemas.hour_by_hour_schema import HourByHourSchema, WorkPlanSchema, PlatformSchema
+from core.data.schemas.all_schemas import LineSchema, EmployeeSchema, SectionSchema, AssignmentSchema, \
+    WorkRecordSchema, CycleTimeSchema, CycleTimeRecordSchema, ClusterSchema
+
 from core.data.schemas.user_schema import UserSchema, RoleSchema, RouteSchema, PermissionSchema
 from core.data.types import SectionNickname
 from core.db.database import DBConnection
@@ -35,6 +35,9 @@ def create_tables():
     DBConnection().create_table(RoleSchema)
     DBConnection().create_table(RouteSchema)
     DBConnection().create_table(PermissionSchema)
+    DBConnection().create_table(ClusterSchema)
+    DBConnection().create_table(CycleTimeSchema)
+    DBConnection().create_table(CycleTimeRecordSchema)
     print('Database initialized')
 
 

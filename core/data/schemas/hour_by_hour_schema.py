@@ -15,6 +15,7 @@ class PlatformSchema(Base):
 
     # Relationship to WorkPlan
     work_plans = relationship("WorkPlanSchema", back_populates="platforms")
+    # cycle_times = relationship("CycleTimeSchema",backref ="platforms")
 
     def to_json(self):
         return {

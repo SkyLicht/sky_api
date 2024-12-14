@@ -1,12 +1,12 @@
 from datetime import timedelta
-from typing import List
 from fastapi import FastAPI, Depends, HTTPException, status
 
 from fastapi.security import OAuth2PasswordRequestForm
 from sqlalchemy.orm import Session
 from starlette.middleware.cors import CORSMiddleware
 
-from core.api.endpoints import user_endpoint, hbh_endpoint, work_plan_endpoint, line_endpoint, layout_endpoint
+from core.api.endpoints import user_endpoint, hbh_endpoint, work_plan_endpoint, line_endpoint, layout_endpoint, \
+    cycle_time_endpoint, platform_endpoint
 from core.data.models.token_model import TokenModel
 from core.security import auth
 from core.security.auth import authenticate_user, ACCESS_TOKEN_EXPIRE_MINUTES, create_access_token
@@ -29,6 +29,8 @@ app.include_router(work_plan_endpoint.router)
 
 app.include_router(line_endpoint.router)
 app.include_router(layout_endpoint.router)
+app.include_router(platform_endpoint.router)
+app.include_router(cycle_time_endpoint.router)
 @app.post("/token", response_model=TokenModel)
 async def login_for_access_token(
         form_data: OAuth2PasswordRequestForm = Depends(),

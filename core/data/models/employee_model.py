@@ -1,6 +1,6 @@
 from pydantic import BaseModel
 
-from core.data.schemas.employee_schema import LineSchema
+from core.data.schemas.all_schemas import LineSchema
 
 
 class LineModel(BaseModel):

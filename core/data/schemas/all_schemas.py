@@ -1,10 +1,14 @@
+from datetime import datetime
 
 from sqlalchemy import Column, String, Boolean, ForeignKey, Integer, Index, CheckConstraint, Date, UniqueConstraint, \
-    DateTime, func
+    DateTime, func, JSON
 from sqlalchemy.orm import relationship, backref
 
 from core.db.database import Base
 from core.db.util import generate_16_uuid
+
+from core.data.schemas.hour_by_hour_schema import PlatformSchema
+from core.data.schemas.user_schema import UserSchema
 
 class EmployeeSchema(Base):
     __tablename__ = 'employees'
@@ -80,7 +84,7 @@ class LineSchema(Base):
     work_records = relationship('WorkRecordSchema', back_populates='line')
 
     # In LineSchema
-    layout = relationship('LayoutSchema', back_populates='line', cascade="all, delete-orphan", lazy='select')
+    layouts = relationship('LayoutSchema', back_populates='line', cascade="all, delete-orphan", lazy='select')
 
     def __repr__(self):
         return f"<Line(name='{self.name}')>"
@@ -93,7 +97,6 @@ class LineSchema(Base):
             "is_active": self.is_active,
             "factory": self.factory
         }
-
 
 # Class representing sections
 class SectionSchema(Base):
@@ -151,9 +154,6 @@ class WorkRecordSchema(Base):
     def __repr__(self):
         return f"<WorkRecord(date='{self.date}', line='{self.line.name}', assignment='{self.assignment.description}')>"
 
-
-
-
 class StationSchema(Base):
     __tablename__ = 'stations'
     __table_args__ = (
@@ -183,8 +183,6 @@ class LayoutSectionSchema(Base):
     area = Column(String(255), nullable=False)
 
     layout = relationship('LayoutSchema', back_populates='layout_section')
-
-
 
 class MachineTypeSchema(Base):
     __tablename__ = 'machine_types'
@@ -225,9 +223,6 @@ class ClusterSchema(Base):
     # Relationships
     layout = relationship('LayoutSchema', back_populates='cluster')
 
-
-
-
 class LayoutSchema(Base):
     __tablename__ = 'layouts'
 
@@ -246,9 +241,11 @@ class LayoutSchema(Base):
     # Relationships
     station = relationship('StationSchema', back_populates='layout')
     cluster = relationship('ClusterSchema', back_populates='layout')
-    line = relationship('LineSchema', back_populates='layout', lazy='select')
+    line = relationship('LineSchema', back_populates='layouts', lazy='select')
     machine = relationship('MachineSchema', back_populates='layout')
     layout_section = relationship('LayoutSectionSchema', back_populates='layout')
+
+    # cycle_time = relationship('CycleTimeSchema', back_populates='layout') - check if this is needed
 
     def to_dict(self)-> dict:
         return {
@@ -263,5 +260,108 @@ class LayoutSchema(Base):
             "layout_section_id": self.layout_section_id
         }
 
+
     def __repr__(self):
         return f"<Layout(index='{self.index}', version='{self.version}')> "
+
+
+
+class CycleTimeSchema(Base):
+    __tablename__ = 'cycle_times'
+
+    id = Column(String(16), primary_key=True, default=lambda: str(generate_16_uuid()), unique=True, nullable=False)
+
+    cycles = Column(JSON, nullable=False, default=list)
+
+    # Foreign key to CycleTimeRecordSchema
+    cycle_time_records_id = Column(String(16), ForeignKey('cycle_time_records.id'), nullable=False)
+    layout_id = Column(String(16), ForeignKey('layouts.id'), nullable=False)
+
+
+    # Relationship back to CycleTimeRecordSchema
+    cycle_time_record = relationship('CycleTimeRecordSchema', back_populates='cycle_times')
+    # One-to-Many  Relationship to LayoutSchema
+    layout = relationship('LayoutSchema', backref='cycle_time')
+
+
+    def __repr__(self):
+        return f"<CycleTime(id='{self.id}', cycles='{self.cycles}')>"
+
+    def to_json(self):
+        return {
+            "id": self.id,
+            "cycles": self.cycles,
+            "cycle_time_records_id": self.cycle_time_records_id,
+            "layout_id": self.layout_id
+        }
+
+
+    # @staticmethod
+    # def create_cycle_time_schema(str_date, week, cycles, line_id, platform_id) -> 'CycleTimeSchema':
+    #     return CycleTimeSchema(str_date=str_date, week=week, cycles=cycles, line_id=line_id, platform_id=platform_id)
+    #
+
+
+
+class CycleTimeRecordSchema(Base):
+    __tablename__ = 'cycle_time_records'
+
+    id = Column(String(16), primary_key=True, default=lambda: str(generate_16_uuid()), unique=True, nullable=False)
+
+    str_date = Column(String(10), nullable=False)
+    week = Column(Integer, nullable=False)
+
+
+    created_at = Column(DateTime, nullable=False, default=datetime.now())
+    updated_at = Column(DateTime, nullable=False, default=datetime.now, onupdate=datetime.now)
+
+
+
+    # Foreign key to Platform
+    line_id = Column(String(16), ForeignKey('lines.id'), nullable=False)
+    user_id = Column(String(16), ForeignKey('users.id'), nullable=True)
+    # Foreign key to Platform
+    platform_id = Column(String(16), ForeignKey('platforms.id'), nullable=False)
+
+    # Use backref to define bidirectional relationship
+    line = relationship('LineSchema', backref='cycle_time_records')
+    user = relationship('UserSchema', backref='cycle_time_records')
+
+    cycle_times = relationship(
+        'CycleTimeSchema',
+        back_populates='cycle_time_record',
+        cascade='all, delete-orphan',  # Ensures cascade delete behavior
+    )
+    # One-to-One Relationship to PlatformSchema
+    platform = relationship('PlatformSchema', backref='cycle_time_record')  # Renamed backref
+
+
+    def __repr__(self):
+        return f"<CycleTimeRecord(str_date='{self.str_date}', week='{self.week}')>"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

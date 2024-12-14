@@ -16,7 +16,7 @@ class LayoutDAO:
     async def fetch_get_layouts(self):
         return self.session.query(LayoutSchema).all()
 
-    async def fetch_get_layout_by_line_id(self, line_id):
+    async def fetch_get_layout_by_line_id(self, line_id)-> list[LayoutSchema]:
         layout = (
             self.session
             .query(LayoutSchema)
