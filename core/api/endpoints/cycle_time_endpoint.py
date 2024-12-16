@@ -87,6 +87,21 @@ async def get_by_week(
 
     return records
 
+@router.get("/get_by_week_details")
+async def get_by_week(
+        year: int,
+        week: int,
+        repository: CycleTimeRepository = Depends(get_cycle_time_repository),
+):
+
+    # Get all records for a week
+    try:
+        records = await repository.get_by_week_details(week)
+    except Exception as e:
+        raise HTTPException(status_code=400, detail=str(e))
+
+    return records
+
 
 @router.get("/get_by_id")
 async def get_by_id(
@@ -104,7 +119,7 @@ async def get_by_id(
 
 
 
-@router.delete("/delete_id")
+@router.delete("/delete")
 async def delete_record(
         record_id: str,
         repository: CycleTimeRepository = Depends(get_cycle_time_repository),

@@ -15,11 +15,17 @@ class CycleTimeDAO:
         self.session.refresh(record)
         return record
 
-    async def fetch_get_by_week(self, week):
+    async def fetch_get_by_week(self, week)-> list[CycleTimeRecordSchema]:
         return self.session.query(CycleTimeRecordSchema).options(
             joinedload(CycleTimeRecordSchema.line),
             joinedload(CycleTimeRecordSchema.platform),
             joinedload(CycleTimeRecordSchema.user),
+            joinedload(CycleTimeRecordSchema.cycle_times),
+            joinedload(CycleTimeRecordSchema.cycle_times).joinedload(CycleTimeSchema.layout),
+            joinedload(CycleTimeRecordSchema.cycle_times).joinedload(CycleTimeSchema.layout).joinedload(
+                LayoutSchema.station),
+            joinedload(CycleTimeRecordSchema.cycle_times).joinedload(CycleTimeSchema.layout).joinedload(
+                LayoutSchema.layout_section),
         ).filter_by(week=week).all()
 
     async def fetch_delete_record(self, record_id):
@@ -37,9 +43,8 @@ class CycleTimeDAO:
             joinedload(CycleTimeRecordSchema.user)).filter_by(id=record_id).first()
 
     async def fetch_update_cycle_time(self, cycle_time_id: str, cycles):
-
         self.session.query(CycleTimeSchema).filter(CycleTimeSchema.id == cycle_time_id).update({"cycles": cycles})
         self.session.commit()
 
         # Fetch the updated record
-        #updated_record = self.session.query(CycleTimeSchema).filter_by(id=cycle_time_id).first()
+        # updated_record = self.session.query(CycleTimeSchema).filter_by(id=cycle_time_id).first()
