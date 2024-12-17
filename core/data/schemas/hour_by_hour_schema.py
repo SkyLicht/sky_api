@@ -14,7 +14,7 @@ class PlatformSchema(Base):
     heller_t = Column(JSON, nullable=True)
 
     # Relationship to WorkPlan
-    work_plans = relationship("WorkPlanSchema", back_populates="platforms")
+    work_plans = relationship("WorkPlanSchema", back_populates="platform")
     # cycle_times = relationship("CycleTimeSchema",backref ="platforms")
 
     def to_json(self):
@@ -70,23 +70,54 @@ class WorkPlanSchema(Base):
     # updated_at = Column(DateTime, default=datetime.now, onupdate=datetime.now)
 
     # Relationship to Platform
-    platforms = relationship("PlatformSchema", back_populates="work_plans")
+    platform = relationship("PlatformSchema", back_populates="work_plans")
 
 
-
-
-
-    def to_dict(self):
+    def to_details(self):
         return {
             "id": self.id,
+            "factory": self.factory,
             "line": self.line,
             "date": self.date,
             "uph_i": self.uph_i,
             "target_oee": self.target_oee,
             "planned_hours": self.planned_hours,
             "week": self.week,
-            "state": self.state
+            "state": self.state,
+            "platform": self.platform,
+            "uph": self.platform.uph * self.target_oee,
+            "ct": 3600 / (self.platform.uph * self.target_oee)
         }
+
+    def to_dict(self):
+        return {
+            "id": self.id,
+            "factory": self.factory,
+            "line": self.line,
+            "date": self.date,
+            "uph_i": self.uph_i,
+            "target_oee": self.target_oee,
+            "planned_hours": self.planned_hours,
+            "week": self.week,
+            "state": self.state,
+            "platform": self.platform
+        }
+
+
+
+
+    #
+    # def to_dict(self):
+    #     return {
+    #         "id": self.id,
+    #         "line": self.line,
+    #         "date": self.date,
+    #         "uph_i": self.uph_i,
+    #         "target_oee": self.target_oee,
+    #         "planned_hours": self.planned_hours,
+    #         "week": self.week,
+    #         "state": self.state
+    #     }
 
     def to_dic_short(self):
         return {

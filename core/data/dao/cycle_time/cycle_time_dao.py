@@ -1,7 +1,7 @@
 from sqlalchemy.orm import joinedload
 
-from core.data.models.cycle_time_model import CycleTimeModel
 from core.data.schemas.all_schemas import CycleTimeRecordSchema, CycleTimeSchema, LayoutSchema
+from core.data.schemas.hour_by_hour_schema import WorkPlanSchema
 
 
 class CycleTimeDAO:
@@ -48,3 +48,9 @@ class CycleTimeDAO:
 
         # Fetch the updated record
         # updated_record = self.session.query(CycleTimeSchema).filter_by(id=cycle_time_id).first()
+
+    async def fetch_get_work_plan_by_str_date_and_line(self, str_date, line):
+
+        return self.session.query(WorkPlanSchema).options(
+            joinedload(WorkPlanSchema.platform),
+        ).filter_by(date=str_date, line = line).first()

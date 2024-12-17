@@ -274,7 +274,8 @@ class CycleTimeSchema(Base):
     cycles = Column(JSON, nullable=False, default=list)
 
     # Foreign key to CycleTimeRecordSchema
-    cycle_time_records_id = Column(String(16), ForeignKey('cycle_time_records.id'), nullable=False)
+    cycle_time_record_id = Column(String(16), ForeignKey('cycle_time_records.id', ondelete="CASCADE"), nullable=False)
+
     layout_id = Column(String(16), ForeignKey('layouts.id'), nullable=False)
 
 
@@ -291,7 +292,7 @@ class CycleTimeSchema(Base):
         return {
             "id": self.id,
             "cycles": self.cycles,
-            "cycle_time_records_id": self.cycle_time_records_id,
+            "cycle_time_records_id": self.cycle_time_record_id,
             "layout_id": self.layout_id
         }
 
@@ -330,7 +331,8 @@ class CycleTimeRecordSchema(Base):
     cycle_times = relationship(
         'CycleTimeSchema',
         back_populates='cycle_time_record',
-        cascade='all, delete-orphan',  # Ensures cascade delete behavior
+        cascade='all, delete',  # Ensures cascade delete behavior
+        passive_deletes=True,
     )
     # One-to-One Relationship to PlatformSchema
     platform = relationship('PlatformSchema', backref='cycle_time_record')  # Renamed backref

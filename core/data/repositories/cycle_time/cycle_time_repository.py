@@ -79,6 +79,12 @@ class CycleTimeRepository:
             cts = []
 
             for record in records:
+
+                work_plan = await self.ct_dao.fetch_get_work_plan_by_str_date_and_line(record.str_date,
+                                                                                       record.line.name)
+
+                print("work_plan", work_plan.to_dict())
+
                 # Construcción de la lista de cycle_times
                 cycle_times_data = []
                 for ct_record in record.cycle_times:
@@ -127,7 +133,9 @@ class CycleTimeRepository:
                     "cycle_times_length": len(cycle_times_data),
                     "cycle_times_completed": cycle_times_completed,
                     "bottle_neck": bottleneck,
-                    "cycle_times": cycle_times_data
+                    "cycle_times": cycle_times_data,
+                    "work_plan": work_plan.to_details() if work_plan else None
+
                 }
 
                 cts.append(ct)

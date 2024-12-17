@@ -1,9 +1,10 @@
-from sqlalchemy import create_engine
+from sqlalchemy import create_engine, event
 from sqlalchemy.exc import SQLAlchemyError
 from sqlalchemy.orm import sessionmaker, declarative_base, scoped_session
 
 # Define the database URL - using SQLite with a local file named `sky_db.db`.
 DATABASE_URL = "sqlite:///./sky_db.db"
+
 
 # Base class for defining ORM models.
 Base = declarative_base()
@@ -31,6 +32,14 @@ class DBConnection:
             connect_args={"check_same_thread": False},  # Required for SQLite in multi-threaded apps
             echo=False
         )
+
+        @event.listens_for(self.engine, "connect")
+        def set_sqlite_pragma(dbapi_connection, connection_record):
+            cursor = dbapi_connection.cursor()
+            cursor.execute("PRAGMA foreign_keys=ON;")
+            cursor.close()
+
+
 
         Base.metadata.create_all(bind=self.engine)
 

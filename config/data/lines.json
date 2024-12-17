@@ -3,48 +3,98 @@
     "id": "lxL6Pz3KSOmnefj",
     "name": "J01",
     "is_active": 1,
-    "factory": "A6"
+    "factory": "A6",
+    "description": null
   },
   {
     "id": "Qsnc5hMQRKCVN8y",
     "name": "J02",
     "is_active": 1,
-    "factory": "A6"
+    "factory": "A6",
+    "description": null
   },
   {
     "id": "IOAI6cUASquGIUL",
     "name": "J03",
     "is_active": 1,
-    "factory": "A6"
+    "factory": "A6",
+    "description": null
   },
   {
     "id": "gVYUuvWlT4qiYX1",
     "name": "J05",
     "is_active": 1,
-    "factory": "A6"
+    "factory": "A6",
+    "description": null
   },
   {
     "id": "vJZ9Eiu_SjC2HWr",
     "name": "J06",
     "is_active": 1,
-    "factory": "A6"
+    "factory": "A6",
+    "description": null
   },
   {
     "id": "NuOEj8H2TZ6axcU",
     "name": "J07",
     "is_active": 1,
-    "factory": "A6"
+    "factory": "A6",
+    "description": null
   },
   {
     "id": "5w6c2wxLROikCOB",
     "name": "J08",
     "is_active": 1,
-    "factory": "A6"
+    "factory": "A6",
+    "description": null
   },
   {
     "id": "JGUPiL6oSzuelSR",
     "name": "J09",
     "is_active": 1,
-    "factory": "A6"
+    "factory": "A6",
+    "description": null
+  },
+  {
+    "id": "JGUPiL6oSzuelS1",
+    "name": "T01",
+    "is_active": 1,
+    "factory": "A5",
+    "description": "AUDIO AMPLIFIER "
+  },
+  {
+    "id": "JGUPiL6oSzuelS2",
+    "name": "T02",
+    "is_active": 1,
+    "factory": "A5",
+    "description": "FRONT BODY CONTROLLER"
+  },
+  {
+    "id": "JGUPiL6oSzuelS3",
+    "name": "T03",
+    "is_active": 1,
+    "factory": "A5",
+    "description": "RIGHT BODY CONTROLLER"
+  },
+  {
+    "id": "JGUPiL6oSzuelS4",
+    "name": "T04",
+    "is_active": 1,
+    "factory": "A5",
+    "description": "LBC- LEFT BODY CONTROLLER"
+  },
+  {
+    "id": "JGUPiL6oSzuelS5",
+    "name": "T05",
+    "is_active": 1,
+    "factory": "A5",
+    "description": "CHARGE PORT CONTROLLER"
+  },
+  {
+    "id": "JGUPiL6oSzuelS6",
+    "name": "T06",
+    "is_active": 1,
+    "factory": "A5",
+    "description": "CAMERAS"
   }
 ]

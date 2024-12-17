@@ -145,10 +145,11 @@ def work_plan_to_db_from_json(file_path: str):
         data = json.load(f)
 
     data = [WorkPlanSchema(
+        id = record.get('id'),
         date=record.get('date'),
         factory="A6",
         line=record.get('line'),
-        planned_hours=record.get('planed_hours'),
+        planned_hours=record.get('planned_hours'),
         platform_id=record.get('platform_id'),
         state=record.get('state'),
         target_oee=record.get('target_oee'),
